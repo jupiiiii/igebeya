@@ -1,0 +1,72 @@
+/* Basic CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set the background image for the container */
+.container {
+    background-image: url('bg.png'); /* Replace with your background image URL */
+    background-size: cover;
+    /*background-position: center -40%;*/
+    height: 100vh;
+    display: flex;
+    background-color: var(--tg-theme-bg-color);
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+h1 {
+    font-family: 'Roboto Light', sans-serif;
+    margin-top: 55px;
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 550;
+    color: var(--tg-theme-text-color);
+}
+
+/* Dark overlay to improve text visibility */
+.overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Centered content within the overlay */
+.content {
+    text-align: center;
+    color: var(--tg-theme-text-color);
+    margin-top: 70%;
+}
+
+/* Buttons container */
+.buttons {
+    margin-top: 20px;
+}
+
+/* Button styles */
+.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 15px;
+    color: white;
+    font-family: 'Roboto Light', sans-serif;
+    font-weight: 300;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.signup {
+    background-color: #387698;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Details</title>
+    <link rel="stylesheet" href="/item-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+
+    <div class="item-details-container">
+        <!-- Main Image Viewer -->
+        <div class="image-viewer">
+            <button id="prev-arrow" class="arrow">❮</button>
+            <img id="main-image" src="" alt="Main Item Image">
+            <button id="next-arrow" class="arrow">❯</button>
+        </div>
+
+        <!-- Thumbnail Images -->
+        <div class="thumbnails">
+            <!-- Thumbnails will be dynamically generated here -->
+        </div>
+
+        <!-- Item Info -->
+        <div class="item-info">
+            <div class="price-and-icon">
+                <p id="item-price"></p>
+                <i class="fas fa-heart like-icon"></i>
+            </div>
+            <h1 id="item-title"></h1>
+            <p id="date"></p>
+            <p id="item-description"></p>
+
+            <!-- Message Typing Box -->
+            <textarea id="message-box" placeholder="Type your message here..."></textarea>
+
+            <button id="send-message">Send Message</button>
+        </div>
+    </div>
+    <!-- Modal for Enlarged Image -->
+    <div id="image-modal" class="modal">
+        <span class="close">&times;</span>
+        <img id="modal-image" class="modal-content" src="" alt="Enlarged Image">
+    </div>
+    <!-- Footer for bottom icons -->
+    <footer class="bottom-navigation">
+        <a href="/sell.html" class="nav-icon">
+            <i class="fas fa-plus"></i>
+            <span>Sell</span>
+        </a>
+        <a href="/favorites.html" class="nav-icon">
+            <i class="fas fa-heart"></i>
+            <span>Favorites</span>
+        </a>
+        <a href="/shop.html" class="nav-icon">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="#" class="nav-icon">
+            <i class="fas fa-search"></i>
+            <span>Search</span>
+        </a>
+        <a href="#" class="nav-icon">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </a>
+    </footer>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="/item-details.js"></script>
+</body>
+</html>

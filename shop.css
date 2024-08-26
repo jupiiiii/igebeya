@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Merriweather', serif;
+    background-color: var(--tg-theme-bg-color);
+    color: var(--tg-theme-text-color);
+    padding: 40px 2px 70px 2px;
+}
+        .header {
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: var(--tg-theme-bg-color);
+            color: var(--tg-theme-text-color);
+            position: fixed;
+            top: 5px;
+            left: 22px;
+            width: 91%;
+            height: 40px;
+            border: rgba(74, 136, 154, 0.44);
+            box-shadow: 0 2px 5px rgba(74, 136, 154, 0.44);
+            border-radius: 10px;
+            z-index: 1000;
+
+        }
+
+        /*.header h1 {*/
+        /*    font-size: 12px;*/
+        /*    margin: 0;*/
+        /*    font-family: 'Oswald', sans-serif;*/
+        /*}*/
+
+        .location {
+            display: flex;
+            align-items: center;
+            font-size: 12px;
+            cursor: pointer;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .location i {
+            margin-right: 5px;
+            font-size: 16px;
+        }
+
+        .search-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-box {
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            background-color: rgba(234, 233, 233, 0.09);
+            /* Adjust the padding to make space for the icon */
+            padding: 5px 5px 5px 30px;
+            width: 200px;
+            height: 25px;
+            font-size: 1rem;
+            border: 1px var(--tg-theme-text-color);
+        }
+
+        .search-box input {
+            font-size: 14px;
+            padding: 8px 32px;
+            border: 1px solid rgba(75, 136, 152, 0.68);
+            border-radius: 15px;
+            background-color: var(--tg-theme-bg-color);;
+        }
+
+        .search-box input::placeholder {
+            color: #888;
+        }
+
+        .search-box i {
+            margin-left: 10px;
+            color: #888;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            left: 30px;
+            transform: translateY(-50%);
+            pointer-events: none; /* Prevent clicking the icon from focusing the input */
+        }
+
+#no-items-found {
+    top: 50vh;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    text-align: center; /* Center text horizontally */
+    position: absolute; /* Position element absolutely */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to truly center */
+    color: #666; /* Optional: set text color */
+    padding: 20px; /* Optional: add some padding */
+}
+
+#no-items-found .icon {
+    font-size: 36px; /* Adjust icon size */
+    display: block; /* Ensure icon is on its own line */
+    margin-bottom: 10px; /* Space between icon and text */
+}
+
+/* Items list styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.items-list {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.item-box {
+    background-color: var(--tg-theme-bg-color);
+    /*border: 1px solid rgba(243, 102, 102, 0.22);*/
+    border: rgba(74, 136, 154, 0.44);
+    box-shadow: 0 2px 5px rgba(74, 136, 154, 0.44);
+    border-radius: 10px;
+    width: 44%;
+    margin: 15px auto;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.item-box:hover {
+    transform: translateY(-5px);
+}
+
+.item-box img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.item-details {
+    padding: 10px 0;
+}
+
+/* Price and Heart Icon Styling */
+.price-and-icon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-price {
+    font-family: 'Oswald', sans-serif;
+    font-weight: normal;
+    font-size: 1.0rem;
+    color: #326472;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.like-icon {
+    font-size: 1.0rem;
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+
+/* Style for liked items */
+.liked {
+    color: red;
+}
+
+
+.like-icon:hover {
+    color: #e63946;
+}
+
+.item-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 5px 0;
+    color: var(--tg-theme-text-color);
+    overflow: hidden;
+}
+
+.item-description {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 50;
+    font-size: 12px;
+    color: #666;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.5;
+}
+
+.item-city {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 150;
+    font-size: 12px;
+    color: #666;
+}
+
+
+/* Footer navigation */
+.bottom-navigation {
+    position: fixed;
+    bottom: 5px;
+    left: 21px;
+    right: 21px;
+    background-color: var(--tg-theme-bg-color);
+    border: rgba(74, 136, 154, 0.44);
+    box-shadow: 0 2px 5px rgba(74, 136, 154, 0.44);
+    border-radius: 10px;
+    border-top: 1px solid rgba(53, 108, 110, 0.59);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.nav-icon {
+    text-align: center;
+    color: var(--tg-theme-text-color);
+    font-size: 16px;
+    text-decoration: none;
+    flex: 1;
+}
+
+.nav-icon i {
+    font-size: 16px;
+    display: block;
+}
+
+.nav-icon span {
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 4px;
+    display: block;
+}
+
+.nav-icon:hover {
+    color: #4b8898;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .item-box {
+        width: 44%;
+    }
+
+    .search-container {
+        text-align: center;
+    }
+
+    .search-box {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .item-box {
+        width: 44%;
+    }
+}
