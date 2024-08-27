@@ -129,7 +129,7 @@ body {
     box-shadow: 0 2px 5px rgba(74, 136, 154, 0.44);
     border-radius: 10px;
     width: 44%;
-    margin: 10px auto;
+    margin: 5px auto;
     padding: 10px;
     transition: transform 0.3s ease;
 }
