@@ -23,7 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const loadingIndicator = document.getElementById("loading");
     
         // Disable the submit button and show the loading indicator
-        submitButton.disabled = true;
+        //submitButton.disabled = true;
+        submitButton.style.display = 'none';
         loadingIndicator.style.display = "block";
     
         const formData = new FormData(sellForm);
@@ -72,7 +73,8 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .finally(() => {
             // Re-enable the submit button and hide the loading indicator
-            submitButton.disabled = false;
+            //submitButton.disabled = false;
+            submitButton.style.display = 'block';
             loadingIndicator.style.display = "none";
         });
     });
