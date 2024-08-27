@@ -63,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then(items => {
                     const itemsList = document.querySelector('.items-list');
                     itemsList.innerHTML = '';
+                    console.log(items);
 
                     // Loop through each item and add to the DOM
                     items.forEach(item => {
