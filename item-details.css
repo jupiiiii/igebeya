@@ -71,6 +71,10 @@ body {
     margin-top: 20px;
 }
 
+.item-info textarea{
+    color: var(--tg-theme-text-color);
+}
+
 .price-and-icon {
     display: flex;
     align-items: center;
