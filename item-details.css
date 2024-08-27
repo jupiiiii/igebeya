@@ -125,7 +125,7 @@ body {
     margin: 5px 0;
     line-height: 1.5; /* Adjust line-height for better readability */
     word-wrap: break-word; /* Ensures that long words are wrapped */
-    white-space: normal; /* Ensure the text wraps normally */
+    white-space: pre-wrap; /* Ensure the text wraps normally and preserve pre input structure of the text*/
 }
 
 #message-box {
