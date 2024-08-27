@@ -129,7 +129,7 @@ body {
     box-shadow: 0 2px 5px rgba(74, 136, 154, 0.44);
     border-radius: 10px;
     width: 44%;
-    margin: 15px auto;
+    margin: 10px auto;
     padding: 10px;
     transition: transform 0.3s ease;
 }
@@ -206,8 +206,9 @@ body {
 }
 
 .item-city {
+    margin-top: 5px;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 150;
+    font-weight: 250;
     font-size: 12px;
     color: #666;
 }
