@@ -213,6 +213,11 @@ body {
     color: #666;
 }
 
+.item-city i {
+    font-size: 12px;
+    display: block;
+}
+
 
 /* Footer navigation */
 .bottom-navigation {
