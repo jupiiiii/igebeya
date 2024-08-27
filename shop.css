@@ -72,7 +72,8 @@ body {
             padding: 8px 32px;
             border: 1px solid rgba(75, 136, 152, 0.68);
             border-radius: 15px;
-            background-color: var(--tg-theme-bg-color);;
+            background-color: var(--tg-theme-bg-color);
+            color: var(--tg-theme-text-color);
         }
 
         .search-box input::placeholder {
