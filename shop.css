@@ -266,7 +266,6 @@ body {
 }
 
 #back-to-top {
-    position: fixed;
     bottom: 20px;
     right: 20px;
     background-color: #326472; /* Adjust color as needed */
@@ -283,7 +282,6 @@ body {
 }
 
 #load-more {
-    position: fixed;
     bottom: 20px;
     right: 20px;
     background-color: #326472; /* Adjust color as needed */
