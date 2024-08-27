@@ -60,8 +60,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then(response => response.json())
                 .then(items => {
                     const itemsList = document.querySelector('.items-list');
-                    itemsList.innerHTML = '';
-                    console.log(items);
+                    if (start === 0) {
+                        // Clear the items list only if this is the initial load
+                        itemsList.innerHTML = '';
+                    }
+    
+                    if (items.length === 0) {
+                        loadMoreButton.style.display = 'none';  // Hide button if no more items
+                    } else {
 
                     // Loop through each item and add to the DOM
                     items.forEach(item => {
@@ -127,6 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         // Append the item box to the list
                         itemsList.appendChild(itemBox);
                     });
+                }
                 })
                 .catch(error => {
                     console.error('Error fetching items:', error);
