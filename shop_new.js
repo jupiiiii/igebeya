@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector('.header');
     const searchInput = document.getElementById('search-input');
     const itemsList = document.querySelector('.items-list');
+    const loadMoreButton = document.getElementById('load-more');
 
     let start = 0; // Start index for items
     const limit = 4; // Number of items to load per batch
@@ -24,13 +25,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // Load initial batch of items
     displayItems(start, limit);
 
-    // Scroll event to detect when user reaches the bottom of the page
-    window.addEventListener('scroll', function () {
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-            // Load the next batch of items
-            start += limit;
-            displayItems(start, limit);
-        }
+    // Add event listener to the "Load More" button
+    loadMoreButton.addEventListener('click', function () {
+        start += limit;  // Increment the start index
+        displayItems(start, limit);  // Fetch and display the next batch of items
     });
 
     // Toggle header visibility when search button is clicked
