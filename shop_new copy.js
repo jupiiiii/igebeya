@@ -18,20 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchInput = document.getElementById('search-input');
     const itemsList = document.querySelector('.items-list');
 
-    let start = 0; // Start index for items
-    const limit = 4; // Number of items to load per batch
-
-    // Load initial batch of items
-    displayItems(start, limit);
-
-    // Scroll event to detect when user reaches the bottom of the page
-    window.addEventListener('scroll', function () {
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-            // Load the next batch of items
-            start += limit;
-            displayItems(start, limit);
-        }
-    });
+    //LOAD THE ENTIRE PAGE
+    displayItems()
 
     // Toggle header visibility when search button is clicked
     searchButton.addEventListener('click', function (event) {
@@ -44,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    function displayItems(start, limit) {
+    function displayItems() {
         // Fetch user's favorites
     fetch(`https://igebeya-bc68de5021c8.herokuapp.com/get_favorite?chat_id=${chatId}`)
         .then(response => response.json())
@@ -58,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             // Fetch all items
-            fetch('https://igebeya-bc68de5021c8.herokuapp.com/get_items?start=${start}&limit=${limit}')
+            fetch('https://igebeya-bc68de5021c8.herokuapp.com/get_items')
                 .then(response => response.json())
                 .then(items => {
                     const itemsList = document.querySelector('.items-list');
