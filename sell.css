@@ -110,12 +110,12 @@ textarea {
 #loading {
     width: 100%;
     padding: 10px;
-    font-size: 16px;
+    font-size: 14px;
     border: none;
     border-radius: 5px;
     background-color: #326472;
     color: white;
-    /* Or use a spinner, animated GIF, etc. */
+    transition: background-color 0.3s ease;
 }
 
 /* Listed items section styling */

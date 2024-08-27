@@ -212,6 +212,10 @@ body {
     font-weight: 250;
     font-size: 12px;
     color: #666;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .item-city i {
