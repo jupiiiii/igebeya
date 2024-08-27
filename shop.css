@@ -282,7 +282,7 @@ body {
 }
 
 #load-more {
-    width: 100%;
+    width: 20%;
     bottom: 20px;
     right: 20px;
     background-color: #326472; /* Adjust color as needed */
