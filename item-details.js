@@ -106,7 +106,8 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             // Populate the rest of the item details
-            document.getElementById("item-price").textContent = `ETB ${itemDetails.item_price}`;
+            const formattedPrice = Number(itemDetails.item_price).toLocaleString();
+            document.getElementById("item-price").textContent = `ETB ${formattedPrice}`;
             document.getElementById("item-title").textContent = itemDetails.item_name;
             document.getElementById("item-description").textContent = itemDetails.item_description;
             document.getElementById("date").textContent = itemDetails.date;
