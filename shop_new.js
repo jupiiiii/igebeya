@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             // Fetch all items
-            fetch('https://igebeya-bc68de5021c8.herokuapp.com/get_items?start=${start}&limit=${limit}')
+            fetch(`https://igebeya-bc68de5021c8.herokuapp.com/get_items?start=${start}&limit=${limit}`)
                 .then(response => response.json())
                 .then(items => {
                     const itemsList = document.querySelector('.items-list');
