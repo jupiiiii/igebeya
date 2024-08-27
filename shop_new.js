@@ -17,7 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const header = document.querySelector('.header');
     const searchInput = document.getElementById('search-input');
     const itemsList = document.querySelector('.items-list');
+
+    // Load more and Back to top buttons
     const loadMoreButton = document.getElementById('load-more');
+    const backToTopButton = document.getElementById('back-to-top');
 
     let start = 0; // Start index for items
     const limit = 4; // Number of items to load per batch
@@ -29,6 +32,12 @@ document.addEventListener("DOMContentLoaded", function () {
     loadMoreButton.addEventListener('click', function () {
         start += limit;  // Increment the start index
         displayItems(start, limit);  // Fetch and display the next batch of items
+    });
+
+    // Add event listener to the "Back to Top" button
+    backToTopButton.addEventListener('click', function () {
+        backToTopButton.style.display = 'none';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
     // Toggle header visibility when search button is clicked
@@ -67,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
                     if (items.length === 0) {
                         loadMoreButton.style.display = 'none';  // Hide button if no more items
+                        backToTopButton.style.display = 'block'; // Show the Back to Top button
                     } else {
 
                     // Loop through each item and add to the DOM
