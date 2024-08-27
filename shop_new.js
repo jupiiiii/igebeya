@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const itemsList = document.querySelector('.items-list');
 
     let start = 0; // Start index for items
-    const limit = 4; // Number of items to load per batch
+    const limit = 2; // Number of items to load per batch
 
     // Load initial batch of items
     displayItems(start, limit);
