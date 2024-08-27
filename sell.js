@@ -18,31 +18,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
     sellForm.addEventListener("submit", function (event) {
         event.preventDefault();
-
+    
+        const submitButton = document.getElementById("submit-btn");
+        const loadingIndicator = document.getElementById("loading");
+    
+        // Disable the submit button and show the loading indicator
+        submitButton.disabled = true;
+        loadingIndicator.style.display = "block";
+    
         const formData = new FormData(sellForm);
-
+    
         // Validate that at least one image is selected
         const itemImages = document.getElementById("item-images").files;
         if (itemImages.length === 0) {
             alert("Please attach at least one image.");
+            submitButton.disabled = false;
+            loadingIndicator.style.display = "none";
             return;
         }
-
+    
         // Get only the first five images if more than five are attached
         let imageFiles = Array.from(itemImages);
         if (imageFiles.length > 5) {
             imageFiles = imageFiles.slice(0, 5);
         }
-
+    
         // Append images to FormData
         imageFiles.forEach(file => formData.append('images', file));
-
-        // retrieve the chat id and append
+    
+        // Retrieve the chat id and append
         const chatId = localStorage.getItem('chatId');
         if (chatId) {
             formData.append('chat_id', chatId);
         }
-
+    
         // Send data to backend
         fetch('https://igebeya-bc68de5021c8.herokuapp.com/list_item', {
             method: 'POST',
@@ -60,9 +69,14 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(error => {
             console.error('Error:', error);
             alert('Failed to list the item. Please try again.');
+        })
+        .finally(() => {
+            // Re-enable the submit button and hide the loading indicator
+            submitButton.disabled = false;
+            loadingIndicator.style.display = "none";
         });
     });
-
+    
     // Remove focus from the input to hide the keyboard
     sell_cont.addEventListener('click', function(event) {
         // Check if the clicked element is not an input field or textarea
