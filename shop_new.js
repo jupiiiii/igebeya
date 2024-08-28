@@ -75,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
     
                     if (items.length === 0) {
+                        alert("No more new items in your area!")
                         loadMoreButton.style.display = 'none';  // Hide button if no more items
                         backToTopButton.style.display = 'block'; // Show the Back to Top button
                     } else {
