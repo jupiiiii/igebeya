@@ -267,13 +267,14 @@ body {
 }
 
 #back-to-top {
+    margin-left: 140px;
+    width: 30%;
+    height: 25px;
     bottom: 20px;
-    right: 20px;
     background-color: #326472; /* Adjust color as needed */
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 10px 20px;
     cursor: pointer;
     z-index: 1000; /* Ensure it appears on top of other elements */
 }
