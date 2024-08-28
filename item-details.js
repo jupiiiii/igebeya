@@ -119,6 +119,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const formattedPrice = Number(itemDetails.item_price).toLocaleString();
             document.getElementById("item-price").textContent = `ETB ${formattedPrice}`;
             document.getElementById("item-title").textContent = itemDetails.item_name;
+            document.getElementById("item-city").textContent = itemDetails.item_city;
             document.getElementById("item-description").textContent = itemDetails.item_description;
             document.getElementById("date").textContent = itemDetails.date;
 
