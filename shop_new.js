@@ -210,7 +210,9 @@ document.addEventListener("DOMContentLoaded", function () {
                                     </div>
                                     <p class="item-title">${item.item_name}</p>
                                     <p class="item-description">${item.item_description}</p>
-                                    <p class="item-city">City:${item.item_city}</p>
+                                    <p class="item-city">
+                                        <i class="fas fa-map-marker-alt"></i> ${item.item_city}
+                                    </p>
                                 </div>
                             `;
 
