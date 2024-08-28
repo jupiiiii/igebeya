@@ -283,10 +283,10 @@ body {
 }
 
 #load-more {
+    margin-left: 60px;
     width: 30%;
     height: 20px;
     bottom: 20px;
-    left: 30vw;
     background-color: #326472; /* Adjust color as needed */
     color: white;
     border: none;
