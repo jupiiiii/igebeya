@@ -131,11 +131,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert('Message sent to the seller!');
                 // Get the message from the textarea
                 const message = document.getElementById("message-box").value.trim();
+                const chat_id = itemDetails.chat_id
 
                 // Check if the message is not empty
                 if (message) {
                     // Send the message to the bot
-                    tg.sendData(message);  // Sends the message back to the bot
+                    const message_content = {
+                        message: 'message',
+                        chat_id: 'receiver_chat_id'
+                    };
+
+                    tg.sendData(message_content);  // Sends the message back to the bot
 
                     // Provide user feedback that the message was sent
                     alert('Message sent! You will get a response on i-Gebeya telegram bot!');
