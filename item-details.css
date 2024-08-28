@@ -248,9 +248,9 @@ body {
 }
 
 #back-button {
-    position: relative;
-    top: 20px; /* Distance from the top */
-    left: 20px; /* Distance from the left */
+    position: fixed;
+    top: 10px; /* Distance from the top */
+    left: 10px; /* Distance from the left */
     background-color: transparent; /* Transparent background */
     color: #326472; /* Adjust color as needed */
     border: none;
