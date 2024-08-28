@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(itemId); // Ensure this logs the correct itemId
     const chatId = localStorage.getItem('chatId');
 
+    function goBack() {
+        window.history.back();
+    }
+
     // Fetch item details from the server
     fetch(`https://igebeya-bc68de5021c8.herokuapp.com/get_item_details?id=${itemId}`)
         .then(response => response.json())

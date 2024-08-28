@@ -246,3 +246,27 @@ body {
 .nav-icon:hover {
     color: #4b8898;
 }
+
+#back-button {
+    position: fixed;
+    top: 20px; /* Distance from the top */
+    left: 20px; /* Distance from the left */
+    background-color: transparent; /* Transparent background */
+    color: #326472; /* Adjust color as needed */
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it appears on top of other elements */
+    display: flex;
+    align-items: center;
+}
+
+#back-button i {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+#back-button:hover {
+    color: #264a54; /* Darker color for hover effect */
+}
+
+
