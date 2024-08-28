@@ -182,8 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
             fetch(`https://igebeya-bc68de5021c8.herokuapp.com/search_items?q=${encodeURIComponent(query)}`)
                 .then(response => response.json())
                 .then(data => {
-                    
-                    // Clear previous items
+                    // Clear previous search results
                     itemsList.innerHTML = '';
                     
 
