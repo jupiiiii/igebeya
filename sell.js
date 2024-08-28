@@ -14,6 +14,16 @@ document.addEventListener("DOMContentLoaded", function () {
         fetchListedItems();
     });
 
+    function goBack() {
+        window.history.back();
+    }
+
+    // Attach the function to the back button
+    const backButton = document.getElementById('back-button');
+    if (backButton) {
+        backButton.addEventListener('click', goBack);
+    }
+
     const sellForm = document.getElementById("sell-form");
 
     sellForm.addEventListener("submit", function (event) {

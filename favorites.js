@@ -11,6 +11,16 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
+    function goBack() {
+        window.history.back();
+    }
+
+    // Attach the function to the back button
+    const backButton = document.getElementById('back-button');
+    if (backButton) {
+        backButton.addEventListener('click', goBack);
+    }
+
     // Replace with your actual API URL
     fetch(`https://igebeya-bc68de5021c8.herokuapp.com/get_favorite?chat_id=${chatId}`)
         .then(response => response.json())
