@@ -283,15 +283,16 @@ body {
 }
 
 #load-more {
-    bottom: 20px; /* Distance from the bottom of the page */
-    left: 50%; /* Start from the center */
-    transform: translateX(-50%); /* Center the button horizontally */
-    width: 40px; /* Set the width to 40px */
-    height: 10px; /* Set the height to 10px */
+    width: 20%;
+    bottom: 20px;
+    right: 20px;
     background-color: #326472; /* Adjust color as needed */
     color: white;
     border: none;
     border-radius: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding: 10px 20px;
     cursor: pointer;
     z-index: 1000; /* Ensure it appears on top of other elements */
 }
