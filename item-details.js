@@ -125,20 +125,20 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("item-city").innerHTML = `<i class="fas fa-map-marker-alt"></i> ${itemDetails.item_city}`;
             document.getElementById("item-description").textContent = itemDetails.item_description;
             document.getElementById("date").innerHTML = `<i class="fas fa-calendar-alt"></i> ${itemDetails.date}`;
+            const chat_id = itemDetails.chat_id;
 
             // Handle Send Message button click
             document.getElementById("send-message").addEventListener('click', () => {
                 alert('Message sent to the seller!');
                 // Get the message from the textarea
                 const message = document.getElementById("message-box").value.trim();
-                const chat_id = itemDetails.chat_id
 
                 // Check if the message is not empty
                 if (message) {
                     // Send the message to the bot
                     const message_content = {
-                        message: 'message',
-                        chat_id: 'receiver_chat_id'
+                        message: message,
+                        receiver_chat_id: chat_id
                     };
 
                     tg.sendData(message_content);  // Sends the message back to the bot
