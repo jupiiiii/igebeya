@@ -19,7 +19,7 @@ body {
             color: var(--tg-theme-text-color);
             position: fixed;
             top: 5px;
-            left: 22px;
+            left: 20px;
             width: 91%;
             height: 40px;
             border: rgba(74, 136, 154, 0.44);
@@ -220,7 +220,7 @@ body {
 
 .item-city i {
     font-size: 12px;
-    margin-left: 3px;
+    margin-left: 2px;
     /* display: block; */
 }
 
