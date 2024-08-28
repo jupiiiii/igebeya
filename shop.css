@@ -283,9 +283,9 @@ body {
 }
 
 #load-more {
-    margin-left: 120px;
+    margin-left: 130px;
     width: 30%;
-    height: 20px;
+    height: 25px;
     bottom: 20px;
     background-color: #326472; /* Adjust color as needed */
     color: white;
