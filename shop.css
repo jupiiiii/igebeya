@@ -284,6 +284,7 @@ body {
 
 #load-more {
     width: 60%;
+    height: 15px;
     bottom: 20px;
     left: 40%;
     background-color: #326472; /* Adjust color as needed */
