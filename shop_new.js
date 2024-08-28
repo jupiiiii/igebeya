@@ -242,6 +242,8 @@ document.addEventListener("DOMContentLoaded", function () {
                             itemsList.appendChild(itemBox);
                         });
                     } else {
+                        loadMoreButton.style.display = 'none';
+                        backToTopButton.style.display = 'none';
                         itemsList.innerHTML = `
                         <p id="no-items-found">
                             <i class="fas fa-search icon"></i> <!-- Search icon -->
