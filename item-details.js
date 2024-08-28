@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(itemId); // Ensure this logs the correct itemId
     const chatId = localStorage.getItem('chatId');
 
+    // Ensure the Telegram WebApp object is initialized
+    const tg = window.Telegram.WebApp;
+
     function goBack() {
         window.history.back();
     }
@@ -126,6 +129,19 @@ document.addEventListener("DOMContentLoaded", function () {
             // Handle Send Message button click
             document.getElementById("send-message").addEventListener('click', () => {
                 alert('Message sent to the seller!');
+                // Get the message from the textarea
+                const message = document.getElementById("message-box").value.trim();
+
+                // Check if the message is not empty
+                if (message) {
+                    // Send the message to the bot
+                    tg.sendData(message);  // Sends the message back to the bot
+
+                    // Provide user feedback that the message was sent
+                    alert('Message sent! You will get a response on i-Gebeya telegram bot!');
+                } else {
+                    alert('Please type a message before sending.');
+                }
             });
 
             document.querySelectorAll(".like-icon").forEach(icon => {
