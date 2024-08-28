@@ -9,6 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
         window.history.back();
     }
 
+    // Attach the function to the back button
+    const backButton = document.getElementById('back-button');
+    if (backButton) {
+        backButton.addEventListener('click', goBack);
+    }
+
     // Fetch item details from the server
     fetch(`https://igebeya-bc68de5021c8.herokuapp.com/get_item_details?id=${itemId}`)
         .then(response => response.json())
