@@ -143,6 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         // Append the item box to the list
                         itemsList.appendChild(itemBox);
                     });
+                    loadMoreButton.style.display = 'block';
                 }
                 })
                 .catch(error => {
