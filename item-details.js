@@ -1,12 +1,12 @@
+// Initialize the Telegram WebApp instance
+let tg = window.Telegram.WebApp;
+
 document.addEventListener("DOMContentLoaded", function () {
     // Extract the item ID from the URL query string
     const urlParams = new URLSearchParams(window.location.search);
     const itemId = urlParams.get('id');
     console.log(itemId); // Ensure this logs the correct itemId
     const chatId = localStorage.getItem('chatId');
-
-    // Ensure the Telegram WebApp object is initialized
-    const tg = window.Telegram.WebApp;
 
     function goBack() {
         window.history.back();
