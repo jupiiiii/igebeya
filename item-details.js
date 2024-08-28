@@ -137,6 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (message) {
                     // Send the message to the bot
                     const message_content = {
+                        type: 'message',
                         message: message,
                         receiver_chat_id: chat_id
                     };
