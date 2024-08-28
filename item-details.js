@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     };
 
                     tg.sendData(JSON.stringify(message_content));  // Sends the message back to the bot
-                    
+                    tg.close();
 
                     // Provide user feedback that the message was sent
                     alert('Message sent! You will get a response on i-Gebeya telegram bot!');
