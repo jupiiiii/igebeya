@@ -182,10 +182,10 @@ document.addEventListener("DOMContentLoaded", function () {
             fetch(`https://igebeya-bc68de5021c8.herokuapp.com/search_items?q=${encodeURIComponent(query)}`)
                 .then(response => response.json())
                 .then(data => {
-                    if (start === 0) {
-                        // Clear the items list only if this is the initial load
-                        itemsList.innerHTML = '';
-                    }
+                    
+                    // Clear previous items
+                    itemsList.innerHTML = '';
+                    
 
                     // Populate the itemsList with new search results
                     if (data.length > 0) {
@@ -255,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         else {
             itemsList.innerHTML = ''; // Clear results if query is empty
-            displayItems(start, limit);
+            displayItems(0, limit);
         }
     }
 
