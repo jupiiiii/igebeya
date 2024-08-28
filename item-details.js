@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("item-title").textContent = itemDetails.item_name;
             document.getElementById("item-city").innerHTML = `<i class="fas fa-map-marker-alt"></i> ${itemDetails.item_city}`;
             document.getElementById("item-description").textContent = itemDetails.item_description;
-            document.getElementById("date").innerHTML = `<i class="fas fa-calendar"></i> ${itemDetails.date}`;
+            document.getElementById("date").innerHTML = `<i class="fas fa-calendar-alt"></i> ${itemDetails.date}`;
 
             // Handle Send Message button click
             document.getElementById("send-message").addEventListener('click', () => {
