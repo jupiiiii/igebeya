@@ -254,7 +254,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         else {
             itemsList.innerHTML = ''; // Clear results if query is empty
-            start -= limit;
+            start -= start;
             displayItems(start, limit);
         }
     }
