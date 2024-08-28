@@ -267,10 +267,11 @@ body {
 }
 
 #back-to-top {
-    margin-left: 140px;
+    margin-left: 135px;
     width: 30%;
     height: 25px;
     bottom: 20px;
+    top: 10px;
     background-color: #326472; /* Adjust color as needed */
     color: white;
     border: none;
@@ -284,10 +285,11 @@ body {
 }
 
 #load-more {
-    margin-left: 140px;
+    margin-left: 135px;
     width: 30%;
     height: 25px;
     bottom: 20px;
+    top: 10px;
     background-color: #326472; /* Adjust color as needed */
     color: white;
     border: none;
