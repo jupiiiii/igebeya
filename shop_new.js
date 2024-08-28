@@ -255,6 +255,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         }
         else {
+            loadMoreButton.style.display = 'none';
+            backToTopButton.style.display = 'none';
             itemsList.innerHTML = ''; // Clear results if query is empty
             start -= start;
             displayItems(start, limit);
