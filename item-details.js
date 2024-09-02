@@ -126,6 +126,11 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("item-description").textContent = itemDetails.item_description;
             document.getElementById("date").innerHTML = `<i class="fas fa-calendar-alt"></i> ${itemDetails.date}`;
             const chat_id = itemDetails.chat_id;
+            const itemTitle = itemDetails.item_name;
+            const itemPrice = itemDetails.item_price;
+            const itemCity = itemDetails.item_city;
+            const itemDate = itemDetails.date;
+
 
             // Handle Send Message button click
             document.getElementById("send-message").addEventListener('click', () => {
@@ -139,7 +144,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     const message_content = {
                         dm: 'dm',
                         message: message,
-                        receiver_chat_id: chat_id
+                        receiver_chat_id: chat_id,
+                        itemTitle: itemTitle,
+                        itemPrice: itemPrice,
+                        itemCity: itemCity,
+                        itemDate: itemDate
+
                     };
 
                     tg.sendData(JSON.stringify(message_content));  // Sends the message back to the bot
