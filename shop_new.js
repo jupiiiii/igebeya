@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const backToTopButton = document.getElementById('back-to-top');
 
     // TG instance for close button
-    let tg = window.Telegram.WebApp;
+    const tg = window.Telegram.WebApp;
     tg.BackButton.hide();
 
     

@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(itemId); // Ensure this logs the correct itemId
     const chatId = localStorage.getItem('chatId');
     // Initialize the Telegram WebApp instance
-    let tg = window.Telegram.WebApp;
+    const tg = window.Telegram.WebApp;
 
     // Show the Telegram back button in the top bar
     tg.BackButton.show();

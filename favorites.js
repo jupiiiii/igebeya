@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const chatId = localStorage.getItem('chatId');
     // Initialize the Telegram WebApp instance
-    let tg = window.Telegram.WebApp;
+    const tg = window.Telegram.WebApp;
 
     //const chatId = getChatIdFromCookie();
     console.log(chatId);
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Show the Telegram back button in the top bar
     tg.BackButton.show();
-    
+
     // Handle back button click event
     tg.onEvent('backButtonClicked', function() {
         // Go to the previous page using Telegram's built-in back button functionality
