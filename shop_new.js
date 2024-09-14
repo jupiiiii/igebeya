@@ -21,6 +21,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Load more and Back to top buttons
     const loadMoreButton = document.getElementById('load-more');
     const backToTopButton = document.getElementById('back-to-top');
+    const tg = window.Telegram.WebApp;
+    tg.Closebutton.show();
+
+    tg.onEvent('closeButtonClicked', function(){
+        tg.close();
+    });
 
     let start = 0; // Start index for items
     const limit = 4; // Number of items to load per batch
