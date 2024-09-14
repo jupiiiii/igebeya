@@ -1,7 +1,8 @@
+// Initialize the Telegram WebApp instance
+const tg = window.Telegram.WebApp;
 document.addEventListener("DOMContentLoaded", function () {
     const chatId = localStorage.getItem('chatId');
-    // Initialize the Telegram WebApp instance
-    const tg = window.Telegram.WebApp;
+    
 
     //const chatId = getChatIdFromCookie();
     console.log(chatId);

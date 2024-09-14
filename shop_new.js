@@ -1,3 +1,5 @@
+// TG instance for close button
+const tg = window.Telegram.WebApp;
 document.addEventListener("DOMContentLoaded", function () {
     // Initialize URLSearchParams from the window location
     const urlParams = new URLSearchParams(window.location.search);
@@ -22,8 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const loadMoreButton = document.getElementById('load-more');
     const backToTopButton = document.getElementById('back-to-top');
 
-    // TG instance for close button
-    const tg = window.Telegram.WebApp;
+    
     tg.BackButton.hide();
 
     
