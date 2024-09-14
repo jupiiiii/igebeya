@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // TG instance for close button
     let tg = window.Telegram.WebApp;
-    tg.CloseButton.show();
+    tg.BackButton.hide();
 
     
 
