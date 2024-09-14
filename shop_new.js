@@ -341,5 +341,5 @@ window.addEventListener('popstate', function (event) {
 // Function to determine if the user is on the homepage
 function checkIfHomePage() {
     // For example, you can check the current URL or a specific element to decide if it's the homepage
-    return window.location.pathname === 'https://main--igebeya.netlify.app/shop.html?';  // Adjust this based on your URL structure
+    return window.location.pathname === '/shop.html';  // Adjust this based on your URL structure
 }
