@@ -26,11 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('popstate', function(event) {
         // Check if the user is navigating to home.html
         if (window.location.pathname === '/shop.html') {
-            // Perform actions specific to home.html
-            console.log('User navigated back to home.html');
             // Example: hide the back button and show the close button
             tg.BackButton.hide();
-            tg.CloseButton.show();
         }
     });
 
