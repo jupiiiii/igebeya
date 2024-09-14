@@ -24,8 +24,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     window.addEventListener('popstate', function(event) {
+        this.alert('111');
         // Check if the user is navigating to home.html
         if (window.location.pathname === '/shop.html') {
+            alert('222');
             // Example: hide the back button and show the close button
             tg.BackButton.hide();
         }
