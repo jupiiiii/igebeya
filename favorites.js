@@ -21,17 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
     tg.onEvent('backButtonClicked', function() {
         // Go to the previous page using Telegram's built-in back button functionality
         window.history.back();  // You can use custom logic here as well
-        alert('000');
-    });
-
-    window.addEventListener('popstate', function(event) {
-        alert('111');
-        // Check if the user is navigating to home.html
-        if (window.location.pathname === '/shop.html') {
-            alert('222');
-            // Example: hide the back button and show the close button
-            tg.BackButton.hide();
-        }
     });
 
     // Replace with your actual API URL
