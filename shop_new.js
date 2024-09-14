@@ -26,14 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let tg = window.Telegram.WebApp;
     tg.CloseButton.show();
 
-    tg.onEvent('closeButtonClicked', function() {
-        closeApp();
-    });
-
-    // Optionally, trigger the close button manually
-    function closeApp() {
-        tg.close();
-    }
+    
 
     let start = 0; // Start index for items
     const limit = 4; // Number of items to load per batch
