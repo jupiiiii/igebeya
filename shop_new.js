@@ -13,14 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     const chatId = localStorage.getItem('chatId');
     console.log("Retrieved chat ID from local storage: ",chatId);
-    
-    const isHomePage = checkIfHomePage();  // Function to determine if it's the homepage
-
-    if (isHomePage) {
-        alert("xxx");
-        tg.BackButton.hide();
-        tg.CloseButton.show();
-    }
 
     const searchButton = document.querySelector('.search-button');
     const header = document.querySelector('.header');
@@ -325,22 +317,3 @@ function removeFromFavorites(itemId) {
       });
 }
 
-// Detect when the user navigates back through browser history
-window.addEventListener('popstate', function (event) {
-    const isHomePage = checkIfHomePage();  // Function to determine if it's the homepage
-
-    // Show/hide buttons based on whether we are at the homepage or not
-    if (isHomePage) {
-        tg.BackButton.hide();
-        tg.CloseButton.show();
-    } else {
-        tg.BackButton.show();
-        tg.CloseButton.hide();
-    }
-});
-
-// Function to determine if the user is on the homepage
-function checkIfHomePage() {
-    // For example, you can check the current URL or a specific element to decide if it's the homepage
-    return window.location.pathname === '/shop.html';  // Adjust this based on your URL structure
-}

@@ -23,6 +23,17 @@ document.addEventListener("DOMContentLoaded", function () {
         window.history.back();  // You can use custom logic here as well
     });
 
+    window.addEventListener('popstate', function(event) {
+        // Check if the user is navigating to home.html
+        if (window.location.pathname === '/shop.html') {
+            // Perform actions specific to home.html
+            console.log('User navigated back to home.html');
+            // Example: hide the back button and show the close button
+            tg.BackButton.hide();
+            tg.CloseButton.show();
+        }
+    });
+
     // Replace with your actual API URL
     fetch(`https://igebeya-bc68de5021c8.herokuapp.com/get_favorite?chat_id=${chatId}`)
         .then(response => response.json())
@@ -120,20 +131,3 @@ document.addEventListener("DOMContentLoaded", function () {
             alert('No items in favorite!');
         });
 });
-
-window.addEventListener('popstate', function(event) {
-    // Check if the user is navigating to home.html
-    if (window.location.pathname === '/shop.html') {
-        // Perform actions specific to home.html
-        console.log('User navigated back to home.html');
-        // Example: hide the back button and show the close button
-        tg.BackButton.hide();
-        tg.CloseButton.show();
-    }
-});
-
-// Function to determine if the user is on the homepage
-function checkIfHomePage() {
-    // For example, you can check the current URL or a specific element to decide if it's the homepage
-    return window.back.pathname === '/shop.html';  // Adjust this based on your URL structure
-}
