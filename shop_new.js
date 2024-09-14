@@ -19,9 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isHomePage) {
         tg.BackButton.hide();
         tg.CloseButton.show();
-    } else {
-        tg.BackButton.show();
-        tg.CloseButton.hide();
     }
 
     const searchButton = document.querySelector('.search-button');
