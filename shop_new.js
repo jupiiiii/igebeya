@@ -14,7 +14,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const chatId = localStorage.getItem('chatId');
     console.log("Retrieved chat ID from local storage: ",chatId);
     
+    const isHomePage = checkIfHomePage();  // Function to determine if it's the homepage
 
+    if (isHomePage) {
+        tg.BackButton.hide();
+        tg.CloseButton.show();
+    } else {
+        tg.BackButton.show();
+        tg.CloseButton.hide();
+    }
 
     const searchButton = document.querySelector('.search-button');
     const header = document.querySelector('.header');
