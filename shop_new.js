@@ -1,5 +1,6 @@
 // // TG instance for close button
-// const tg = window.Telegram.WebApp;
+const tg = window.Telegram.WebApp;
+
 document.addEventListener("DOMContentLoaded", function () {
     // Initialize URLSearchParams from the window location
     const urlParams = new URLSearchParams(window.location.search);
@@ -24,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const loadMoreButton = document.getElementById('load-more');
     const backToTopButton = document.getElementById('back-to-top');
     
-    // tg.BackButton.hide();
+    tg.BackButton.hide();
 
     let start = 0; // Start index for items
     const limit = 4; // Number of items to load per batch
@@ -316,4 +317,24 @@ function removeFromFavorites(itemId) {
       }).catch(error => {
           console.error('Error removing from favorites:', error);
       });
+}
+
+// Detect when the user navigates back through browser history
+window.addEventListener('popstate', function (event) {
+    const isHomePage = checkIfHomePage();  // Function to determine if it's the homepage
+
+    // Show/hide buttons based on whether we are at the homepage or not
+    if (isHomePage) {
+        tg.BackButton.hide();
+        tg.CloseButton.show();
+    } else {
+        tg.BackButton.show();
+        tg.CloseButton.hide();
+    }
+});
+
+// Function to determine if the user is on the homepage
+function checkIfHomePage() {
+    // For example, you can check the current URL or a specific element to decide if it's the homepage
+    return window.location.pathname === '/shop.html';  // Adjust this based on your URL structure
 }
