@@ -120,3 +120,23 @@ document.addEventListener("DOMContentLoaded", function () {
             alert('No items in favorite!');
         });
 });
+
+// Detect when the user navigates back through browser history
+window.addEventListener('popstate', function (event) {
+    const isHomePage = checkIfHomePage();  // Function to determine if it's the homepage
+
+    // Show/hide buttons based on whether we are at the homepage or not
+    if (isHomePage) {
+        tg.BackButton.hide();
+        tg.CloseButton.show();
+    } else {
+        tg.BackButton.show();
+        tg.CloseButton.hide();
+    }
+});
+
+// Function to determine if the user is on the homepage
+function checkIfHomePage() {
+    // For example, you can check the current URL or a specific element to decide if it's the homepage
+    return window.back.pathname === '/shop.html';  // Adjust this based on your URL structure
+}
