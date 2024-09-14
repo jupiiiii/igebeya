@@ -1,5 +1,4 @@
-// Initialize the Telegram WebApp instance
-let tg = window.Telegram.WebApp;
+
 
 document.addEventListener("DOMContentLoaded", function () {
     // Extract the item ID from the URL query string

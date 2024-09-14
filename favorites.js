@@ -1,3 +1,6 @@
+// Initialize the Telegram WebApp instance
+let tg = window.Telegram.WebApp;
+
 document.addEventListener("DOMContentLoaded", function () {
     const chatId = localStorage.getItem('chatId');
 
@@ -31,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Go to the previous page using Telegram's built-in back button functionality
                 window.history.back();  // You can use custom logic here as well
             });
-            
+
             // console.log(items);  // Log the items to check the structure
             const itemsList = document.querySelector('.items-list');
 
