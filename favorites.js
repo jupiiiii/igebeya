@@ -97,12 +97,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 });
 
-                // Handle back button click event
-                tg.onEvent('backButtonClicked', function() {
-                    // Go to the previous page using Telegram's built-in back button functionality
-                    window.history.back();  // You can use custom logic here as well
-                });
-
                 // Append the item box to the list
                 itemsList.appendChild(itemBox);
             });
@@ -111,6 +105,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         })
+        
+        // Handle back button click event
+        tg.onEvent('backButtonClicked', function() {
+            // Go to the previous page using Telegram's built-in back button functionality
+            window.history.back();  // You can use custom logic here as well
+        });
+
         .catch(error => {
             //console.error('Error fetching items:', error);
             alert('No items in favorite!');
