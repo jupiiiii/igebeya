@@ -8,9 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(itemId); // Ensure this logs the correct itemId
     const chatId = localStorage.getItem('chatId');
 
-    function goBack() {
-        window.history.back();
-    }
+    // Show the Telegram back button in the top bar
+    tg.BackButton.show();
+
+    // Handle back button click event
+    tg.onEvent('backButtonClicked', function() {
+        // Go to the previous page using Telegram's built-in back button functionality
+        window.history.back();  // You can use custom logic here as well
+    });
 
     // Attach the function to the back button
     const backButton = document.getElementById('back-button');
