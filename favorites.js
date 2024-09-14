@@ -14,6 +14,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // Show the Telegram back button in the top bar
     tg.BackButton.show();
 
+    // Handle back button click event
+    tg.onEvent('backButtonClicked', function() {
+        // Go to the previous page using Telegram's built-in back button functionality
+        window.history.back();  // You can use custom logic here as well
+    });
+
     // Replace with your actual API URL
     fetch(`https://igebeya-bc68de5021c8.herokuapp.com/get_favorite?chat_id=${chatId}`)
         .then(response => response.json())
@@ -105,13 +111,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         })
-        
-        // Handle back button click event
-        tg.onEvent('backButtonClicked', function() {
-            // Go to the previous page using Telegram's built-in back button functionality
-            window.history.back();  // You can use custom logic here as well
-        });
-
         .catch(error => {
             //console.error('Error fetching items:', error);
             alert('No items in favorite!');
