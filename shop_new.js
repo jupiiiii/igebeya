@@ -21,8 +21,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Load more and Back to top buttons
     const loadMoreButton = document.getElementById('load-more');
     const backToTopButton = document.getElementById('back-to-top');
-    const tg = window.Telegram.WebApp;
-    tg.Closebutton.show();
+    // TG instance for close button
+    let tg = window.Telegram.WebApp;
+    tg.CloseButton.show();
 
     tg.onEvent('closeButtonClicked', function(){
         tg.close();
