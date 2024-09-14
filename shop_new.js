@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Retrieved chat ID from local storage: ",chatId);
     
     const isHomePage = checkIfHomePage();  // Function to determine if it's the homepage
+    console.message(isHomePage);
 
     if (isHomePage) {
         tg.BackButton.hide();
