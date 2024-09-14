@@ -1,5 +1,5 @@
-// TG instance for close button
-const tg = window.Telegram.WebApp;
+// // TG instance for close button
+// const tg = window.Telegram.WebApp;
 document.addEventListener("DOMContentLoaded", function () {
     // Initialize URLSearchParams from the window location
     const urlParams = new URLSearchParams(window.location.search);
@@ -23,11 +23,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Load more and Back to top buttons
     const loadMoreButton = document.getElementById('load-more');
     const backToTopButton = document.getElementById('back-to-top');
-
     
-    tg.BackButton.hide();
-
-    
+    // tg.BackButton.hide();
 
     let start = 0; // Start index for items
     const limit = 4; // Number of items to load per batch
