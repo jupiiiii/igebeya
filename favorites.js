@@ -121,17 +121,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 });
 
-// Detect when the user navigates back through browser history
-window.addEventListener('popstate', function (event) {
-    const isHomePage = checkIfHomePage();  // Function to determine if it's the homepage
-
-    // Show/hide buttons based on whether we are at the homepage or not
-    if (isHomePage) {
+window.addEventListener('popstate', function(event) {
+    // Check if the user is navigating to home.html
+    if (window.location.pathname === '/shop.html') {
+        // Perform actions specific to home.html
+        console.log('User navigated back to home.html');
+        // Example: hide the back button and show the close button
         tg.BackButton.hide();
         tg.CloseButton.show();
-    } else {
-        tg.BackButton.show();
-        tg.CloseButton.hide();
     }
 });
 
