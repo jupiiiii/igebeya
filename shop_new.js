@@ -1,6 +1,18 @@
 // // TG instance for close button
 const tg = window.Telegram.WebApp;
-tg.BackButton.hide();
+
+function updatePageHistory(pageName) {
+    // Retrieve existing history from localStorage or initialize an empty array
+    let pageHistory = JSON.parse(localStorage.getItem('pageHistory')) || [];
+    
+    // Add the current page to the history
+    pageHistory.push(pageName);
+    
+    // Save the updated history back to localStorage
+    localStorage.setItem('pageHistory', JSON.stringify(pageHistory));
+}
+
+updatePageHistory('shop.html'); // Call this with each page the user navigates to
 
 document.addEventListener("DOMContentLoaded", function () {
     // Initialize URLSearchParams from the window location
