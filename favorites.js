@@ -1,6 +1,19 @@
 // Initialize the Telegram WebApp instance
 const tg = window.Telegram.WebApp;
 
+function updatePageHistory(pageName) {
+    // Retrieve existing history from localStorage or initialize an empty array
+    let pageHistory = JSON.parse(localStorage.getItem('pageHistory')) || [];
+    
+    // Add the current page to the history
+    pageHistory.push(pageName);
+    
+    // Save the updated history back to localStorage
+    localStorage.setItem('pageHistory', JSON.stringify(pageHistory));
+}
+
+updatePageHistory('favorites.html'); // Call this with each page the user navigates to
+
 function getPageHistory() {
     return JSON.parse(localStorage.getItem('pageHistory')) || [];
 }
@@ -29,14 +42,18 @@ document.addEventListener("DOMContentLoaded", function () {
         // Go to the previous page using Telegram's built-in back button functionality
         if (pageHistory.length > 0) {
             // Navigate back by removing the last page from history
+            pageHistory.pop();
             const previousPage = pageHistory.pop();
 
-            // Manually navigate to the previous page
+            // Manually navigate to the previous page. shop, sell, item-details
             // window.location.href = previousPage;
 
             // If the previous page is home.html, switch to close button
             if (previousPage === 'shop.html') {
                 localStorage.removeItem('pageHistory');
+                let pageHistory = [];
+                pageHistory.push('shop.html')
+                localStorage.setItem('pageHistory', JSON.stringify(pageHistory));
                 tg.BackButton.hide();
                 window.history.back();
             }
