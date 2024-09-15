@@ -1,5 +1,6 @@
 // // TG instance for close button
 const tg = window.Telegram.WebApp;
+tg.BackButton.hide();
 
 document.addEventListener("DOMContentLoaded", function () {
     // Initialize URLSearchParams from the window location
