@@ -241,25 +241,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-            // Function to ensure the input field is visible above the keyboard
+            const textareas = document.querySelectorAll('textarea');
+
             function ensureFieldVisible(element) {
-                // Calculate the distance from the top of the element to the top of the viewport
                 const rect = element.getBoundingClientRect();
-                const elementTop = rect.top;
                 const elementBottom = rect.bottom;
-    
-                // Calculate the available viewport height
                 const viewportHeight = window.innerHeight;
 
-                // If the bottom of the element is below the visible viewport area, scroll it into view
+                // Scroll the textarea into view if it's not fully visible
                 if (elementBottom > viewportHeight) {
-                    // Scroll the element into view
                     element.scrollIntoView({ behavior: 'smooth', block: 'end' });
                 }
             }
 
-            // Add event listeners to handle focus on input fields
-            document.querySelectorAll('textarea').forEach(field => {
+            // Add focus event listeners to ensure textarea visibility
+            textareas.forEach(field => {
                 field.addEventListener('focus', function() {
                     ensureFieldVisible(this);
                 });
