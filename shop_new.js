@@ -66,6 +66,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    const mainCont = this.getElementById('main_cont')
+    // Remove focus from the input to hide the keyboard
+    mainCont.addEventListener('click', function(event) {
+        // Check if the clicked element is not an input field or textarea
+        if (!event.target.closest('input')) {
+            // Find all input and textarea elements
+            const inputs = document.querySelectorAll('input');
+            inputs.blur(); // Remove focus from the input to hide the keyboard
+        }
+    });
+
 
     function displayItems(start, limit) {
         // Fetch user's favorites
