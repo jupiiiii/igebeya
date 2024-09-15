@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const itemId = urlParams.get('id');
     console.log(itemId); // Ensure this logs the correct itemId
     const chatId = localStorage.getItem('chatId');
+    const item_cont = this.getElementById('item_cont');
     
 
     // Show the Telegram back button in the top bar
@@ -228,6 +229,16 @@ document.addEventListener("DOMContentLoaded", function () {
                     window.history.back();
                 }
 
+            });
+
+            // Remove focus from the input to hide the keyboard
+            item_cont.addEventListener('click', function(event) {
+                // Check if the clicked element is not an input field or textarea
+                if (!event.target.closest('textarea')) {
+                    // Find all input and textarea elements
+                    const inputs = document.querySelectorAll('textarea');
+                    inputs.blur(); // Remove focus from the input to hide the keyboard
+                }
             });
 
 
