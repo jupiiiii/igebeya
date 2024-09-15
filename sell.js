@@ -42,6 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
             else{
                 window.history.back();  // You can use custom logic here as well
             }
+        } else {
+                window.history.back();
         }
 
     });
