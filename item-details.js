@@ -243,7 +243,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Function to ensure the input field is visible above the keyboard
             function ensureFieldVisible(element) {
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 // Calculate the distance from the top of the element to the top of the viewport
                 const rect = element.getBoundingClientRect();
                 const elementTop = rect.top;
@@ -255,7 +254,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // If the bottom of the element is below the visible viewport area, scroll it into view
                 if (elementBottom > viewportHeight) {
                     // Scroll the element into view
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    element.scrollIntoView({ behavior: 'smooth', block: 'end' });
                 }
             }
 
