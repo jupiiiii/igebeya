@@ -1,5 +1,12 @@
 // Initialize the Telegram WebApp instance
 const tg = window.Telegram.WebApp;
+
+function getPageHistory() {
+    return JSON.parse(localStorage.getItem('pageHistory')) || [];
+}
+
+let pageHistory = getPageHistory();
+
 document.addEventListener("DOMContentLoaded", function () {
     const chatId = localStorage.getItem('chatId');
     
