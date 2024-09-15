@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const mainCont = this.getElementById('main_cont')
     // Remove focus from the input to hide the keyboard
-    mainCont.addEventListener('scroll', function(event) {
+    mainCont.addEventListener('touchstart', function(event) {
         const inputs = document.querySelectorAll('input');
         inputs.blur();
         // Check if the clicked element is not an input field or textarea
