@@ -35,9 +35,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // If the previous page is home.html, switch to close button
             if (previousPage === 'shop.html') {
-                //localStorage.removeItem('pageHistory');
-                //tg.BackButton.hide();
-                //tg.CloseButton.show();
+                localStorage.removeItem('pageHistory');
+                tg.BackButton.hide();
                 window.history.back();
             }
             else{
