@@ -70,12 +70,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // Remove focus from the input to hide the keyboard
     mainCont.addEventListener('touchstart', function(event) {
         event.preventDefault();
+        const inputs = document.querySelectorAll('input');
+        inputs.blur();
         // Check if the clicked element is not an input field or textarea
-        if (!event.target.closest('input')) {
-            // Find all input and textarea elements
-            const inputs = document.querySelectorAll('input');
-            inputs.blur(); // Remove focus from the input to hide the keyboard
-        }
+        // if (!event.target.closest('input')) {
+        //     // Find all input and textarea elements
+        //     const inputs = document.querySelectorAll('input');
+        //     inputs.blur(); // Remove focus from the input to hide the keyboard
+        // }
     });
 
 
