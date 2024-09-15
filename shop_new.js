@@ -66,20 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    //const inputs = document.querySelectorAll('input');
-    // Remove focus from the input to hide the keyboard
-    
-    // mainCont.addEventListener('touchstart', function(event) {
-    //     const inputs = document.querySelectorAll('input');
-    //     inputs.blur();
-    //     // Check if the clicked element is not an input field or textarea
-    //     // if (!event.target.closest('input')) {
-    //     //     // Find all input and textarea elements
-    //     //     const inputs = document.querySelectorAll('input');
-    //     //     inputs.blur(); // Remove focus from the input to hide the keyboard
-    //     // }
-    // });
-
 
     function displayItems(start, limit) {
         // Fetch user's favorites
@@ -300,7 +286,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const query = event.target.value;
         handleSearch(query);
     }, 300)); // 300ms delay
-    
+
     // Handle "Enter" key press to dismiss the keyboard
     searchInput.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
