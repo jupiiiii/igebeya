@@ -66,18 +66,27 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    const mainCont = this.getElementById('main_cont')
+    const inputs = document.querySelectorAll('input');
     // Remove focus from the input to hide the keyboard
-    mainCont.addEventListener('touchstart', function(event) {
-        const inputs = document.querySelectorAll('input');
-        inputs.blur();
-        // Check if the clicked element is not an input field or textarea
-        // if (!event.target.closest('input')) {
-        //     // Find all input and textarea elements
-        //     const inputs = document.querySelectorAll('input');
-        //     inputs.blur(); // Remove focus from the input to hide the keyboard
-        // }
+    inputs.addEventListener('keydown', function(event) {
+        // Check if the pressed key is "Enter"
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent form submission or default action
+
+            // Remove focus from the input to hide the keyboard
+            inputs.blur();
+        }
     });
+    // mainCont.addEventListener('touchstart', function(event) {
+    //     const inputs = document.querySelectorAll('input');
+    //     inputs.blur();
+    //     // Check if the clicked element is not an input field or textarea
+    //     // if (!event.target.closest('input')) {
+    //     //     // Find all input and textarea elements
+    //     //     const inputs = document.querySelectorAll('input');
+    //     //     inputs.blur(); // Remove focus from the input to hide the keyboard
+    //     // }
+    // });
 
 
     function displayItems(start, limit) {
