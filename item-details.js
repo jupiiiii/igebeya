@@ -241,6 +241,30 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
+            // Function to ensure the input field is visible above the keyboard
+            function ensureFieldVisible(element) {
+                // Calculate the distance from the top of the element to the top of the viewport
+                const rect = element.getBoundingClientRect();
+                const elementTop = rect.top;
+                const elementBottom = rect.bottom;
+    
+                // Calculate the available viewport height
+                const viewportHeight = window.innerHeight;
+
+                // If the bottom of the element is below the visible viewport area, scroll it into view
+                if (elementBottom > viewportHeight) {
+                    // Scroll the element into view
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+
+            // Add event listeners to handle focus on input fields
+            document.querySelectorAll('textarea').forEach(field => {
+                field.addEventListener('focus', function() {
+                    ensureFieldVisible(this);
+                });
+            });
+
 
         })
         .catch(error => {
