@@ -20,8 +20,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Handle back button click event
     tg.onEvent('backButtonClicked', function() {
         // Go to the previous page using Telegram's built-in back button functionality
+        tg.BackButton.hide();
         window.history.back();  // You can use custom logic here as well
-        alert(window.history);
     });
 
     // Replace with your actual API URL
