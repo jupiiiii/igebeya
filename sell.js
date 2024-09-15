@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // window.location.href = previousPage;
 
             // If the previous page is home.html, switch to close button
-            if (previousPage === '/shop.html') {
+            if (previousPage === 'shop.html') {
                 tg.BackButton.hide();
                 tg.CloseButton.show();
                 window.history.back();
