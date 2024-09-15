@@ -43,7 +43,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 window.history.back();  // You can use custom logic here as well
             }
         } else {
-                window.history.back();
+            tg.BackButton.hide();
+            window.history.back();
         }
 
     });

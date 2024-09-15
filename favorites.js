@@ -20,7 +20,27 @@ document.addEventListener("DOMContentLoaded", function () {
     // Handle back button click event
     tg.onEvent('backButtonClicked', function() {
         // Go to the previous page using Telegram's built-in back button functionality
-        window.history.back();  // You can use custom logic here as well
+        if (pageHistory.length > 0) {
+            // Navigate back by removing the last page from history
+            const previousPage = pageHistory.pop();
+
+            // Manually navigate to the previous page
+            // window.location.href = previousPage;
+
+            // If the previous page is home.html, switch to close button
+            if (previousPage === 'shop.html') {
+                localStorage.removeItem('pageHistory');
+                tg.BackButton.hide();
+                window.history.back();
+            }
+            else{
+                window.history.back();  // You can use custom logic here as well
+            }
+        } else {
+            tg.BackButton.hide();
+            window.history.back();
+        }
+
     });
 
     // Replace with your actual API URL
