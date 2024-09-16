@@ -305,7 +305,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Handle "Load More" button click
     showMoreButton.addEventListener('click', function() {
         startSearch += limit;
-        displayItemsSearch(currentItems, startSearch, limit); // Load next set of items
+        displayItemsSearch(currentItems, startSearch, limit, favoriteIds); // Load next set of items
     });
 
     // Function to handle search request
