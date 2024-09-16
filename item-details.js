@@ -240,26 +240,31 @@ document.addEventListener("DOMContentLoaded", function () {
                     inputs.blur(); // Remove focus from the input to hide the keyboard
                 }
             });
+            
+            window.addEventListener('resize', function() {
+                const vh = window.innerHeight * 0.01;
+                document.documentElement.style.setProperty('--vh', `${vh}px`);
+            });
 
             //const textareas = document.querySelectorAll('textarea');
 
-            function ensureFieldVisible(element) {
-                const rect = element.getBoundingClientRect();
-                const elementBottom = rect.bottom;
-                const viewportHeight = window.innerHeight;
+            // function ensureFieldVisible(element) {
+            //     const rect = element.getBoundingClientRect();
+            //     const elementBottom = rect.bottom;
+            //     const viewportHeight = window.innerHeight;
             
-                // If the bottom of the element is below the visible viewport area, scroll it into view
-                if (elementBottom > viewportHeight - 100) { // -100 to account for keyboard height
-                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            }
+            //     // If the bottom of the element is below the visible viewport area, scroll it into view
+            //     if (elementBottom > viewportHeight - 100) { // -100 to account for keyboard height
+            //         element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            //     }
+            // }
 
-            // Add focus event listeners to ensure textarea visibility
-            textareas.querySelectorAll('textarea').forEach(field => {
-                field.addEventListener('focus', function() {
-                    ensureFieldVisible(this);
-                });
-            });
+            // // Add focus event listeners to ensure textarea visibility
+            // textareas.querySelectorAll('textarea').forEach(field => {
+            //     field.addEventListener('focus', function() {
+            //         ensureFieldVisible(this);
+            //     });
+            // });
 
 
         })
