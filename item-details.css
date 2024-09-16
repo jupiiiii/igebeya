@@ -15,6 +15,11 @@ body {
     border: 1px rgba(74, 136, 154, 0.54);
 }
 
+/* When the container moves up */
+.container-move-up {
+    transform: translateY(-150px); /* Adjust this value to your desired `x` px */
+}
+
 .image-viewer {
     position: relative;
     text-align: center;
