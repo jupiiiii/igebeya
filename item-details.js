@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.documentElement.style.setProperty('--vh', `${vh}px`);
     
                 // Adjust the height of the message box dynamically to fit above the keyboard
-                messageBox.style.height = `calc(var(--vh, 1vh) * 80)`; // Adjust based on your layout
+                messageBox.style.height = `calc(var(--vh, 1vh) * 25)`; // Adjust based on your layout
             }
 
             // Event listener to detect focus and adjust the message box
