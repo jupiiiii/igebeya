@@ -35,6 +35,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Load more and Back to top buttons
     const loadMoreButton = document.getElementById('load-more');
     const backToTopButton = document.getElementById('back-to-top');
+
+    // City drop down
+    const cityTrigger = document.getElementById("city-dropdown-trigger");
+    const cityDropdown = document.getElementById("city-dropdown");
+    const selectedCity = document.getElementById("selected-city");
     
     tg.BackButton.hide();
 
@@ -63,6 +68,33 @@ document.addEventListener("DOMContentLoaded", function () {
             header.style.display = 'flex';  // Show the header
         } else {
             header.style.display = 'none';  // Hide the header if already shown
+        }
+    });
+
+    // City dropdown
+    // Toggle dropdown visibility when city is clicked
+    cityTrigger.addEventListener("click", function() {
+        cityDropdown.classList.toggle("hidden");
+    });
+
+    // Handle city selection
+    cityDropdown.addEventListener("click", function(event) {
+        if (event.target.tagName === 'LI') {
+            const city = event.target.getAttribute("data-city");
+            selectedCity.textContent = city; // Update the header with selected city
+
+            // Hide the dropdown after selection
+            cityDropdown.classList.add("hidden");
+
+            // Optionally, perform any additional action based on the selected city (e.g., filter search results)
+            console.log("Selected city:", city);
+        }
+    });
+
+    // Hide the dropdown if clicked outside
+    document.addEventListener("click", function(event) {
+        if (!cityTrigger.contains(event.target) && !cityDropdown.contains(event.target)) {
+            cityDropdown.classList.add("hidden");
         }
     });
 

@@ -48,6 +48,46 @@ body {
             font-size: 16px;
         }
 
+        /* .location {
+            cursor: pointer;
+            position: relative;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .location i {
+            margin-right: 5px;
+        } */
+        
+        #city-dropdown {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 150px;
+            background-color: var(--tg-theme-bg-color);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            list-style-type: none;
+            padding: 10px 0;
+            z-index: 999;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        #city-dropdown li {
+            padding: 10px;
+            cursor: pointer;
+        }
+        
+        #city-dropdown li:hover {
+            background-color: #d7d5d5;
+        }
+        
+        /* Initially hide the dropdown */
+        .hidden {
+            display: none;
+        }
+
         .search-container {
             position: relative;
             display: flex;

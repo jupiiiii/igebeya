@@ -11,10 +11,11 @@
 </head>
 <body>
     <div class="header">
-<!--        <h1>i-Gebeya 🛍</h1>-->
-        <div class="location">
+        <!--<h1>i-Gebeya 🛍</h1>-->
+        <div class="location" id="city-dropdown-trigger">
             <i class="fas fa-map-marker-alt"></i>
-            <span>City</span>
+            <span id="selected-city">City</span>
+            <i class="fas fa-caret-down"></i> <!-- Arrow icon to show dropdown is possible -->
         </div>
 
         <div class="search-container">
@@ -23,6 +24,17 @@
                 <i class="fas fa-search"></i>
             </div>
         </div>
+
+        <!-- City Dropdown -->
+        <ul id="city-dropdown" class="hidden">
+            <li data-city="Addis Ababa">Addis Ababa</li>
+            <li data-city="Dire Dawa">Dire Dawa</li>
+            <li data-city="Bahir Dar">Bahir Dar</li>
+            <li data-city="Gondar">Gondar</li>
+            <li data-city="Hawassa">Hawassa</li>
+            <li data-city="Adama">Adama</li>
+            <li data-city="Mekelle">Mekelle</li>
+        </ul>
     </div>
 
     <div class="container" id="main_cont">
