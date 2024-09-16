@@ -1,3 +1,19 @@
+// // TG instance for close button
+const tg = window.Telegram.WebApp;
+
+function updatePageHistory(pageName) {
+    // Retrieve existing history from localStorage or initialize an empty array
+    let pageHistory = JSON.parse(localStorage.getItem('pageHistory')) || [];
+    
+    // Add the current page to the history
+    pageHistory.push(pageName);
+    
+    // Save the updated history back to localStorage
+    localStorage.setItem('pageHistory', JSON.stringify(pageHistory));
+}
+
+updatePageHistory('shop.html'); // Call this with each page the user navigates to
+
 document.addEventListener("DOMContentLoaded", function () {
     // Initialize URLSearchParams from the window location
     const urlParams = new URLSearchParams(window.location.search);
@@ -10,8 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     const chatId = localStorage.getItem('chatId');
     console.log("Retrieved chat ID from local storage: ",chatId);
-    
-
 
     const searchButton = document.querySelector('.search-button');
     const header = document.querySelector('.header');
@@ -21,6 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Load more and Back to top buttons
     const loadMoreButton = document.getElementById('load-more');
     const backToTopButton = document.getElementById('back-to-top');
+
+    // City drop down
+    const cityTrigger = document.getElementById("city-dropdown-trigger");
+    const cityDropdown = document.getElementById("city-dropdown");
+    const selectedCity = document.getElementById("selected-city");
+    
+    tg.BackButton.hide();
 
     let start = 0; // Start index for items
     const limit = 4; // Number of items to load per batch
@@ -50,6 +71,48 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // City dropdown
+    // Toggle dropdown visibility when city is clicked
+    cityTrigger.addEventListener("click", function() {
+        cityDropdown.classList.toggle("hidden");
+
+        // Prevent background scroll if the dropdown is visible
+        if (!cityDropdown.classList.contains("hidden")) {
+            document.body.classList.add("no-scroll");
+        } else {
+            document.body.classList.remove("no-scroll");
+        }
+    });
+
+    // Handle city selection
+    cityDropdown.addEventListener("click", function(event) {
+        if (event.target.tagName === 'LI') {
+            const city = event.target.getAttribute("data-city");
+            selectedCity.textContent = city; // Update the header with selected city
+
+            // Hide the dropdown after selection
+            cityDropdown.classList.add("hidden");
+            document.body.classList.remove("no-scroll");
+
+            // Optionally, perform any additional action based on the selected city (e.g., filter search results)
+            xxx = 'Addis Ababa'
+            handleSearch(xxx);
+        }
+    });
+
+    // Hide the dropdown if clicked outside
+    document.addEventListener("click", function(event) {
+        if (!cityTrigger.contains(event.target) && !cityDropdown.contains(event.target)) {
+            cityDropdown.classList.add("hidden");
+            document.body.classList.remove("no-scroll");
+        }
+    });
+
+    // Prevent touch scrolling on the background when interacting with the dropdown
+    cityDropdown.addEventListener("touchmove", function(event) {
+        event.stopPropagation(); // Stop the event from propagating to the background
+    });
+
 
     function displayItems(start, limit) {
         // Fetch user's favorites
@@ -77,7 +140,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (items.length === 0) {
                         alert("No more new items in your area!")
                         loadMoreButton.style.display = 'none';  // Hide button if no more items
-                        backToTopButton.style.display = 'block'; // Show the Back to Top button
+                        backToTopButton.style.display = 'none'; // Show the Back to Top button
+                        itemsList.innerHTML = `
+                        <p id="no-items-found">
+                            <i class="fas fa-search icon"></i> <!-- Search icon -->
+                            No items listed yet.
+                        </p>`;
                     } else {
 
                     // Loop through each item and add to the DOM
@@ -184,6 +252,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then(data => {
                     // Clear previous search results
                     itemsList.innerHTML = '';
+                    
 
                     // Populate the itemsList with new search results
                     if (data.length > 0) {
@@ -209,7 +278,9 @@ document.addEventListener("DOMContentLoaded", function () {
                                     </div>
                                     <p class="item-title">${item.item_name}</p>
                                     <p class="item-description">${item.item_description}</p>
-                                    <p class="item-city">City:${item.item_city}</p>
+                                    <p class="item-city">
+                                        <i class="fas fa-map-marker-alt"></i> ${item.item_city}
+                                    </p>
                                 </div>
                             `;
 
@@ -239,6 +310,8 @@ document.addEventListener("DOMContentLoaded", function () {
                             itemsList.appendChild(itemBox);
                         });
                     } else {
+                        loadMoreButton.style.display = 'none';
+                        backToTopButton.style.display = 'none';
                         itemsList.innerHTML = `
                         <p id="no-items-found">
                             <i class="fas fa-search icon"></i> <!-- Search icon -->
@@ -252,8 +325,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         }
         else {
+            loadMoreButton.style.display = 'none';
+            backToTopButton.style.display = 'none';
             itemsList.innerHTML = ''; // Clear results if query is empty
-            displayItems()
+            start -= start;
+            displayItems(start, limit);
         }
     }
 
@@ -262,6 +338,14 @@ document.addEventListener("DOMContentLoaded", function () {
         const query = event.target.value;
         handleSearch(query);
     }, 300)); // 300ms delay
+
+    // Handle "Enter" key press to dismiss the keyboard
+    searchInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault(); // Prevent default action like form submission
+            searchInput.blur(); // Remove focus from the input to hide the keyboard
+        }
+    });
 });
 
 // Function to add item to favorites
@@ -305,3 +389,4 @@ function removeFromFavorites(itemId) {
           console.error('Error removing from favorites:', error);
       });
 }
+

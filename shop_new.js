@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Load more and Back to top buttons
     const loadMoreButton = document.getElementById('load-more');
+    const showMoreButton = document.getElementById('show-more');
     const backToTopButton = document.getElementById('back-to-top');
 
     // City drop down
@@ -44,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     tg.BackButton.hide();
 
     let start = 0; // Start index for items
+    let startSearch = 0; // start index for search items
     const limit = 4; // Number of items to load per batch
 
     // Load initial batch of items
@@ -140,7 +142,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (items.length === 0) {
                         alert("No more new items in your area!")
                         loadMoreButton.style.display = 'none';  // Hide button if no more items
-                        backToTopButton.style.display = 'block'; // Show the Back to Top button
+                        backToTopButton.style.display = 'none'; // Show the Back to Top button
+                        itemsList.innerHTML = `
+                        <p id="no-items-found">
+                            <i class="fas fa-search icon"></i> <!-- Search icon -->
+                            No items listed yet.
+                        </p>`;
                     } else {
 
                     // Loop through each item and add to the DOM
@@ -233,6 +240,79 @@ document.addEventListener("DOMContentLoaded", function () {
         };
     }
 
+    // Function to display items in chunks
+    function displayItems(items, startIndex, limit) {
+        const endIndex = Math.min(startIndex + limit, items.length);
+
+        for (let i = startIndex; i < endIndex; i++) {
+            const item = items[i];
+            const itemBox = document.createElement('div');
+            itemBox.classList.add('item-box');
+            itemBox.setAttribute('data-id', item.id);
+
+            const images = item.item_pic.split(',');
+
+            // Determine if the item is in favorites
+            const isLiked = favoriteIds.includes(item.id.toString());
+
+            // Set heart icon class based on liked status
+            const heartIconClass = isLiked ? 'fas fa-heart like-icon liked' : 'fas fa-heart like-icon';
+
+            itemBox.innerHTML = `
+                <img src="${images[0]}" alt="${item.item_name}">
+                <div class="item-details">
+                    <div class="price-and-icon">
+                        <p class="item-price"><strong>ETB ${Number(item.item_price).toLocaleString()}</strong></p>
+                        <i class="${heartIconClass}"></i>
+                    </div>
+                    <p class="item-title">${item.item_name}</p>
+                    <p class="item-description">${item.item_description}</p>
+                    <p class="item-city">
+                        <i class="fas fa-map-marker-alt"></i> ${item.item_city}
+                    </p>
+                </div>
+            `;
+
+            // Add a click event listener to the heart icon
+            const heartIcon = itemBox.querySelector('.like-icon');
+            heartIcon.addEventListener('click', function (event) {
+                event.stopPropagation();
+
+                const itemId = itemBox.getAttribute('data-id');
+                console.log('Heart clicked for item ID:', itemId);
+
+                // Toggle the liked class
+                if (heartIcon.classList.contains('liked')) {
+                    heartIcon.classList.remove('liked');
+                    removeFromFavorites(itemId);
+                } else {
+                    heartIcon.classList.add('liked');
+                    addToFavorites(itemId);
+                }
+            });
+
+            // Add click event listener for item details
+            itemBox.addEventListener('click', function () {
+                window.location.href = `item-details.html?id=${item.id}`;
+            });
+
+            itemsList.appendChild(itemBox);
+        }
+
+        // Check if more items are available, if not, hide the "Load More" button
+        if (endIndex >= items.length) {
+            showMoreButton.style.display = 'none';
+        } else {
+            showMoreButton.style.display = 'block';
+        }
+    }
+
+    // Handle "Load More" button click
+    showMoreButton.addEventListener('click', function() {
+        startSearch += limit;
+        displayItems(currentItems, startSearch, limit); // Load next set of items
+    });
+
     // Function to handle search request
     function handleSearch(query) {
         if (query.trim() !== "") {
@@ -251,61 +331,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     // Populate the itemsList with new search results
                     if (data.length > 0) {
-                        data.forEach(item => {
-                            const itemBox = document.createElement('div');
-                            itemBox.classList.add('item-box');
-                            itemBox.setAttribute('data-id', item.id);
+                        // Clear previous search results
+                        itemsList.innerHTML = '';
 
-                            const images = item.item_pic.split(',');
+                        // Save the items fetched for pagination
+                        currentItems = data;
 
-                            // Determine if the item is in favorites
-                            const isLiked = favoriteIds.includes(item.id.toString());
-
-                            // Set heart icon class based on liked status
-                            const heartIconClass = isLiked ? 'fas fa-heart like-icon liked' : 'fas fa-heart like-icon';
-
-                            itemBox.innerHTML = `
-                                <img src="${images[0]}" alt="${item.item_name}">
-                                <div class="item-details">
-                                    <div class="price-and-icon">
-                                        <p class="item-price"><strong>ETB ${Number(item.item_price).toLocaleString()}</strong></p>
-                                        <i class="${heartIconClass}"></i>
-                                    </div>
-                                    <p class="item-title">${item.item_name}</p>
-                                    <p class="item-description">${item.item_description}</p>
-                                    <p class="item-city">
-                                        <i class="fas fa-map-marker-alt"></i> ${item.item_city}
-                                    </p>
-                                </div>
-                            `;
-
-                            // Add a click event listener to the heart icon
-                            const heartIcon = itemBox.querySelector('.like-icon');
-                            heartIcon.addEventListener('click', function (event) {
-                                event.stopPropagation();
-
-                                const itemId = itemBox.getAttribute('data-id');
-                                console.log('Heart clicked for item ID:', itemId);
-
-                                // Toggle the liked class
-                                if (heartIcon.classList.contains('liked')) {
-                                    heartIcon.classList.remove('liked');
-                                    removeFromFavorites(itemId);
-                                } else {
-                                    heartIcon.classList.add('liked');
-                                    addToFavorites(itemId);
-                                }
-                            });
-
-                            // Add click event listener for item details
-                            itemBox.addEventListener('click', function () {
-                                window.location.href = `item-details.html?id=${item.id}`;
-                            });
-
-                            itemsList.appendChild(itemBox);
-                        });
+                        // Initially display only the first set of items (4 items)
+                        startSearch = 0;
+                        displayItems(currentItems, startSearch, limit);
+                        
+                    
                     } else {
-                        loadMoreButton.style.display = 'none';
+                        showMoreButton.style.display = 'none';
                         backToTopButton.style.display = 'none';
                         itemsList.innerHTML = `
                         <p id="no-items-found">
@@ -320,11 +358,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         }
         else {
-            loadMoreButton.style.display = 'none';
+            showMoreButton.style.display = 'none';
             backToTopButton.style.display = 'none';
             itemsList.innerHTML = ''; // Clear results if query is empty
-            start -= start;
-            displayItems(start, limit);
+            startSearch -= startSearch;
+            displayItems(startSearch, limit);
         }
     }
 

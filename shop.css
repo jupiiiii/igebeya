@@ -351,6 +351,24 @@ body {
     background-color: #244c57; /* Adjust color on hover as needed */
 }
 
+#show-more {
+    margin-left: 135px;
+    width: 30%;
+    height: 25px;
+    bottom: 20px;
+    margin-top: 10px;
+    background-color: #326472; /* Adjust color as needed */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it appears on top of other elements */
+}
+
+#show-more:hover {
+    background-color: #244c57; /* Adjust color on hover as needed */
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
