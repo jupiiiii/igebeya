@@ -141,13 +141,13 @@ body {
         }
 
 #no-items-found {
-    top: 50vh;
+    top: 30vh;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     text-align: center; /* Center text horizontally */
     position: absolute; /* Position element absolutely */
     left: 50%; /* Center horizontally */
-    transform: translate(-50%, -80%); /* Adjust position to truly center */
+    transform: translate(-50%, -70%); /* Adjust position to truly center */
     color: #666; /* Optional: set text color */
     padding: 20px; /* Optional: add some padding */
 }
