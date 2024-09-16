@@ -236,7 +236,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Function to display items in chunks
-    function displayItemsSearch(items, startIndex, limit) {
+    function displayItemsSearch(items, startIndex, limit, favoriteIds) {
         const endIndex = Math.min(startIndex + limit, items.length);
 
         for (let i = startIndex; i < endIndex; i++) {
@@ -335,7 +335,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         // Initially display only the first set of items (4 items)
                         startSearch = 0;
-                        displayItemsSearch(currentItems, startSearch, limit);
+                        displayItemsSearch(currentItems, startSearch, limit, favoriteIds);
                         
                     
                     } else {
