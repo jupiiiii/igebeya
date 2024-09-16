@@ -300,6 +300,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Check if more items are available, if not, hide the "Load More" button
         if (endIndex >= items.length) {
             showMoreButton.style.display = 'none';
+            backToTopButton.style.display = 'block';
         } else {
             showMoreButton.style.display = 'block';
         }
