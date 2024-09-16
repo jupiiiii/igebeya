@@ -241,21 +241,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             });
 
-            const textareas = document.querySelectorAll('textarea');
+            //const textareas = document.querySelectorAll('textarea');
 
             function ensureFieldVisible(element) {
                 const rect = element.getBoundingClientRect();
                 const elementBottom = rect.bottom;
                 const viewportHeight = window.innerHeight;
-
-                // Scroll the textarea into view if it's not fully visible
-                if (elementBottom > viewportHeight) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'end' });
+            
+                // If the bottom of the element is below the visible viewport area, scroll it into view
+                if (elementBottom > viewportHeight - 100) { // -100 to account for keyboard height
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
             }
 
             // Add focus event listeners to ensure textarea visibility
-            textareas.forEach(field => {
+            textareas.querySelectorAll('textarea').forEach(field => {
                 field.addEventListener('focus', function() {
                     ensureFieldVisible(this);
                 });
