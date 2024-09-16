@@ -65,6 +65,7 @@ body {
             top: 40px;
             left: 0;
             width: 150px;
+            max-height: 200px;
             background-color: var(--tg-theme-bg-color);
             border: 1px solid #9c9b9b6e;
             border-radius: 5px;

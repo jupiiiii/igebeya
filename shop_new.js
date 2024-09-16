@@ -92,6 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Hide the dropdown after selection
             cityDropdown.classList.add("hidden");
+            document.body.classList.remove("no-scroll");
 
             // Optionally, perform any additional action based on the selected city (e.g., filter search results)
             console.log("Selected city:", city);
@@ -102,7 +103,13 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("click", function(event) {
         if (!cityTrigger.contains(event.target) && !cityDropdown.contains(event.target)) {
             cityDropdown.classList.add("hidden");
+            document.body.classList.remove("no-scroll");
         }
+    });
+
+    // Prevent touch scrolling on the background when interacting with the dropdown
+    cityDropdown.addEventListener("touchmove", function(event) {
+        event.stopPropagation(); // Stop the event from propagating to the background
     });
 
 
