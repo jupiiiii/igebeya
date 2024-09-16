@@ -77,6 +77,8 @@ body {
         #city-dropdown li {
             padding: 10px;
             cursor: pointer;
+            font-family: 'Oswald', sans-serif;
+            font-size: 12px;
         }
         
         #city-dropdown li:hover {
