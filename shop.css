@@ -103,7 +103,7 @@ body {
             background-color: rgba(234, 233, 233, 0.09);
             /* Adjust the padding to make space for the icon */
             padding: 5px 5px 5px 30px;
-            width: 200px;
+            width: 180px;
             height: 25px;
             font-size: 1rem;
             border: 1px var(--tg-theme-text-color);
