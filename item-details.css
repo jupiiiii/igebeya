@@ -67,20 +67,8 @@ body {
     transform: scale(1.1);
 }
 
-/* .item-info {
-    margin-top: 20px;
-} */
-
-/* test */
 .item-info {
     margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    /* bottom: 0; */
-    /* width: 100%; */
-    /* padding: 10px; */
-    /* background-color: var(--tg-theme-bg-color); */
 }
 
 .item-info textarea{
@@ -162,22 +150,9 @@ body {
     white-space: pre-wrap; /* Ensure the text wraps normally and preserve pre input structure of the text*/
 }
 
-/* #message-box {
-    width: 95%;
-    height: 100px;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: rgba(215, 217, 217, 0.29);
-    border: 1px solid #4A889A84;
-    border-radius: 5px;
-    font-size: 12px;
-    font-family: 'Open Sans', sans-serif;
-    resize: vertical;
-} */
-/* test */
 #message-box {
     width: 95%;
-    height: auto;
+    height: 100px;
     padding: 10px;
     margin-bottom: 10px;
     background-color: rgba(215, 217, 217, 0.29);
