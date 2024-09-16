@@ -47,6 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
     let start = 0; // Start index for items
     let startSearch = 0; // start index for search items
     const limit = 4; // Number of items to load per batch
+    let currentItems = [];
+    let favSearch = [];
 
     // Load initial batch of items
     displayItems(start, limit);
@@ -236,7 +238,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Function to display items in chunks
-    function displayItemsSearch(items, startIndex, limit, favoriteIds) {
+    function displayItemsSearch(items, startIndex, limit, favSearch) {
         const endIndex = Math.min(startIndex + limit, items.length);
 
         for (let i = startIndex; i < endIndex; i++) {
@@ -248,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const images = item.item_pic.split(',');
 
             // Determine if the item is in favorites
-            const isLiked = favoriteIds.includes(item.id.toString());
+            const isLiked = favSearch.includes(item.id.toString());
 
             // Set heart icon class based on liked status
             const heartIconClass = isLiked ? 'fas fa-heart like-icon liked' : 'fas fa-heart like-icon';
@@ -305,7 +307,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Handle "Load More" button click
     showMoreButton.addEventListener('click', function() {
         startSearch += limit;
-        displayItemsSearch(currentItems, startSearch, limit, favoriteIds); // Load next set of items
+        displayItemsSearch(currentItems, startSearch, limit, favSearch); // Load next set of items
     });
 
     // Function to handle search request
@@ -315,7 +317,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.json())
         .then(favorites => {
             // Ensure favorites is an array
-            const favoriteIds = Array.isArray(favorites) ? favorites.map(fav => fav.id.toString()) : [];
+            favSearch = Array.isArray(favorites) ? favorites.map(fav => fav.id.toString()) : [];
             // Send a request to the server-side search endpoint
             fetch(`https://igebeya-bc68de5021c8.herokuapp.com/search_items?q=${encodeURIComponent(query)}`)
                 .then(response => response.json())
@@ -335,7 +337,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         // Initially display only the first set of items (4 items)
                         startSearch = 0;
-                        displayItemsSearch(currentItems, startSearch, limit, favoriteIds);
+                        displayItemsSearch(currentItems, startSearch, limit, favSearch);
                         
                     
                     } else {
@@ -356,9 +358,10 @@ document.addEventListener("DOMContentLoaded", function () {
         else {
             showMoreButton.style.display = 'none';
             backToTopButton.style.display = 'none';
+            loadMoreButton.style.display = 'block';
             itemsList.innerHTML = ''; // Clear results if query is empty
-            startSearch -= startSearch;
-            displayItemsSearch(startSearch, limit);
+            start -= start;
+            displayItems(start, limit);
         }
     }
 
