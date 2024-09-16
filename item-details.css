@@ -17,7 +17,7 @@ body {
 
 /* When the container moves up */
 .container-move-up {
-    transform: translateY(-150px); /* Adjust this value to your desired `x` px */
+    transform: translateY(-180px); /* Adjust this value to your desired `x` px */
 }
 
 .image-viewer {
