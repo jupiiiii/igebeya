@@ -331,6 +331,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         // Save the items fetched for pagination
                         currentItems = data;
+                        console.log("",currentItems);
 
                         // Initially display only the first set of items (4 items)
                         startSearch = 0;
