@@ -241,7 +241,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Function to display items in chunks
-    function displayItems(items, startIndex, limit) {
+    function displayItemsSearch(items, startIndex, limit) {
         const endIndex = Math.min(startIndex + limit, items.length);
 
         for (let i = startIndex; i < endIndex; i++) {
@@ -310,7 +310,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Handle "Load More" button click
     showMoreButton.addEventListener('click', function() {
         startSearch += limit;
-        displayItems(currentItems, startSearch, limit); // Load next set of items
+        displayItemsSearch(currentItems, startSearch, limit); // Load next set of items
     });
 
     // Function to handle search request
@@ -339,7 +339,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         // Initially display only the first set of items (4 items)
                         startSearch = 0;
-                        displayItems(currentItems, startSearch, limit);
+                        displayItemsSearch(currentItems, startSearch, limit);
                         
                     
                     } else {
@@ -362,7 +362,7 @@ document.addEventListener("DOMContentLoaded", function () {
             backToTopButton.style.display = 'none';
             itemsList.innerHTML = ''; // Clear results if query is empty
             startSearch -= startSearch;
-            displayItems(startSearch, limit);
+            displayItemsSearch(startSearch, limit);
         }
     }
 
