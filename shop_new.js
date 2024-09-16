@@ -365,6 +365,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Attach debounce to search input
     searchInput.addEventListener('input', debounce(function (event) {
         const query = event.target.value;
+        loadMoreButton.style.display = 'none';
         handleSearch(query);
     }, 300)); // 300ms delay
 
