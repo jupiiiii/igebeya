@@ -13,7 +13,6 @@ body {
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(74, 136, 154, 0.52);
     border: 1px rgba(74, 136, 154, 0.54);
-    display: flex;
 }
 
 .image-viewer {
