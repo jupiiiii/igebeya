@@ -148,7 +148,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Handle Send Message button click
             document.getElementById("send-message").addEventListener('click', () => {
-                alert('Message sent to the seller!');
                 // Get the message from the textarea
                 const message = document.getElementById("message-box").value.trim();
 
