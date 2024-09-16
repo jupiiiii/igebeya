@@ -360,6 +360,7 @@ document.addEventListener("DOMContentLoaded", function () {
             backToTopButton.style.display = 'none';
             loadMoreButton.style.display = 'block';
             itemsList.innerHTML = ''; // Clear results if query is empty
+            startSearch -= startSearch;
             start -= start;
             displayItems(start, limit);
         }
