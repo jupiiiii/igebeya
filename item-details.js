@@ -240,11 +240,33 @@ document.addEventListener("DOMContentLoaded", function () {
                     inputs.blur(); // Remove focus from the input to hide the keyboard
                 }
             });
-            
-            window.addEventListener('resize', function() {
+
+            const messageBox = document.getElementById('message-box');
+
+            // Function to adjust the height of the message box
+            function adjustMessageBoxHeight() {
                 const vh = window.innerHeight * 0.01;
                 document.documentElement.style.setProperty('--vh', `${vh}px`);
+    
+                // Adjust the height of the message box dynamically to fit above the keyboard
+                messageBox.style.height = `calc(var(--vh, 1vh) * 50)`; // Adjust based on your layout
+            }
+
+            // Event listener to detect focus and adjust the message box
+            messageBox.addEventListener('focus', function() {
+                adjustMessageBoxHeight(); // Adjust the height when the textarea gets focus
             });
+
+            // Event listener to reset height on blur (optional)
+            messageBox.addEventListener('blur', function() {
+                // Reset to original height when focus is lost
+                messageBox.style.height = '100px'; // Reset to default height
+            });
+
+            // window.addEventListener('resize', function() {
+            //     const vh = window.innerHeight * 0.01;
+            //     document.documentElement.style.setProperty('--vh', `${vh}px`);
+            // });
 
             //const textareas = document.querySelectorAll('textarea');
 
