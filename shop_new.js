@@ -75,6 +75,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Toggle dropdown visibility when city is clicked
     cityTrigger.addEventListener("click", function() {
         cityDropdown.classList.toggle("hidden");
+
+        // Prevent background scroll if the dropdown is visible
+        if (!cityDropdown.classList.contains("hidden")) {
+            document.body.classList.add("no-scroll");
+        } else {
+            document.body.classList.remove("no-scroll");
+        }
     });
 
     // Handle city selection
