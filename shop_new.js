@@ -143,9 +143,20 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
     
                     if (items.length === 0) {
-                        alert("No more new items in your area!")
-                        loadMoreButton.style.display = 'none';  // Hide button if no more items
-                        backToTopButton.style.display = 'block'; // Show the Back to Top button
+                        if (start > 0) {
+                            alert("No more new items in your area!")
+                            loadMoreButton.style.display = 'none';  // Hide button if no more items
+                            backToTopButton.style.display = 'block'; // Show the Back to Top button
+                        } else {
+                            loadMoreButton.style.display = 'none';
+                            backToTopButton.style.display = 'none';
+                            itemsList.innerHTML = `
+                            <p id="no-items-found">
+                                <i class="fas fa-search icon"></i> <!-- Search icon -->
+                                No items listed yet! :(.
+                            </p>`;
+                        }
+                        
                     } else {
 
                     // Loop through each item and add to the DOM
