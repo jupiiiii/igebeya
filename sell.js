@@ -142,6 +142,15 @@ document.addEventListener("DOMContentLoaded", function () {
         loadingIndicator.style.display = "block";
     
         const formData = new FormData(sellForm);
+
+        // Validate that a city is selected
+        const selectedCity = itemCityInput.value;
+        if (!selectedCity) {
+            alert("Please select a city.");
+            submitButton.style.display = 'block';
+            loadingIndicator.style.display = "none";
+            return;
+        }
     
         // Validate that at least one image is selected
         const itemImages = document.getElementById("item-images").files;
