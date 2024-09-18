@@ -307,6 +307,8 @@ body.no-scroll {
 }
 
 .location {
+    border: 1px solid #ddd;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     font-size: 12px;
