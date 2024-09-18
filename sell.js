@@ -86,14 +86,6 @@ document.addEventListener("DOMContentLoaded", function () {
             itemCityInput.value = selectedCity; // Set the hidden input value
             cityDropdown.classList.add("hidden"); // Hide the dropdown after selection
         }
-        // if (event.target.tagName === 'LI') {
-        //     const city = event.target.getAttribute("data-city");
-        //     selectedCity.textContent = city; // Update the header with selected city
-
-        //     // Hide the dropdown after selection
-        //     cityDropdown.classList.add("hidden");
-        //     document.body.classList.remove("no-scroll");
-        // }
     });
 
     // Hide the dropdown if clicked outside
@@ -175,6 +167,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (chatId) {
             formData.append('chat_id', chatId);
         }
+
+        // Append selected city to FormData
+        formData.append('item-city', selectedCity);
     
         // Send data to backend
         fetch('https://igebeya-bc68de5021c8.herokuapp.com/list_item', {
