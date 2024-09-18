@@ -22,6 +22,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const sell_cont = document.getElementById('sell_cont')
     const myListedItemsContainer = document.getElementById('my-listed-items');
 
+    // City drop down
+    const cityTrigger = document.getElementById("city-dropdown-trigger");
+    const cityDropdown = document.getElementById("item-city");
+    const selectedCity = document.getElementById("selected-city");
+
     document.getElementById('list-new-item').addEventListener('click', function () {
         document.getElementById('new-item-form').style.display = 'block';
         document.getElementById('listed-items').style.display = 'none';
@@ -64,6 +69,44 @@ document.addEventListener("DOMContentLoaded", function () {
             window.history.back();
         }
 
+    });
+
+    // City dropdown
+    // Toggle dropdown visibility when city is clicked
+    cityTrigger.addEventListener("click", function() {
+        cityDropdown.classList.toggle("hidden");
+
+        // Prevent background scroll if the dropdown is visible
+        if (!cityDropdown.classList.contains("hidden")) {
+            document.body.classList.add("no-scroll");
+        } else {
+            document.body.classList.remove("no-scroll");
+        }
+    });
+
+    // Handle city selection
+    cityDropdown.addEventListener("click", function(event) {
+        if (event.target.tagName === 'LI') {
+            const city = event.target.getAttribute("data-city");
+            selectedCity.textContent = city; // Update the header with selected city
+
+            // Hide the dropdown after selection
+            cityDropdown.classList.add("hidden");
+            document.body.classList.remove("no-scroll");
+
+            // Optionally, perform any additional action based on the selected city (e.g., filter search results)
+            xxx = 'Addis Ababa'
+            loadMoreButton.style.display = 'none';
+            handleSearch(xxx);
+        }
+    });
+
+    // Hide the dropdown if clicked outside
+    document.addEventListener("click", function(event) {
+        if (!cityTrigger.contains(event.target) && !cityDropdown.contains(event.target)) {
+            cityDropdown.classList.add("hidden");
+            document.body.classList.remove("no-scroll");
+        }
     });
 
     // Function to ensure the input field is visible above the keyboard
