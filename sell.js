@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (selectedCity) {
             selectedCityDisplay.textContent = selectedCity; // Update the displayed city
             itemCityInput.value = selectedCity; // Set the hidden input value
-            cityList.classList.add('hidden'); // Hide the dropdown after selection
+            cityDropdown.classList.add("hidden"); // Hide the dropdown after selection
         }
         // if (event.target.tagName === 'LI') {
         //     const city = event.target.getAttribute("data-city");
