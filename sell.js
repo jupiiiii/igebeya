@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Append selected city to FormData
         formData.append('item-city', selectedCity);
-        console.log(formData);
+        console.log(selectedCity);
     
         // Send data to backend
         fetch('https://igebeya-bc68de5021c8.herokuapp.com/list_item', {
