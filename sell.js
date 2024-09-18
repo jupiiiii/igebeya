@@ -25,7 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // City drop down
     const cityTrigger = document.getElementById("city-dropdown-trigger");
     const cityDropdown = document.getElementById("item-city");
-    const selectedCity = document.getElementById("selected-city");
+    const selectedCityDisplay = document.getElementById("selected-city");
+    const itemCityInput = document.getElementById('item-city');
 
     document.getElementById('list-new-item').addEventListener('click', function () {
         document.getElementById('new-item-form').style.display = 'block';
@@ -75,37 +76,30 @@ document.addEventListener("DOMContentLoaded", function () {
     // Toggle dropdown visibility when city is clicked
     cityTrigger.addEventListener("click", function() {
         cityDropdown.classList.toggle("hidden");
-
-        // Prevent background scroll if the dropdown is visible
-        if (!cityDropdown.classList.contains("hidden")) {
-            document.body.classList.add("no-scroll");
-        } else {
-            document.body.classList.remove("no-scroll");
-        }
     });
 
     // Handle city selection
     cityDropdown.addEventListener("click", function(event) {
-        if (event.target.tagName === 'LI') {
-            const city = event.target.getAttribute("data-city");
-            selectedCity.textContent = city; // Update the header with selected city
-
-            // Hide the dropdown after selection
-            cityDropdown.classList.add("hidden");
-            document.body.classList.remove("no-scroll");
-
-            // Optionally, perform any additional action based on the selected city (e.g., filter search results)
-            xxx = 'Addis Ababa'
-            loadMoreButton.style.display = 'none';
-            handleSearch(xxx);
+        const selectedCity = event.target.getAttribute('data-city');
+        if (selectedCity) {
+            selectedCityDisplay.textContent = selectedCity; // Update the displayed city
+            itemCityInput.value = selectedCity; // Set the hidden input value
+            cityList.classList.add('hidden'); // Hide the dropdown after selection
         }
+        // if (event.target.tagName === 'LI') {
+        //     const city = event.target.getAttribute("data-city");
+        //     selectedCity.textContent = city; // Update the header with selected city
+
+        //     // Hide the dropdown after selection
+        //     cityDropdown.classList.add("hidden");
+        //     document.body.classList.remove("no-scroll");
+        // }
     });
 
     // Hide the dropdown if clicked outside
     document.addEventListener("click", function(event) {
         if (!cityTrigger.contains(event.target) && !cityDropdown.contains(event.target)) {
             cityDropdown.classList.add("hidden");
-            document.body.classList.remove("no-scroll");
         }
     });
 
