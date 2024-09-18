@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // City drop down
     const cityTrigger = document.getElementById("city-dropdown-trigger");
-    const cityDropdown = document.getElementById("item-city");
+    const cityDropdown = document.getElementById("city-list");
     const selectedCityDisplay = document.getElementById("selected-city");
     const itemCityInput = document.getElementById('item-city');
 
