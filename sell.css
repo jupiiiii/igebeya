@@ -271,8 +271,8 @@ textarea {
 
 #item-city {
     position: absolute;
-    top: 40px;
-    left: 0;
+    top: 320px;
+    left: 80px;
     width: 150px;
     max-height: 200px;
     background-color: var(--tg-theme-bg-color);
