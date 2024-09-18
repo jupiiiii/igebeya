@@ -305,3 +305,16 @@ body.no-scroll {
 .hidden {
     display: none;
 }
+
+.location {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+}
+
+.location i {
+    margin-right: 5px;
+    font-size: 16px;
+}
