@@ -88,7 +88,7 @@ body {
             font-size: 12px;
         }
 
-        ul#city-dropdown li {
+        #selected-city {
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
