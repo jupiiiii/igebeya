@@ -103,6 +103,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 loadMoreButton.style.display = 'none';
                 handleSearch(city);
             }else{
+                showMoreButton.style.display = 'none';
+                backToTopButton.style.display = 'none';
+                loadMoreButton.style.display = 'block';
                 startSearch -= startSearch;
                 start -= start;
                 displayItems(start, limit);
