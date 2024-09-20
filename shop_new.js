@@ -101,6 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Optionally, perform any additional action based on the selected city (e.g., filter search results)
             if (city !== 'Anywhere'){
                 loadMoreButton.style.display = 'none';
+                backToTopButton.style.display = 'none';
                 handleSearch(city);
             }else{
                 showMoreButton.style.display = 'none';
