@@ -99,9 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
             document.body.classList.remove("no-scroll");
 
             // Optionally, perform any additional action based on the selected city (e.g., filter search results)
-            xxx = 'Addis Ababa'
             loadMoreButton.style.display = 'none';
-            handleSearch(xxx);
+            handleSearch(city);
         }
     });
 
