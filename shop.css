@@ -87,6 +87,14 @@ body {
             font-family: 'Oswald', sans-serif;
             font-size: 12px;
         }
+
+        ul#city-dropdown li {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: 30px; /* Adjust width based on your design */
+            display: inline-block;
+        }
         
         #city-dropdown li:hover {
             background-color: #d7d5d5;
