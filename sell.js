@@ -149,6 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (itemImages.length === 0) {
             alert("Please attach at least one image.");
             submitButton.disabled = false;
+            submitButton.style.display = 'block';
             loadingIndicator.style.display = "none";
             return;
         }
