@@ -99,8 +99,15 @@ document.addEventListener("DOMContentLoaded", function () {
             document.body.classList.remove("no-scroll");
 
             // Optionally, perform any additional action based on the selected city (e.g., filter search results)
-            loadMoreButton.style.display = 'none';
-            handleSearch(city);
+            if (city !== 'Anywhere'){
+                loadMoreButton.style.display = 'none';
+                handleSearch(city);
+            }else{
+                startSearch -= startSearch;
+                start -= start;
+                displayItems(start, limit);
+            }
+            
         }
     });
 
