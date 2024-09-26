@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Populate the sub-category dropdown based on the selected main category
     const subCategoryList = document.getElementById('sub-category-list');
     const subTrigger = document.getElementById("sub-category-dropdown-trigger");
-    let selectedSubCategoryDisplay = document.getElementById("selected-sub-category");
+    const selectedSubCategoryDisplay = document.getElementById("selected-sub-category");
     const subCategoryInput = document.getElementById('item-sub-category');
     const subcategories = {
         'Appliances': ['Air Conditioners', 'Refrigerators', 'Washing Machines', 'All Appliances'],
@@ -154,7 +154,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Get the subcategories for the selected main category
             const selectedSubcategories = subcategories[selectedMainCategory] || [];
-            selectedSubCategoryDisplay = selectedSubcategories;
 
             // Populate the sub-category list
             selectedSubcategories.forEach(subCategory => {
