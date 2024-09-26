@@ -282,32 +282,32 @@ document.addEventListener("DOMContentLoaded", function () {
         formData.append('item-city', selectedCity);
         formData.append('item-main-category', selectedmain);
         formData.append('item-sub-category', selectedsub);
-        console.log(selectedCity, selectedmain, selectedsub);
+        // console.log(selectedCity, selectedmain, selectedsub);
     
-        // // Send data to backend
-        // fetch('https://igebeya-bc68de5021c8.herokuapp.com/list_item', {
-        //     method: 'POST',
-        //     body: formData
-        // })
-        // .then(response => response.json())
-        // .then(data => {
-        //     if (data.error) {
-        //         alert(`Error: ${data.error}`);
-        //     } else {
-        //         alert(data.message);
-        //         sellForm.reset();
-        //     }
-        // })
-        // .catch(error => {
-        //     console.error('Error:', error);
-        //     alert('Failed to list the item. Please try again.');
-        // })
-        // .finally(() => {
-        //     // Re-enable the submit button and hide the loading indicator
-        //     //submitButton.disabled = false;
-        //     submitButton.style.display = 'block';
-        //     loadingIndicator.style.display = "none";
-        // });
+        // Send data to backend
+        fetch('https://igebeya-bc68de5021c8.herokuapp.com/list_item', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert(`Error: ${data.error}`);
+            } else {
+                alert(data.message);
+                sellForm.reset();
+            }
+        })
+        .catch(error => {
+            // console.error('Error:', error);
+            alert('Failed to list the item. Please try again.');
+        })
+        .finally(() => {
+            // Re-enable the submit button and hide the loading indicator
+            //submitButton.disabled = false;
+            submitButton.style.display = 'block';
+            loadingIndicator.style.display = "none";
+        });
     });
     
     // Remove focus from the input to hide the keyboard
@@ -332,8 +332,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Check if chatId exists before making the API call
         if (!chatId) {
-            console.error('Chat ID not found in localStorage.');
-            alert('No chat id!');
+            // console.error('Chat ID not found in localStorage.');
+            alert('No chat id! Restart App!');
             return;
         }
 
@@ -382,7 +382,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
             })
             .catch(error => {
-                console.error('Error fetching listed items:', error);
+                // console.error('Error fetching listed items:', error);
                 myListedItemsContainer.innerHTML = `<p>Failed to fetch listed items.</p>`;
             });
     }
@@ -403,7 +403,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         })
         .catch(error => {
-            console.error('Error unlisting item:', error);
+            // console.error('Error unlisting item:', error);
             alert('An error occurred while trying to unlist the item.');
         });
     }
