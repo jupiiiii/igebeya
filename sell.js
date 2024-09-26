@@ -246,7 +246,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const selectedsub = subCategoryInput.value;
         const selectedmain = mainCategoryInput.value
         
-        if (!selectedCity && !selectedsub && !selectedmain) {
+        if (!selectedCity || !selectedsub || !selectedmain) {
             alert("Please select required fields.");
             submitButton.style.display = 'block';
             loadingIndicator.style.display = "none";
