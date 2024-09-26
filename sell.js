@@ -115,8 +115,9 @@ document.addEventListener("DOMContentLoaded", function () {
         if (selectedMainCategory) {
             selectedMainCategoryDisplay.textContent = selectedMainCategory; // Update the displayed category
             mainCategoryInput.value = selectedMainCategory; // Set the hidden input value
+            console.log(mainCategoryInput)
             mainDropdown.classList.add("hidden"); // Hide the dropdown after selection
-            subCatForm.classList.add("block");
+            subCatForm.classList.toggle("hidden");
         }
     });
 
