@@ -8,7 +8,7 @@ body {
     font-family: 'Roboto', sans-serif;
     background-color: var(--tg-theme-bg-color);
     color: var(--tg-theme-text-color);
-    padding: 20px 20px 20px;
+    padding: 20px 20px 70px;
 }
 
 .sell-container {
