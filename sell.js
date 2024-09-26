@@ -36,6 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Sub category drop down
     // Subcategories mapped to their main categories
+    // Populate the sub-category dropdown based on the selected main category
+    const subCategoryList = document.getElementById('sub-category-list');
+    const subTrigger = document.getElementById("sub-category-dropdown-trigger");
     const subcategories = {
         'Appliances': ['Air Conditioners', 'Refrigerators', 'Washing Machines', 'All Appliances'],
         'Car & Motorbike': ['Car Accessories', 'Car Parts', 'Car Electronics', 'Motorbike Accessories & Parts', 'All Car & Motorbike Products'],
@@ -145,8 +148,6 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("hidden-sub-category-form").style.display = "block";
 
             // Populate the sub category based on the main category selected
-            // Populate the sub-category dropdown based on the selected main category
-            const subCategoryList = document.getElementById('sub-category-list');
             subCategoryList.innerHTML = ''; // Clear previous subcategories
 
             // Get the subcategories for the selected main category
@@ -167,6 +168,12 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!mainTrigger.contains(event.target) && !mainDropdown.contains(event.target)) {
             mainDropdown.classList.add("hidden");
         }
+    });
+
+    // Sub dropdown
+    // Toggle dropdown visibility when sub is clicked
+    subTrigger.addEventListener("click", function() {
+        subCategoryList.classList.toggle("hidden");
     });
 
     // Function to ensure the input field is visible above the keyboard
