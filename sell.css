@@ -340,10 +340,10 @@ body.no-scroll {
 
 #category-list {
     position: absolute;
-    top: 300px;
+    top: 400px;
     left: 80px;
     width: 150px;
-    max-height: 200px;
+    max-height: 400px;
     background-color: var(--tg-theme-bg-color);
     border: 1px solid #9c9b9b6e;
     border-radius: 5px;
