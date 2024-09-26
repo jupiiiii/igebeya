@@ -340,7 +340,7 @@ body.no-scroll {
 
 #category-list {
     position: absolute;
-    top: 400px;
+    top: 250px;
     left: 80px;
     width: 150px;
     max-height: 400px;
