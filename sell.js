@@ -243,8 +243,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Validate that a city is selected
         const selectedCity = itemCityInput.value;
-        if (!selectedCity) {
-            alert("Please select a city.");
+        const selectedsub = subCategoryInput.value;
+        const selectedmain = mainCategoryInput.value
+        
+        if (!selectedCity && !selectedsub && !selectedmain) {
+            alert("Please select required fields.");
             submitButton.style.display = 'block';
             loadingIndicator.style.display = "none";
             return;
