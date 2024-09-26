@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
         'Men\'s Shoes': ['Formal Shoes', 'Casual Shoes', 'Sports Shoes'],
         'Women\'s Clothing': ['Ethnic Wear', 'Lingerie & Nightwear', 'Western Wear', 'The Designer Boutique', 'Amazon Fashion'],
         'Industrial Supplies': ['Industrial & Scientific Supplies', 'Lab & Scientific', 'Janitorial & Sanitation Supplies', 'Test, Measure & Inspect'],
-        'Men\'s Clothing': ['Shirts', 'Jeans', 'T-shirts & Polos', 'Amazon Fashion'],
+        'Men\'s Clothing': ['Shirts', 'Jeans', 'T-shirts & Polos', 'Habesha Fashion'],
         'Music': ['Musical Instruments & Professional Audio'],
         'Home, Kitchen, Pets': ['All Home & Kitchen', 'All Pet Supplies']
     };
