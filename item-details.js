@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     tg.BackButton.show();
 
     // Fetch item details from the server
-    fetch(`https://igebeya-bc68de5021c8.herokuapp.com/get_item_details?id=${itemId}`)
+    fetch(`https://igebeya3-272f297966dc.herokuapp.com/get_item_details?id=${itemId}`)
         .then(response => response.json())
         .then(itemDetails => {
             // Log item details to the console for debugging
@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.querySelectorAll(".like-icon").forEach(icon => {
                 icon.addEventListener("click", function () {
 
-                    fetch(`https://igebeya-bc68de5021c8.herokuapp.com/add_favorite?chat_id=${chatId}`, {
+                    fetch(`https://igebeya3-272f297966dc.herokuapp.com/add_favorite?chat_id=${chatId}`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'

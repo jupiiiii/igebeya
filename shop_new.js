@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function displayItems(start, limit) {
         // Fetch user's favorites
-    fetch(`https://igebeya-bc68de5021c8.herokuapp.com/get_favorite?chat_id=${chatId}`)
+    fetch(`https://igebeya3-272f297966dc.herokuapp.com/get_favorite?chat_id=${chatId}`)
         .then(response => response.json())
         .then(favorites => {
             // Ensure favorites is an array
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             // Fetch all items
-            fetch(`https://igebeya-bc68de5021c8.herokuapp.com/get_items?start=${start}&limit=${limit}`)
+            fetch(`https://igebeya3-272f297966dc.herokuapp.com/get_items?start=${start}&limit=${limit}`)
                 .then(response => response.json())
                 .then(items => {
                     const itemsList = document.querySelector('.items-list');
@@ -336,13 +336,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Function to handle search request
     function handleSearch(query) {
         if (query.trim() !== "") {
-            fetch(`https://igebeya-bc68de5021c8.herokuapp.com/get_favorite?chat_id=${chatId}`)
+            fetch(`https://igebeya3-272f297966dc.herokuapp.com/get_favorite?chat_id=${chatId}`)
         .then(response => response.json())
         .then(favorites => {
             // Ensure favorites is an array
             favSearch = Array.isArray(favorites) ? favorites.map(fav => fav.id.toString()) : [];
             // Send a request to the server-side search endpoint
-            fetch(`https://igebeya-bc68de5021c8.herokuapp.com/search_items?q=${encodeURIComponent(query)}`)
+            fetch(`https://igebeya3-272f297966dc.herokuapp.com/search_items?q=${encodeURIComponent(query)}`)
                 .then(response => response.json())
                 .then(data => {
                     // Clear previous search results
@@ -413,7 +413,7 @@ function addToFavorites(itemId) {
     console.log('item ID:', itemId);
 
     // Call API to add to favorites (implement server-side logic for adding)
-    fetch(`https://igebeya-bc68de5021c8.herokuapp.com/add_favorite?chat_id=${chatId}`, {
+    fetch(`https://igebeya3-272f297966dc.herokuapp.com/add_favorite?chat_id=${chatId}`, {
         method: 'POST',
         headers: {
                             'Content-Type': 'application/json',
@@ -433,7 +433,7 @@ function removeFromFavorites(itemId) {
     if (!itemId || !chatId) return;
 
     // Call API to remove from favorites (implement server-side logic for removal)
-    fetch(`https://igebeya-bc68de5021c8.herokuapp.com/remove_favorite?chat_id=${chatId}`, {
+    fetch(`https://igebeya3-272f297966dc.herokuapp.com/remove_favorite?chat_id=${chatId}`, {
         method: 'POST',
         headers: {
                             'Content-Type': 'application/json',

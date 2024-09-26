@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Replace with your actual API URL
-    fetch(`https://igebeya-bc68de5021c8.herokuapp.com/get_favorite?chat_id=${chatId}`)
+    fetch(`https://igebeya3-272f297966dc.herokuapp.com/get_favorite?chat_id=${chatId}`)
         .then(response => response.json())
         .then(items => {
             const yyy = Array.isArray(items) ? items.map(fav => fav.id.toString()) : [];
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     const itemId = itemBox.getAttribute('data-id');
                     //console.log('Remove item ID:', itemId); // Replace with actual removal logic
                     // Send API request to remove the item from favorites
-                    fetch(`https://igebeya-bc68de5021c8.herokuapp.com/remove_favorite?chat_id=${chatId}`, {
+                    fetch(`https://igebeya3-272f297966dc.herokuapp.com/remove_favorite?chat_id=${chatId}`, {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',

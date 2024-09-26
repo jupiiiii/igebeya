@@ -285,7 +285,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // console.log(selectedCity, selectedmain, selectedsub);
     
         // Send data to backend
-        fetch('https://igebeya-bc68de5021c8.herokuapp.com/list_item', {
+        fetch('https://igebeya3-272f297966dc.herokuapp.com/list_item', {
             method: 'POST',
             body: formData
         })
@@ -338,7 +338,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Fetch the items listed by the user
-        fetch(`https://igebeya-bc68de5021c8.herokuapp.com/get_user_items?chat_id=${chatId}`)
+        fetch(`https://igebeya3-272f297966dc.herokuapp.com/get_user_items?chat_id=${chatId}`)
             .then(response => response.json())
             .then(items => {
                 if (items.length === 0) {
@@ -390,7 +390,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Function to unlist an item
     function unlistItem(itemId) {
         // Make a request to the backend to unlist the item
-        fetch(`https://igebeya-bc68de5021c8.herokuapp.com/unlist_item?id=${itemId}`, {
+        fetch(`https://igebeya3-272f297966dc.herokuapp.com/unlist_item?id=${itemId}`, {
             method: 'POST',
         })
         .then(response => response.json())
