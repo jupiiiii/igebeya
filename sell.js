@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const subcategories = {
         'Appliances': ['Air Conditioners', 'Refrigerators', 'Washing Machines', 'All Appliances'],
         'Car & Motorbike': ['Car Accessories', 'Car Parts', 'Car Electronics', 'Motorbike Accessories & Parts', 'All Car & Motorbike Products'],
-        'Tv, Phones & Cameras': ['Televisions', 'Speakers', 'Cameras', 'Headphones', 'Home Audio & Theater', 'Camera Accessories', 'Security Cameras', 'All Electronics'],
+        'TV, Phones & Cameras': ['Televisions', 'Speakers', 'Cameras', 'Headphones', 'Home Audio & Theater', 'Camera Accessories', 'Security Cameras', 'All Electronics'],
         'Sports & Fitness': ['Badminton', 'Cardio Equipment', 'Fitness Accessories', 'Football', 'Running', 'Strength Training', 'All Sports, Fitness & Outdoors'],
         'Grocery & Gourmet Foods': ['Coffee, Tea & Beverages', 'Snack Foods', 'All Grocery & Gourmet Foods'],
         'Home & Kitchen': ['Furniture', 'Home Décor', 'Home Furnishing', 'Home Storage', 'Kitchen & Dining', 'Kitchen Storage & Containers', 'Home Improvement', 'All Home & Kitchen'],
