@@ -26,7 +26,7 @@ body {
     border: 1px rgba(74, 136, 154, 0.54);
 }
 
-/* .form-container {
+.form-container {
     background-color: var(--tg-theme-bg-color);
     padding: 20px;
     border-radius: 10px;
@@ -35,7 +35,7 @@ body {
     align-items: stretch;
     height: auto; 
     overflow: visible;
-} */
+}
 
 .form-group {
     margin-bottom: 20px;
