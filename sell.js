@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
         mainDropdown.classList.toggle("hidden");
     });
 
-    // Handle city selection
+    // Handle main category selection
     mainDropdown.addEventListener("click", function(event) {
         const selectedMainCategory = event.target.getAttribute('data-category');
         if (selectedMainCategory) {
@@ -163,6 +163,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 listItem.textContent = subCategory;
                 subCategoryList.appendChild(listItem);
             });
+
+            // Reset sub category if previously selected
+            selectedSubCategoryDisplay.textContent = 'Sub category';
+            subCategoryInput.value = '';
         }
     });
 
