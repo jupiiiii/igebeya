@@ -269,6 +269,10 @@ textarea {
     color: #878b8c; /* Darker color for hover effect */
 }
 
+#fas_arrow {
+    padding-left: 5px;
+}
+
 #city-list {
     position: absolute;
     top: 300px;
