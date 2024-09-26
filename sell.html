@@ -36,8 +36,6 @@
                     <textarea id="item-description" name="item-description" placeholder="Describe the item" required></textarea>
                 </div>
 
-                
-
                 <div class="form-group">
                     <label for="item-city">City</label>
                     <div class="location" id="city-dropdown-trigger">
@@ -67,6 +65,16 @@
                     </ul>
                     
                     <!-- Hidden input field to store the selected city -->
+                    <input type="hidden" id="item-city" name="item-city" required>
+                </div>
+
+                <div class="form-group"></div>
+                    <label for="item-city">City</label>
+                    <div class="location" id="city-dropdown-trigger">
+                        <span id="selected-city">Select city</span>
+                        <i id="fas_arrow"class="fas fa-caret-down"></i> <!-- Arrow icon to show dropdown is possible -->
+                    </div>
+
                     <input type="hidden" id="item-city" name="item-city" required>
                 </div>
 
