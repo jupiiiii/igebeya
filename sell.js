@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
         'Industrial Supplies': ['Industrial & Scientific Supplies', 'Lab & Scientific', 'Janitorial & Sanitation Supplies', 'Test, Measure & Inspect'],
         'Men\'s Clothing': ['Shirts', 'Jeans', 'T-shirts & Polos', 'Amazon Fashion'],
         'Music': ['Musical Instruments & Professional Audio'],
-        'Home, kitchen, pets': ['All Home & Kitchen', 'All Pet Supplies']
+        'Home, Kitchen, Pets': ['All Home & Kitchen', 'All Pet Supplies']
     };
     
 
