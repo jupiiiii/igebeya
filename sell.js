@@ -39,6 +39,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // Populate the sub-category dropdown based on the selected main category
     const subCategoryList = document.getElementById('sub-category-list');
     const subTrigger = document.getElementById("sub-category-dropdown-trigger");
+    let selectedSubCategoryDisplay = document.getElementById("selected-sub-category");
+    const subCategoryInput = document.getElementById('item-sub-category');
     const subcategories = {
         'Appliances': ['Air Conditioners', 'Refrigerators', 'Washing Machines', 'All Appliances'],
         'Car & Motorbike': ['Car Accessories', 'Car Parts', 'Car Electronics', 'Motorbike Accessories & Parts', 'All Car & Motorbike Products'],
@@ -152,10 +154,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Get the subcategories for the selected main category
             const selectedSubcategories = subcategories[selectedMainCategory] || [];
+            selectedSubCategoryDisplay = selectedSubcategories;
 
             // Populate the sub-category list
             selectedSubcategories.forEach(subCategory => {
                 const listItem = document.createElement('li');
+                listItem.setAttribute('data-subcategory', subCategory);
                 listItem.dataset.subcategory = subCategory;
                 listItem.textContent = subCategory;
                 subCategoryList.appendChild(listItem);
@@ -175,6 +179,24 @@ document.addEventListener("DOMContentLoaded", function () {
     subTrigger.addEventListener("click", function() {
         subCategoryList.classList.toggle("hidden");
     });
+
+    // Handle sub selection
+    subCategoryList.addEventListener("click", function(event) {
+        const selectedsub = event.target.getAttribute('data-subcategory');
+        if (selectedsub) {
+            selectedSubCategoryDisplay.textContent = selectedsub; // Update the displayed city
+            subCategoryInput.value = selectedCity; // Set the hidden input value
+            subCategoryList.classList.add("hidden"); // Hide the dropdown after selection
+        }
+    });
+
+    // Hide the dropdown if clicked outside
+    document.addEventListener("click", function(event) {
+        if (!subTrigger.contains(event.target) && !subCategoryList.contains(event.target)) {
+            subCategoryList.classList.add("hidden");
+        }
+    });
+
 
     // Function to ensure the input field is visible above the keyboard
     function ensureFieldVisible(element) {
