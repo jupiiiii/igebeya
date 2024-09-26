@@ -366,11 +366,6 @@ body.no-scroll {
     background-color: #d7d5d5;
 }
 
-/* Initially hide the dropdown */
-.hidden-category {
-    display: none;
-}
-
 .category {
     padding: 10px;
     border: 1px solid #ddd;
@@ -413,11 +408,6 @@ body.no-scroll {
 
 #sub-category-list li:hover {
     background-color: #d7d5d5;
-}
-
-/* Initially hide the dropdown */
-.hidden-sub-category {
-    display: none;
 }
 
 .sub-category {
