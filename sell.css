@@ -12,6 +12,11 @@ body {
 }
 
 .sell-container {
+    min-height: 100px; /* Add a min height */
+    height: auto; /* Allow it to grow dynamically */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
@@ -20,6 +25,23 @@ body {
     box-shadow: 0 2px 5px rgba(74, 136, 154, 0.52);
     border: 1px rgba(74, 136, 154, 0.54);
 }
+
+.form-container {
+    background-color: var(--tg-theme-bg-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    align-items: stretch;
+    height: auto; /* Ensure it grows dynamically */
+    overflow: visible; /* Ensure no content overflow */
+}
+
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
 
 h2 {
     font-family: 'Roboto', sans-serif;
@@ -52,17 +74,6 @@ h2 {
     background-color: #274b5c;
 }
 
-.form-container {
-    background-color: var(--tg-theme-bg-color);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
 label {
     font-family: 'Roboto', sans-serif;
     display: block;
@@ -83,7 +94,8 @@ textarea {
 
 input[type="file"] {
     display: block;
-    margin-top: 5px;
+    margin-top: 10px;
+    width: 100%;
 }
 
 textarea {
