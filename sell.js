@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Main category dropdown
     // Toggle dropdown visibility when category is clicked
     mainTrigger.addEventListener("click", function() {
-        console.log("mainTrigger Clicked")
+        // console.log("mainTrigger Clicked")
         mainDropdown.classList.toggle("hidden");
     });
 
