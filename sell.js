@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
         'Women\'s Shoes': ['Ballerinas', 'Casual Shoes', 'Fashion Sandals'],
         'Beauty & Health': ['Make-up', 'Luxury Beauty', 'Beauty & Grooming', 'Diet & Nutrition', 'Health & Personal Care', 'Personal Care Appliances'],
         'Men\'s Shoes': ['Formal Shoes', 'Casual Shoes', 'Sports Shoes'],
-        'Women\'s Clothing': ['Ethnic Wear', 'Lingerie & Nightwear', 'Western Wear', 'The Designer Boutique', 'Amazon Fashion'],
+        'Women\'s Clothing': ['Ethnic Wear', 'Lingerie & Nightwear', 'Western Wear', 'The Designer Boutique', 'Habesha Fashion'],
         'Industrial Supplies': ['Industrial & Scientific Supplies', 'Lab & Scientific', 'Janitorial & Sanitation Supplies', 'Test, Measure & Inspect'],
         'Men\'s Clothing': ['Shirts', 'Jeans', 'T-shirts & Polos', 'Habesha Fashion'],
         'Music': ['Musical Instruments & Professional Audio'],
