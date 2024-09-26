@@ -183,6 +183,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Handle sub selection
     subCategoryList.addEventListener("click", function(event) {
         const selectedsub = event.target.getAttribute('data-subcategory');
+        console.log(selectedsub)
         if (selectedsub) {
             selectedSubCategoryDisplay.textContent = selectedsub; // Update the displayed city
             subCategoryInput.value = selectedCity; // Set the hidden input value
