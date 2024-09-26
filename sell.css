@@ -362,3 +362,19 @@ body.no-scroll {
 .hidden-category {
     display: none;
 }
+
+.category {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+}
+
+.category i {
+    margin-right: 5px;
+    font-size: 16px;
+}
