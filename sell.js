@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const mainDropdown = document.getElementById("category-list");
     const selectedMainCategoryDisplay = document.getElementById("selected-category");
     const mainCategoryInput = document.getElementById('item-category');
-    const subCatForm = document.getElementById("hidden-sub-category-form");
+    
 
     document.getElementById('list-new-item').addEventListener('click', function () {
         document.getElementById('new-item-form').style.display = 'block';
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function () {
             mainCategoryInput.value = selectedMainCategory; // Set the hidden input value
             // console.log(mainCategoryInput)
             mainDropdown.classList.add("hidden"); // Hide the dropdown after selection
-            subCatForm.classList.toggle("hidden");
+            document.getElementById("hidden-sub-category-form").style.display = "block";
         }
     });
 
