@@ -339,7 +339,7 @@ body.no-scroll {
 }
 
 #category-list {
-    position: absolute;
+    position: flex;
     top: 300px;
     left: 80px;
     width: 150px;
