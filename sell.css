@@ -385,7 +385,7 @@ body.no-scroll {
 
 #sub-category-list {
     position: absolute;
-    top: 300px;
+    top: 70%;
     left: 80px;
     width: 200px;
     max-height: 400px;
