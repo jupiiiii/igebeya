@@ -339,6 +339,7 @@ body.no-scroll {
 }
 
 #category-list {
+    display: none;
     position: absolute;
     top: 300px;
     left: 80px;
@@ -367,9 +368,9 @@ body.no-scroll {
 }
 
 /* Initially hide the dropdown */
-.hidden-category {
+/* .hidden-category {
     display: none;
-}
+} */
 
 .category {
     padding: 10px;
