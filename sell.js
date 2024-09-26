@@ -33,6 +33,31 @@ document.addEventListener("DOMContentLoaded", function () {
     const mainDropdown = document.getElementById("category-list");
     const selectedMainCategoryDisplay = document.getElementById("selected-category");
     const mainCategoryInput = document.getElementById('item-category');
+
+    // Sub category drop down
+    // Subcategories mapped to their main categories
+    const subcategories = {
+        'Appliances': ['Air Conditioners', 'Refrigerators', 'Washing Machines', 'All Appliances'],
+        'Car & Motorbike': ['Car Accessories', 'Car Parts', 'Car Electronics', 'Motorbike Accessories & Parts', 'All Car & Motorbike Products'],
+        'Tv, Phones & Cameras': ['Televisions', 'Speakers', 'Cameras', 'Headphones', 'Home Audio & Theater', 'Camera Accessories', 'Security Cameras', 'All Electronics'],
+        'Sports & Fitness': ['Badminton', 'Cardio Equipment', 'Fitness Accessories', 'Football', 'Running', 'Strength Training', 'All Sports, Fitness & Outdoors'],
+        'Grocery & Gourmet Foods': ['Coffee, Tea & Beverages', 'Snack Foods', 'All Grocery & Gourmet Foods'],
+        'Home & Kitchen': ['Furniture', 'Home Décor', 'Home Furnishing', 'Home Storage', 'Kitchen & Dining', 'Kitchen Storage & Containers', 'Home Improvement', 'All Home & Kitchen'],
+        'Pet Supplies': ['Dog supplies', 'All Pet Supplies'],
+        'Stores': ['Value Bazaar', 'Refurbished & Open Box'],
+        'Toys & Baby Products': ['STEM Toys Store', 'Toys & Games', 'Baby Bath, Skin & Grooming', 'Strollers & Prams', 'Nursing & Feeding', 'Diapers', 'All Baby Products', 'International Toy Store'],
+        'Kids\' Fashion': ['Kids\' Clothing', 'Kids\' Shoes', 'Kids\' Watches', 'Baby Fashion'],
+        'Bags & Luggage': ['Backpacks', 'Handbags & Clutches', 'School Bags', 'Travel Accessories', 'Suitcases & Trolley Bags', 'All Bags & Luggage'],
+        'Accessories': ['Sunglasses', 'Wallets', 'Jewellery', 'Fashion & Silver Jewellery', 'Gold & Diamond Jewellery', 'Travel Duffles', 'Fashion Sales & Deals'],
+        'Women\'s Shoes': ['Ballerinas', 'Casual Shoes', 'Fashion Sandals'],
+        'Beauty & Health': ['Make-up', 'Luxury Beauty', 'Beauty & Grooming', 'Diet & Nutrition', 'Health & Personal Care', 'Personal Care Appliances'],
+        'Men\'s Shoes': ['Formal Shoes', 'Casual Shoes', 'Sports Shoes'],
+        'Women\'s Clothing': ['Ethnic Wear', 'Lingerie & Nightwear', 'Western Wear', 'The Designer Boutique', 'Amazon Fashion'],
+        'Industrial Supplies': ['Industrial & Scientific Supplies', 'Lab & Scientific', 'Janitorial & Sanitation Supplies', 'Test, Measure & Inspect'],
+        'Men\'s Clothing': ['Shirts', 'Jeans', 'T-shirts & Polos', 'Amazon Fashion'],
+        'Music': ['Musical Instruments & Professional Audio'],
+        'Home, kitchen, pets': ['All Home & Kitchen', 'All Pet Supplies']
+    };
     
 
     document.getElementById('list-new-item').addEventListener('click', function () {
@@ -118,6 +143,22 @@ document.addEventListener("DOMContentLoaded", function () {
             // console.log(mainCategoryInput)
             mainDropdown.classList.add("hidden"); // Hide the dropdown after selection
             document.getElementById("hidden-sub-category-form").style.display = "block";
+
+            // Populate the sub category based on the main category selected
+            // Populate the sub-category dropdown based on the selected main category
+            const subCategoryList = document.getElementById('sub-category-list');
+            subCategoryList.innerHTML = ''; // Clear previous subcategories
+
+            // Get the subcategories for the selected main category
+            const selectedSubcategories = subcategories[selectedMainCategory] || [];
+
+            // Populate the sub-category list
+            selectedSubcategories.forEach(subCategory => {
+                const listItem = document.createElement('li');
+                listItem.dataset.subcategory = subCategory;
+                listItem.textContent = subCategory;
+                subCategoryList.appendChild(listItem);
+            });
         }
     });
 
