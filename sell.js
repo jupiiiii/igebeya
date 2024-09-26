@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Main category dropdown
     // Toggle dropdown visibility when category is clicked
     mainTrigger.addEventListener("click", function() {
-        mainDropdown.classList.toggle("hidden-category");
+        mainDropdown.classList.toggle("hidden");
     });
 
     // Handle city selection
