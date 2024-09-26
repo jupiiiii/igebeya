@@ -28,6 +28,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const selectedCityDisplay = document.getElementById("selected-city");
     const itemCityInput = document.getElementById('item-city');
 
+    // Main category drop down
+    const mainTrigger = document.getElementById("category-dropdown-trigger");
+    const mainDropdown = document.getElementById("category-list");
+    const selectedMainCategoryDisplay = document.getElementById("selected-category");
+    const mainCategoryInput = document.getElementById('item-category');
+    const subCatForm = document.getElementById("hidden-sub-category-form");
+
     document.getElementById('list-new-item').addEventListener('click', function () {
         document.getElementById('new-item-form').style.display = 'block';
         document.getElementById('listed-items').style.display = 'none';
@@ -85,6 +92,30 @@ document.addEventListener("DOMContentLoaded", function () {
             selectedCityDisplay.textContent = selectedCity; // Update the displayed city
             itemCityInput.value = selectedCity; // Set the hidden input value
             cityDropdown.classList.add("hidden"); // Hide the dropdown after selection
+        }
+    });
+
+    // Hide the dropdown if clicked outside
+    document.addEventListener("click", function(event) {
+        if (!cityTrigger.contains(event.target) && !cityDropdown.contains(event.target)) {
+            cityDropdown.classList.add("hidden");
+        }
+    });
+
+    // Main category dropdown
+    // Toggle dropdown visibility when category is clicked
+    mainTrigger.addEventListener("click", function() {
+        mainDropdown.classList.toggle("hidden-category");
+    });
+
+    // Handle city selection
+    mainDropdown.addEventListener("click", function(event) {
+        const selectedMainCategory = event.target.getAttribute('data-category');
+        if (selectedMainCategory) {
+            selectedMainCategoryDisplay.textContent = selectedMainCategory; // Update the displayed category
+            mainCategoryInput.value = selectedMainCategory; // Set the hidden input value
+            mainDropdown.classList.add("hidden"); // Hide the dropdown after selection
+            subCatForm.classList.add("block");
         }
     });
 

@@ -435,3 +435,8 @@ body.no-scroll {
     margin-right: 5px;
     font-size: 16px;
 }
+
+/* Initially hide the dropdown */
+.hidden-sub-category-form {
+    display: none;
+}
