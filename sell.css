@@ -437,6 +437,6 @@ body.no-scroll {
 }
 
 /* Initially hide the dropdown */
-.hidden-sub-category-form {
+#hidden-sub-category-form {
     display: none;
 }
