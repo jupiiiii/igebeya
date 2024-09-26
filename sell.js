@@ -121,8 +121,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Hide the dropdown if clicked outside
     document.addEventListener("click", function(event) {
-        if (!cityTrigger.contains(event.target) && !cityDropdown.contains(event.target)) {
-            cityDropdown.classList.add("hidden");
+        if (!mainTrigger.contains(event.target) && !mainDropdown.contains(event.target)) {
+            mainDropdown.classList.add("hidden");
         }
     });
 
