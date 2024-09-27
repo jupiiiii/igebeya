@@ -238,7 +238,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (!event.target.closest('textarea')) {
                     // Find all input and textarea elements
                     const inputs = document.querySelectorAll('textarea');
-                    inputs.blur(); // Remove focus from the input to hide the keyboard
+                    
+                    inputs.forEach(function(input) {
+                        input.blur(); // Remove focus from the input to hide the keyboard
+                    });
                 }
             });
 
