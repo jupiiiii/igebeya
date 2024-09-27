@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.json())
         .then(itemDetails => {
             // Log item details to the console for debugging
-            // console.log(itemDetails);
+            console.log(itemDetails);
 
             // Check if itemDetails has the required fields
             if (!itemDetails || itemDetails.error) {
