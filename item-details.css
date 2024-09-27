@@ -119,35 +119,27 @@ body {
     white-space: normal; /* Ensure the text wraps normally */
 }
 
-.item_main {
-    margin-top: 10px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 250;
-    font-size: 10px;
-    color: var(--tg-theme-text-color);
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    border:rgb(119, 130, 135);
-    border-radius: 5px;
-    background-color: #454646;
+.main_and_sub {
+    display: flex; /* Use flexbox to ensure they align on the same row */
+    gap: 10px; /* Add some space between the two tags */
 }
 
-.item_sub {
+.item_main, .item_sub {
+    display: inline-block;
+    padding: 5px 10px; /* Padding inside the box */
     margin-top: 10px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 250;
     font-size: 10px;
     color: var(--tg-theme-text-color);
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    border:rgb(119, 130, 135);
-    border-radius: 5px;
-    background-color: #454646;
+    border: 1px solid rgb(197, 198, 198); /* Border around the box */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #454646; /* Box background color */
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-overflow: ellipsis; /* Handle overflow with ellipsis */
+    overflow: hidden; /* Hide overflow content */
 }
+
 
 .item-city {
     margin-top: 15px;
