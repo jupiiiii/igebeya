@@ -119,6 +119,36 @@ body {
     white-space: normal; /* Ensure the text wraps normally */
 }
 
+.item_main {
+    margin-top: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 250;
+    font-size: 10px;
+    color: var(--tg-theme-text-color);
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border:rgb(119, 130, 135);
+    border-radius: 5px;
+    background-color: #454646;
+}
+
+.item_sub {
+    margin-top: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 250;
+    font-size: 10px;
+    color: var(--tg-theme-text-color);
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border:rgb(119, 130, 135);
+    border-radius: 5px;
+    background-color: #454646;
+}
+
 .item-city {
     margin-top: 15px;
     font-family: 'Open Sans', sans-serif;
