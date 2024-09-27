@@ -126,8 +126,9 @@ body {
 
 .item_main, .item_sub {
     display: inline-block;
-    padding: 5px 10px; /* Padding inside the box */
-    margin-top: 10px;
+    padding: 5px 5px; /* Padsding inside the box */
+    margin-top: 5px;
+    margin-bottom: 5px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 250;
     font-size: 10px;
