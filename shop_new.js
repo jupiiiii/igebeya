@@ -78,6 +78,7 @@ function startSession() {
 // Function to track user interaction with items
 function trackUserInteraction(itemName, mainCategory, subCategory, action) {
     // Record interaction with main and subcategories
+    let userSessionData = JSON.parse(localStorage.getItem('userSessionData'));
     currentTimestamp = generateTimestamp();
     // Add the interaction details
     userSessionData[chatId][currentTimestamp] = {
