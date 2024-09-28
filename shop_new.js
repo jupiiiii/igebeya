@@ -16,6 +16,7 @@ function checkAndSendExistingData() {
 
     if (storedData) {
         storedData = JSON.parse(storedData);
+        console.log(storedData);
 
         // Get the last timestamp in the stored data
         let previousTimestamp = Object.keys(storedData).pop(); // Last timestamp key
