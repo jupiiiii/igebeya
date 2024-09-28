@@ -1,5 +1,19 @@
-// // TG instance for close button
+// TG instance for close button
 const tg = window.Telegram.WebApp;
+
+// Initialize URLSearchParams from the window location
+const urlParams = new URLSearchParams(window.location.search);
+
+// Check if the URL has any search parameters
+if (urlParams.toString()) {
+    const chatId = urlParams.get('chat_id');
+    localStorage.setItem('chatId', chatId);
+    console.log("saved chat ID to local storage: ",chatId);
+}
+const chatId = localStorage.getItem('chatId');
+console.log("Retrieved chat ID from local storage: ",chatId);
+
+// Session tracker
 let userSessionData = {};
 let currentTimestamp;
 
@@ -49,8 +63,9 @@ function startSession() {
 // Function to track user interaction with items
 function trackUserInteraction(mainCategory, subCategory) {
     // Record interaction with main and subcategories
-    userSessionData[currentTimestamp][mainCategory] = userSessionData[currentTimestamp][mainCategory] || {};
-    userSessionData[currentTimestamp][mainCategory][subCategory] = (userSessionData[currentTimestamp][mainCategory][subCategory] || 0) + 1;
+    // Check if the session for this chat ID exists, if not, initialize
+    userSessionData[chatID] = userSessionData[chatID] || {};
+    userSessionData[chatID][currentTimestamp] = {}; // Create a new entry for the current session
     
     // Update localStorage with the new session data
     localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
@@ -72,18 +87,6 @@ startSession(); // Call this function to track timestamp and usersessions
 updatePageHistory('shop.html'); // Call this with each page the user navigates to
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Initialize URLSearchParams from the window location
-    const urlParams = new URLSearchParams(window.location.search);
-
-    // Check if the URL has any search parameters
-    if (urlParams.toString()) {
-        const chatId = urlParams.get('chat_id');
-        localStorage.setItem('chatId', chatId);
-        console.log("saved chat ID to local storage: ",chatId);
-    }
-    const chatId = localStorage.getItem('chatId');
-    console.log("Retrieved chat ID from local storage: ",chatId);
-
     const searchButton = document.querySelector('.search-button');
     const header = document.querySelector('.header');
     const searchInput = document.getElementById('search-input');
