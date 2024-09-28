@@ -3,11 +3,6 @@ const tg = window.Telegram.WebApp;
 let userSessionData = localStorage.getItem('userSessionData');
 let currentTimestamp = Object.keys(userSessionData).pop();
 
-// Function to generate an integer timestamp (Unix time in seconds)
-function generateTimestamp() {
-    const date = new Date();
-    return Math.floor(date.getTime() / 1000);  // Converts milliseconds to seconds
-}
 
 // Function to track user interaction with items
 function trackUserInteraction(mainCategory, subCategory) {
@@ -17,6 +12,7 @@ function trackUserInteraction(mainCategory, subCategory) {
     console.log("Here:",subCategory);
 
     userSessionData[currentTimestamp][mainCategory] = userSessionData[currentTimestamp][mainCategory] || {};
+    console.log(userSessionData);
     userSessionData[currentTimestamp][mainCategory][subCategory] = (userSessionData[currentTimestamp][mainCategory][subCategory] || 0) + 1;
     
     // Update localStorage with the new session data
