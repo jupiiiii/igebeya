@@ -2,6 +2,7 @@
 const tg = window.Telegram.WebApp;
 let userSessionData = localStorage.getItem('userSessionData');
 let currentTimestamp = Object.keys(userSessionData).pop();
+console.log(currentTimestamp);
 
 
 // Function to track user interaction with items
