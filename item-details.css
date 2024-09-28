@@ -139,7 +139,7 @@ body {
     white-space: nowrap; /* Prevent text from wrapping */
     text-overflow: ellipsis; /* Handle overflow with ellipsis */
     overflow: hidden; /* Hide overflow content */
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 
 
