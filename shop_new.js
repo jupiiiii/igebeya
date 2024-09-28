@@ -54,10 +54,10 @@ function checkAndSendExistingData() {
             console.log(`Skipping sending data. Last session was ${timeDifference / 3600} hours ago.`);
         }
     } else {
-        currentTimestamp = generateTimestamp();
+        //currentTimestamp = generateTimestamp();
         // Check if the session for this chat ID exists, if not, initialize
         userSessionData[chatId] = userSessionData[chatId] || {};
-        userSessionData[chatId][currentTimestamp] = {}; // Create a new entry for the current session
+        //userSessionData[chatId][currentTimestamp] = {}; // Create a new entry for the current session
         console.log(userSessionData);
         localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
     }
