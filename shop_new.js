@@ -44,10 +44,10 @@ function checkAndSendExistingData() {
             sendDataToBackend(storedData);
 
             // Proceed with normal session process
-            currentTimestamp = generateTimestamp();
+            //currentTimestamp = generateTimestamp();
             // Check if the session for this chat ID exists, if not, initialize
             userSessionData[chatId] = userSessionData[chatId] || {};
-            userSessionData[chatId][currentTimestamp] = {}; // Create a new entry for the current session
+            //userSessionData[chatId][currentTimestamp] = {}; // Create a new entry for the current session
             // Store the updated session data in localStorage
             localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
         } else {

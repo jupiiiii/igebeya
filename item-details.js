@@ -3,17 +3,23 @@ const tg = window.Telegram.WebApp;
 const chatId = localStorage.getItem('chatId');
 let currentTimestamp;
 let userSessionData = JSON.parse(localStorage.getItem('userSessionData'));
-let currentTimestampp = Object.keys(userSessionData).pop();
-currentTimestamp = String(currentTimestampp);
+// let currentTimestampp = Object.keys(userSessionData).pop();
+// currentTimestamp = String(currentTimestampp);
 
 console.log("User Session Data:", userSessionData);
 console.log("Current Timestamp:", currentTimestamp);
 
 
+// Function to generate an integer timestamp (Unix time in seconds)
+function generateTimestamp() {
+    const date = new Date();
+    return Math.floor(date.getTime() / 1000);  // Converts milliseconds to seconds
+}
 
 // Function to track user interaction with items
 function trackUserInteraction(itemName, mainCategory, subCategory, action) {
     // Record interaction with main and subcategories
+    currentTimestamp = generateTimestamp();
     // Add the interaction details
     userSessionData[chatId][currentTimestamp] = {
         'item': itemName,
