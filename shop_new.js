@@ -32,14 +32,19 @@ function checkAndSendExistingData() {
         storedData = JSON.parse(storedData);
 
         // Get the last timestamp in the stored data
-        let previousTimestamp = Object.keys(storedData).pop(); // Last timestamp key
-        console.log(previousTimestamp);
+        // Get all timestamps for the chat ID
+        let timestamps = Object.keys(storedData[chatId]);
+
+        // Get the last timestamp
+        let lastTimestamp = timestamps[timestamps.length - 1];
+        console.log("Last time stamp",lastTimestamp);
+
         let currentTime = generateTimestamp();
         
         // Calculate the time difference in seconds (12 hours = 43,200 seconds)
-        let timeDifference = currentTime - parseInt(previousTimestamp);
+        let timeDifference = currentTime - parseInt(lastTimestamp);
 
-        if (timeDifference >= 43200 && Object.keys(JSON.parse(storedData)).length > 0) {
+        if (timeDifference >= 43200 && Object.keys(JSON.parse(storedData[chatId])).length > 0) {
             // If time difference is more than 12 hours and dict not empty, send data to backend
             sendDataToBackend(storedData);
 
