@@ -249,6 +249,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             if (data.success) {
                                 // Toggle the heart icon to show it's favorited
                                 this.classList.toggle('favorited');
+                                trackUserInteraction(itemTitle, itemMain, itemSub, 'favorite')
                                 // Optionally, show a message or update UI
                                 alert('Item added to favorites!');
                             } else {
@@ -294,11 +295,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Check if the clicked element is not an input field or textarea
                 if (!event.target.closest('textarea')) {
                     // Find all input and textarea elements
-                    const inputs = document.querySelectorAll('textarea');
+                    const input = document.getElementById("message-box");
                     
-                    inputs.forEach(function(input) {
-                        input.blur(); // Remove focus from the input to hide the keyboard
-                    });
+                    input.blur(); // Remove focus from the input to hide the keyboard
+                    
                 }
             });
 
@@ -326,31 +326,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 container.classList.remove("container-move-up");
                 messageBox.style.height = '100px'; // Reset to default height
             });
-
-            // window.addEventListener('resize', function() {
-            //     const vh = window.innerHeight * 0.01;
-            //     document.documentElement.style.setProperty('--vh', `${vh}px`);
-            // });
-
-            //const textareas = document.querySelectorAll('textarea');
-
-            // function ensureFieldVisible(element) {
-            //     const rect = element.getBoundingClientRect();
-            //     const elementBottom = rect.bottom;
-            //     const viewportHeight = window.innerHeight;
-            
-            //     // If the bottom of the element is below the visible viewport area, scroll it into view
-            //     if (elementBottom > viewportHeight - 100) { // -100 to account for keyboard height
-            //         element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            //     }
-            // }
-
-            // // Add focus event listeners to ensure textarea visibility
-            // textareas.querySelectorAll('textarea').forEach(field => {
-            //     field.addEventListener('focus', function() {
-            //         ensureFieldVisible(this);
-            //     });
-            // });
 
 
         })
