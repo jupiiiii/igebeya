@@ -1,6 +1,6 @@
 // TG instance for close button
 const tg = window.Telegram.WebApp;
-let itemDetailsDict;
+let itemDetailsDict = {};
 
 // Initialize URLSearchParams from the window location
 const urlParams = new URLSearchParams(window.location.search);
@@ -261,6 +261,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             'itemMain': item.item_main,
                             'itemSub': item.item_sub
                         };
+                        console.log(itemDetailsDict);
 
                         const images = item.item_pic.split(',');
 
