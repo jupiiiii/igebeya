@@ -58,7 +58,7 @@ function checkAndSendExistingData() {
         // Check if the session for this chat ID exists, if not, initialize
         userSessionData[chatId] = userSessionData[chatId] || {};
         userSessionData[chatId][currentTimestamp] = {}; // Create a new entry for the current session
-        console.log(user);
+        console.log(userSessionData);
         localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
     }
 }
