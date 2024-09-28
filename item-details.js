@@ -15,8 +15,9 @@ function trackUserInteraction(mainCategory, subCategory) {
     console.log("Here:",userSessionData);
     console.log("Here:",mainCategory);
     console.log("Here:",subCategory);
+    console.log("??:", userSessionData[currentTimestamp][mainCategory]);
 
-    userSessionData[currentTimestamp][mainCategory] = userSessionData["1727536749"][mainCategory] || {};
+    userSessionData[currentTimestamp][mainCategory] = userSessionData[currentTimestamp][mainCategory] || {};
     userSessionData[currentTimestamp][mainCategory][subCategory] = (userSessionData[currentTimestamp][mainCategory][subCategory] || 0) + 1;
     
     // Update localStorage with the new session data
