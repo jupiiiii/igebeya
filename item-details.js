@@ -177,9 +177,11 @@ document.addEventListener("DOMContentLoaded", function () {
             const itemPrice = itemDetails.item_price;
             const itemCity = itemDetails.item_city;
             const itemDate = itemDetails.date;
+            const itemMain = itemDetails.item_main_category;
+            const itemSub = itemDetails.item_sub_category;
 
             // Add the item main and sub category to user session
-            trackUserInteraction(itemDetails.item_main_category, itemDetails.item_sub_category);
+            trackUserInteraction(itemMain, itemSub);
             console.log("Item added to user session: ", itemDetails.item_name);
 
 
