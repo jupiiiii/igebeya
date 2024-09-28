@@ -184,8 +184,13 @@ document.addEventListener("DOMContentLoaded", function () {
             const itemMain = itemDetails.item_main_category;
             const itemSub = itemDetails.item_sub_category;
 
-            // Add the item main and sub category to user session
-            trackUserInteraction(itemMain, itemSub);
+            // Add validation to ensure itemMain and itemSub are not undefined or null
+            if (itemMain && itemSub) {
+                // Add the item main and sub category to user session
+                trackUserInteraction(itemMain, itemSub);
+            } else {
+                console.error("Error: itemMain or itemSub is undefined. Item details:", itemDetails);
+            }
             console.log("Item added to user session: ", itemDetails.item_name);
 
 
