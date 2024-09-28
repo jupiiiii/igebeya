@@ -2,7 +2,7 @@
 const tg = window.Telegram.WebApp;
 let userSessionData = localStorage.getItem('userSessionData');
 let currentTimestamp = Object.keys(JSON.parse(userSessionData)).pop();
-currentTimestamp = currentTimestamp.toString();
+currentTimestamp = '${currentTimestamp}';
 
 console.log("User Session Data:", userSessionData);
 console.log("Current Timestamp:", currentTimestamp);
