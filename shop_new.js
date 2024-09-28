@@ -51,6 +51,12 @@ function checkAndSendExistingData() {
         } else {
             console.log(`Skipping sending data. Last session was ${timeDifference / 3600} hours ago.`);
         }
+    } else {
+        currentTimestamp = generateTimestamp();
+        // Check if the session for this chat ID exists, if not, initialize
+        userSessionData[chatId] = userSessionData[chatId] || {};
+        userSessionData[chatId][currentTimestamp] = {}; // Create a new entry for the current session
+        console.log(userSessionData);
     }
 }
 
@@ -64,8 +70,8 @@ function startSession() {
 function trackUserInteraction(mainCategory, subCategory) {
     // Record interaction with main and subcategories
     // Check if the session for this chat ID exists, if not, initialize
-    userSessionData[chatID] = userSessionData[chatID] || {};
-    userSessionData[chatID][currentTimestamp] = {}; // Create a new entry for the current session
+    userSessionData[chatId] = userSessionData[chatId] || {};
+    userSessionData[chatId][currentTimestamp] = {}; // Create a new entry for the current session
     
     // Update localStorage with the new session data
     localStorage.setItem('userSessionData', JSON.stringify(userSessionData));

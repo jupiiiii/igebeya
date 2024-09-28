@@ -1,5 +1,6 @@
 // Initialize the Telegram WebApp instance
 const tg = window.Telegram.WebApp;
+const chatId = localStorage.getItem('chatId');
 let currentTimestamp;
 let userSessionData = JSON.parse(localStorage.getItem('userSessionData'));
 let currentTimestampp = Object.keys(userSessionData).pop();
@@ -13,19 +14,19 @@ console.log("Current Timestamp:", currentTimestamp);
 // Function to track user interaction with items
 function trackUserInteraction(mainCategory, subCategory) {
     // Record interaction with main and subcategories
-    console.log("Here:",userSessionData);
-    console.log("Here:",mainCategory);
-    console.log("Here:",subCategory);
-    console.log("??:", userSessionData["1727537113"]);
-
     // Initialize the main category if it doesn't exist
-    if (!userSessionData[currentTimestamp][mainCategory]) {
-        userSessionData[currentTimestamp][mainCategory] = {}; // Initialize if it doesn't exist
+    // Ensure chat ID and timestamp exist in the structure
+    if (!userSessionData[chatId]) {
+        userSessionData[chatId] = {};
     }
 
-    userSessionData[currentTimestamp][mainCategory] = userSessionData[currentTimestamp][mainCategory] || {};
-    userSessionData[currentTimestamp][mainCategory][subCategory] = (userSessionData[currentTimestamp][mainCategory][subCategory] || 0) + 1;
-    
+    if (!userSessionData[chatId][currentTimestamp]) {
+        userSessionData[chatId][currentTimestamp] = {};
+    }
+
+    userSessionData[chatId] = userSessionData[chatId] || {};
+    userSessionData[chatId][currentTimestamp] = {}; // Create a new entry for the current session
+
     // Update localStorage with the new session data
     localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
     console.log('User session data: ', userSessionData);
@@ -67,7 +68,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const urlParams = new URLSearchParams(window.location.search);
     const itemId = urlParams.get('id');
     console.log(itemId); // Ensure this logs the correct itemId
-    const chatId = localStorage.getItem('chatId');
     const item_cont = this.getElementById('item_cont');
     
 
