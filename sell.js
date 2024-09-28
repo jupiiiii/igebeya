@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const subcategories = {
         'Appliances': ['Air Conditioners', 'Refrigerators', 'Washing Machines', 'All Appliances'],
         'Car & Motorbike': ['Car Accessories', 'Car Parts', 'Car Electronics', 'Motorbike Accessories & Parts', 'All Car & Motorbike Products'],
-        'TV, Phones & Cameras': ['Televisions', 'Speakers', 'Cameras', 'Headphones', 'Home Audio & Theater', 'Camera Accessories', 'Security Cameras', 'All Electronics'],
+        'TV, Phones & Cameras': ['Phones', 'Laptops' ,'Televisions', 'Speakers', 'Cameras', 'Headphones', 'Home Audio & Theater', 'Camera Accessories', 'Security Cameras', 'All Electronics'],
         'Sports & Fitness': ['Badminton', 'Cardio Equipment', 'Fitness Accessories', 'Football', 'Running', 'Strength Training', 'All Sports, Fitness & Outdoors'],
         'Grocery & Gourmet Foods': ['Coffee, Tea & Beverages', 'Snack Foods', 'All Grocery & Gourmet Foods'],
         'Home & Kitchen': ['Furniture', 'Home Décor', 'Home Furnishing', 'Home Storage', 'Kitchen & Dining', 'Kitchen Storage & Containers', 'Home Improvement', 'All Home & Kitchen'],
@@ -61,7 +61,8 @@ document.addEventListener("DOMContentLoaded", function () {
         'Industrial Supplies': ['Industrial & Scientific Supplies', 'Lab & Scientific', 'Janitorial & Sanitation Supplies', 'Test, Measure & Inspect'],
         'Men\'s Clothing': ['Shirts', 'Jeans', 'T-shirts & Polos', 'Habesha Fashion'],
         'Music': ['Musical Instruments & Professional Audio'],
-        'Home, Kitchen, Pets': ['All Home & Kitchen', 'All Pet Supplies']
+        'Home, Kitchen, Pets': ['All Home & Kitchen', 'All Pet Supplies'],
+        'Apartments & Lands': ['Rental Apartment','Apartment For Sale','Land For Sale']
     };
     
 
