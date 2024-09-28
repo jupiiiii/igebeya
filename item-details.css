@@ -119,7 +119,7 @@ body {
     white-space: normal; /* Ensure the text wraps normally */
 }
 
-.main_and_sub {
+.item_main .item_sub {
     display: flex; /* Use flexbox to ensure they align on the same row */
     gap: 10px; /* Add some space between the two tags */
     display: inline-block;

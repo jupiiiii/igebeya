@@ -180,8 +180,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const formattedPrice = Number(itemDetails.item_price).toLocaleString();
             document.getElementById("item-price").textContent = `ETB ${formattedPrice}`;
             document.getElementById("item-title").textContent = itemDetails.item_name;
-            // document.getElementById("item_main").textContent = itemDetails.item_main_category;
-            // document.getElementById("item_sub").textContent = itemDetails.item_sub_category;
+            document.getElementById("item_main").textContent = itemDetails.item_main_category;
+            document.getElementById("item_sub").textContent = itemDetails.item_sub_category;
             document.getElementById("item-city").innerHTML = `<i class="fas fa-map-marker-alt"></i> ${itemDetails.item_city}`;
             document.getElementById("item-description").textContent = itemDetails.item_description;
             document.getElementById("date").innerHTML = `<i class="fas fa-calendar-alt"></i> ${itemDetails.date}`;
@@ -190,8 +190,8 @@ document.addEventListener("DOMContentLoaded", function () {
             const itemPrice = itemDetails.item_price;
             const itemCity = itemDetails.item_city;
             const itemDate = itemDetails.date;
-            // const itemMain = itemDetails.item_main_category;
-            // const itemSub = itemDetails.item_sub_category;
+            const itemMain = itemDetails.item_main_category;
+            const itemSub = itemDetails.item_sub_category;
 
             // Add validation to ensure itemMain and itemSub are not undefined or null
             if (itemMain && itemSub) {
