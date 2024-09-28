@@ -1,5 +1,6 @@
 // Initialize the Telegram WebApp instance
 const tg = window.Telegram.WebApp;
+let currentTimestamp;
 let userSessionData = JSON.parse(localStorage.getItem('userSessionData'));
 let currentTimestampp = Object.keys(userSessionData).pop();
 currentTimestamp = String(currentTimestampp);
