@@ -1,5 +1,6 @@
 // TG instance for close button
 const tg = window.Telegram.WebApp;
+let itemDetailsDict;
 
 // Initialize URLSearchParams from the window location
 const urlParams = new URLSearchParams(window.location.search);
@@ -75,11 +76,16 @@ function startSession() {
 }
 
 // Function to track user interaction with items
-function trackUserInteraction(mainCategory, subCategory) {
+function trackUserInteraction(itemName, mainCategory, subCategory, action) {
     // Record interaction with main and subcategories
-    // Check if the session for this chat ID exists, if not, initialize
-    userSessionData[chatId] = userSessionData[chatId] || {};
-    userSessionData[chatId][currentTimestamp] = {}; // Create a new entry for the current session
+    currentTimestamp = generateTimestamp();
+    // Add the interaction details
+    userSessionData[chatId][currentTimestamp] = {
+        'item': itemName,
+        'main category': mainCategory,
+        'sub category': subCategory,
+        'action': action
+    };
     
     // Update localStorage with the new session data
     localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
@@ -248,6 +254,13 @@ document.addEventListener("DOMContentLoaded", function () {
                         const itemBox = document.createElement('div');
                         itemBox.classList.add('item-box');
                         itemBox.setAttribute('data-id', item.id);
+
+                        // Add the item details to the dictionary using item.id as the key
+                        itemDetailsDict[item.id] = {
+                            'itemName': item.item_name,
+                            'itemMain': item.item_main,
+                            'itemSub': item.item_sub
+                        };
 
                         const images = item.item_pic.split(',');
 
@@ -482,6 +495,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Function to add item to favorites
 function addToFavorites(itemId) {
     const chatId = localStorage.getItem('chatId');
+    const item = itemDetailsDict[itemId];
 
     if (!itemId || !chatId) return;
     console.log('item ID:', itemId);
@@ -495,7 +509,8 @@ function addToFavorites(itemId) {
         body: JSON.stringify({id: itemId})
     }).then(response => response.json())
       .then(data => {
-          console.log('Item added to favorites:', data);
+        trackUserInteraction(item.itemName, item.itemMain, item.itemSub, 'favorite');
+        console.log('Item added to favorites:', data);
       }).catch(error => {
           console.error('Error adding to favorites:', error);
       });

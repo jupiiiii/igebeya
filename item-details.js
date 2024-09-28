@@ -210,6 +210,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // Check if the message is not empty
                 if (message) {
+                    // Track user session
+                    trackUserInteraction(itemTitle, itemMain, itemSub, 'message')
                     // Send the message to the bot
                     const message_content = {
                         dm: 'dm',
