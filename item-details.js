@@ -15,7 +15,12 @@ function trackUserInteraction(mainCategory, subCategory) {
     console.log("Here:",userSessionData);
     console.log("Here:",mainCategory);
     console.log("Here:",subCategory);
-    console.log("??:", userSessionData[1727537113]);
+    console.log("??:", userSessionData["1727537113"]);
+
+    // Initialize the main category if it doesn't exist
+    if (!userSessionData[currentTimestamp][mainCategory]) {
+        userSessionData[currentTimestamp][mainCategory] = {}; // Initialize if it doesn't exist
+    }
 
     userSessionData[currentTimestamp][mainCategory] = userSessionData[currentTimestamp][mainCategory] || {};
     userSessionData[currentTimestamp][mainCategory][subCategory] = (userSessionData[currentTimestamp][mainCategory][subCategory] || 0) + 1;
