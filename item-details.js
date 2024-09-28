@@ -15,7 +15,7 @@ function trackUserInteraction(mainCategory, subCategory) {
     console.log("Here:",userSessionData);
     console.log("Here:",mainCategory);
     console.log("Here:",subCategory);
-    console.log("??:", userSessionData[currentTimestamp][mainCategory]);
+    console.log("??:", userSessionData[1727537113][mainCategory]);
 
     userSessionData[currentTimestamp][mainCategory] = userSessionData[currentTimestamp][mainCategory] || {};
     userSessionData[currentTimestamp][mainCategory][subCategory] = (userSessionData[currentTimestamp][mainCategory][subCategory] || 0) + 1;
