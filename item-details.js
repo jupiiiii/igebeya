@@ -1,7 +1,7 @@
 // Initialize the Telegram WebApp instance
 const tg = window.Telegram.WebApp;
 let userSessionData = localStorage.getItem('userSessionData');
-let currentTimestamp = generateTimestamp();
+let currentTimestamp = Object.keys(userSessionData).pop();
 
 // Function to generate an integer timestamp (Unix time in seconds)
 function generateTimestamp() {
