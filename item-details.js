@@ -12,6 +12,10 @@ function generateTimestamp() {
 // Function to track user interaction with items
 function trackUserInteraction(mainCategory, subCategory) {
     // Record interaction with main and subcategories
+    console.log("Here:",userSessionData);
+    console.log("Here:",mainCategory);
+    console.log("Here:",subCategory);
+
     userSessionData[currentTimestamp][mainCategory] = userSessionData[currentTimestamp][mainCategory] || {};
     userSessionData[currentTimestamp][mainCategory][subCategory] = (userSessionData[currentTimestamp][mainCategory][subCategory] || 0) + 1;
     
