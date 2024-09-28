@@ -45,7 +45,9 @@ function checkAndSendExistingData() {
 
             // Proceed with normal session process
             currentTimestamp = generateTimestamp();
-            userSessionData[currentTimestamp] = {};
+            // Check if the session for this chat ID exists, if not, initialize
+            userSessionData[chatId] = userSessionData[chatId] || {};
+            userSessionData[chatId][currentTimestamp] = {}; // Create a new entry for the current session
             // Store the updated session data in localStorage
             localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
         } else {
@@ -56,7 +58,7 @@ function checkAndSendExistingData() {
         // Check if the session for this chat ID exists, if not, initialize
         userSessionData[chatId] = userSessionData[chatId] || {};
         userSessionData[chatId][currentTimestamp] = {}; // Create a new entry for the current session
-        console.log(userSessionData);
+        localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
     }
 }
 

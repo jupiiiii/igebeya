@@ -12,7 +12,7 @@ console.log("Current Timestamp:", currentTimestamp);
 
 
 // Function to track user interaction with items
-function trackUserInteraction(mainCategory, subCategory) {
+function trackUserInteraction(itemName, mainCategory, subCategory, action) {
     // Record interaction with main and subcategories
     // Initialize the main category if it doesn't exist
     // Ensure chat ID and timestamp exist in the structure
@@ -24,8 +24,14 @@ function trackUserInteraction(mainCategory, subCategory) {
         userSessionData[chatId][currentTimestamp] = {};
     }
 
-    userSessionData[chatId] = userSessionData[chatId] || {};
-    userSessionData[chatId][currentTimestamp] = {}; // Create a new entry for the current session
+    // Add the interaction details
+    userSessionData[chatId][currentTimestamp] = {
+        'item': itemName,
+        'main category': mainCategory,
+        'sub category': subCategory,
+        'action': action
+    };
+
 
     // Update localStorage with the new session data
     localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
@@ -194,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Add validation to ensure itemMain and itemSub are not undefined or null
             if (itemMain && itemSub) {
                 // Add the item main and sub category to user session
-                trackUserInteraction(itemMain, itemSub);
+                trackUserInteraction(itemTitle, itemMain, itemSub, 'click');
             } else {
                 console.error("Error: itemMain or itemSub is undefined. Item details:", itemDetails);
             }
