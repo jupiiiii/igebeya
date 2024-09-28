@@ -14,16 +14,6 @@ console.log("Current Timestamp:", currentTimestamp);
 // Function to track user interaction with items
 function trackUserInteraction(itemName, mainCategory, subCategory, action) {
     // Record interaction with main and subcategories
-    // Initialize the main category if it doesn't exist
-    // Ensure chat ID and timestamp exist in the structure
-    if (!userSessionData[chatId]) {
-        userSessionData[chatId] = {};
-    }
-
-    if (!userSessionData[chatId][currentTimestamp]) {
-        userSessionData[chatId][currentTimestamp] = {};
-    }
-
     // Add the interaction details
     userSessionData[chatId][currentTimestamp] = {
         'item': itemName,
