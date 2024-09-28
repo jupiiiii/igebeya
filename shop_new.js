@@ -28,6 +28,12 @@ function checkAndSendExistingData() {
         if (timeDifference >= 43200 && Object.keys(JSON.parse(storedData)).length > 0) {
             // If time difference is more than 12 hours and dict not empty, send data to backend
             sendDataToBackend(storedData);
+
+            // Proceed with normal session process
+            currentTimestamp = generateTimestamp();
+            userSessionData[currentTimestamp] = {};
+            // Store the updated session data in localStorage
+            localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
         } else {
             console.log(`Skipping sending data. Last session was ${timeDifference / 3600} hours ago.`);
         }
@@ -37,14 +43,7 @@ function checkAndSendExistingData() {
 // Call this function when the mini app is opened or user returns
 function startSession() {
     // Check for existing session data in localStorage
-    checkAndSendExistingData();
-
-    // Proceed with normal session process
-    currentTimestamp = generateTimestamp();
-    userSessionData[currentTimestamp] = {};
-    
-    // Store the updated session data in localStorage
-    localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
+    checkAndSendExistingData(); 
 }
 
 // Function to track user interaction with items
