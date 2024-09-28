@@ -1,6 +1,62 @@
 // // TG instance for close button
 const tg = window.Telegram.WebApp;
+let userSessionData = {};
+let currentTimestamp;
 
+// Function to generate an integer timestamp (Unix time in seconds)
+function generateTimestamp() {
+    const date = new Date();
+    return Math.floor(date.getTime() / 1000);  // Converts milliseconds to seconds
+}
+
+
+// Check if userSessionData exists in localStorage and is not empty
+function checkAndSendExistingData() {
+    let storedData = localStorage.getItem('userSessionData');
+
+    if (storedData) {
+        storedData = JSON.parse(storedData);
+
+        // Get the last timestamp in the stored data
+        let previousTimestamp = Object.keys(storedData).pop(); // Last timestamp key
+        let currentTime = generateTimestamp();
+        
+        // Calculate the time difference in seconds (12 hours = 43,200 seconds)
+        let timeDifference = currentTime - parseInt(previousTimestamp);
+
+        if (timeDifference >= 43200 && Object.keys(JSON.parse(storedData)).length > 0) {
+            // If time difference is more than 12 hours and dict not empty, send data to backend
+            sendDataToBackend(storedData);
+        } else {
+            console.log(`Skipping sending data. Last session was ${timeDifference / 3600} hours ago.`);
+        }
+    }
+}
+
+// Call this function when the mini app is opened or user returns
+function startSession() {
+    // Check for existing session data in localStorage
+    checkAndSendExistingData();
+
+    // Proceed with normal session process
+    currentTimestamp = generateTimestamp();
+    userSessionData[currentTimestamp] = {};
+    
+    // Store the updated session data in localStorage
+    localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
+}
+
+// Function to track user interaction with items
+function trackUserInteraction(mainCategory, subCategory) {
+    // Record interaction with main and subcategories
+    userSessionData[currentTimestamp][mainCategory] = userSessionData[currentTimestamp][mainCategory] || {};
+    userSessionData[currentTimestamp][mainCategory][subCategory] = (userSessionData[currentTimestamp][mainCategory][subCategory] || 0) + 1;
+    
+    // Update localStorage with the new session data
+    localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
+}
+
+// Track page history
 function updatePageHistory(pageName) {
     // Retrieve existing history from localStorage or initialize an empty array
     let pageHistory = JSON.parse(localStorage.getItem('pageHistory')) || [];
@@ -12,6 +68,7 @@ function updatePageHistory(pageName) {
     localStorage.setItem('pageHistory', JSON.stringify(pageHistory));
 }
 
+startSession(); // Call this function to track timestamp and usersessions
 updatePageHistory('shop.html'); // Call this with each page the user navigates to
 
 document.addEventListener("DOMContentLoaded", function () {

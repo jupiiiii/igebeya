@@ -1,5 +1,36 @@
 // Initialize the Telegram WebApp instance
 const tg = window.Telegram.WebApp;
+let userSessionData = localStorage.getItem('userSessionData');
+let currentTimestamp = generateTimestamp();
+
+// Function to generate an integer timestamp (Unix time in seconds)
+function generateTimestamp() {
+    const date = new Date();
+    return Math.floor(date.getTime() / 1000);  // Converts milliseconds to seconds
+}
+
+// Function to track user interaction with items
+function trackUserInteraction(mainCategory, subCategory) {
+    // Record interaction with main and subcategories
+    userSessionData[currentTimestamp][mainCategory] = userSessionData[currentTimestamp][mainCategory] || {};
+    userSessionData[currentTimestamp][mainCategory][subCategory] = (userSessionData[currentTimestamp][mainCategory][subCategory] || 0) + 1;
+    
+    // Update localStorage with the new session data
+    localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
+    console.log('User session data: ', userSessionData);
+}
+
+// Track page history
+function updatePageHistory(pageName) {
+    // Retrieve existing history from localStorage or initialize an empty array
+    let pageHistory = JSON.parse(localStorage.getItem('pageHistory')) || [];
+    
+    // Add the current page to the history
+    pageHistory.push(pageName);
+    
+    // Save the updated history back to localStorage
+    localStorage.setItem('pageHistory', JSON.stringify(pageHistory));
+}
 
 function updatePageHistory(pageName) {
     // Retrieve existing history from localStorage or initialize an empty array
@@ -146,6 +177,10 @@ document.addEventListener("DOMContentLoaded", function () {
             const itemPrice = itemDetails.item_price;
             const itemCity = itemDetails.item_city;
             const itemDate = itemDetails.date;
+
+            // Add the item main and sub category to user session
+            trackUserInteraction(itemDetails.item_main_category, itemDetails.item_sub_category);
+            console.log("Item added to user session: ", itemDetails.item_name);
 
 
             // Handle Send Message button click
