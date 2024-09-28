@@ -20,6 +20,7 @@ function checkAndSendExistingData() {
 
         // Get the last timestamp in the stored data
         let previousTimestamp = Object.keys(storedData).pop(); // Last timestamp key
+        console.log(previousTimestamp);
         let currentTime = generateTimestamp();
         
         // Calculate the time difference in seconds (12 hours = 43,200 seconds)
