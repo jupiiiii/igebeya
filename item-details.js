@@ -4,6 +4,10 @@ let userSessionData = localStorage.getItem('userSessionData');
 let currentTimestamp = Object.keys(JSON.parse(userSessionData)).pop();
 currentTimestamp = currentTimestamp.toString();
 
+console.log("User Session Data:", userSessionData);
+console.log("Current Timestamp:", currentTimestamp);
+
+
 
 // Function to track user interaction with items
 function trackUserInteraction(mainCategory, subCategory) {
