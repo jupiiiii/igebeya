@@ -28,7 +28,7 @@ function generateTimestamp() {
 function checkAndSendExistingData() {
     let storedData = localStorage.getItem('userSessionData');
     let xx = JSON.parse(storedData);
-    console.log("Jupi: ",Object.keys(xx[chatId]));
+    console.log("Jupi: ",Object.keys(xx[chatId]).length);
 
     if (storedData) {
         storedData = JSON.parse(storedData);
