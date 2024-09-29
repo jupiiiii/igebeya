@@ -28,7 +28,6 @@ function generateTimestamp() {
 function checkAndSendExistingData() {
     let storedData = localStorage.getItem('userSessionData');
     let xx = JSON.parse(storedData);
-    console.log("Jupi: ",Object.keys(xx[chatId]).length);
 
     if (storedData) {
         storedData = JSON.parse(storedData);
@@ -46,7 +45,7 @@ function checkAndSendExistingData() {
         // Calculate the time difference in seconds (12 hours = 43,200 seconds)
         let timeDifference = currentTime - parseInt(lastTimestamp);
 
-        if (timeDifference >= 43200 && Object.keys(JSON.parse(storedData[chatId])).length > 0) {
+        if (timeDifference >= 43200 && Object.keys(xx[chatId]).length > 0) {
             // If time difference is more than 12 hours and dict not empty, send data to backend
             sendDataToBackend(storedData);
 
