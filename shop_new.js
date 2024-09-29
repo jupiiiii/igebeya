@@ -27,7 +27,7 @@ function generateTimestamp() {
 // Check if userSessionData exists in localStorage and is not empty
 function checkAndSendExistingData() {
     let storedData = localStorage.getItem('userSessionData');
-    let xx = JSON.parse(sessionData);
+    let xx = JSON.parse(storedData);
     console.log(Object.keys(xx[chatId]));
 
     if (storedData) {
