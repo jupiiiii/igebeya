@@ -24,6 +24,24 @@ function generateTimestamp() {
     return Math.floor(date.getTime() / 1000);  // Converts milliseconds to seconds
 }
 
+// Function to send data to the backend
+function sendDataToBackend(data) {
+    fetch(`https://igebeya3-272f297966dc.herokuapp.com/save_session_data`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log('Data sent and saved:', data);
+        // Clear userSessionData after successfully sending to backend
+        localStorage.removeItem('userSessionData');
+    })
+    .catch((error) => console.error('Error:', error));
+}
+
 // Check if userSessionData exists in localStorage and is not empty
 function checkAndSendExistingData() {
     let storedData = localStorage.getItem('userSessionData');
@@ -47,7 +65,7 @@ function checkAndSendExistingData() {
 
         if (timeDifference >= 43200 && Object.keys(xx[chatId]).length > 0) {
             // If time difference is more than 12 hours and dict not empty, send data to backend
-            sendDataToBackend(storedData);
+            sendDataToBackend({ chat_id: chatId, session_data: storedData });
 
             // Proceed with normal session process
             //currentTimestamp = generateTimestamp();
