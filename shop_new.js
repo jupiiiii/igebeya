@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             // Fetch all items
-            fetch(`https://igebeya3-272f297966dc.herokuapp.com/get_items?start=${start}&limit=${limit}&?chat_id=${chatId}`)
+            fetch(`https://igebeya3-272f297966dc.herokuapp.com/get_items?start=${start}&limit=${limit}&chat_id=${chatId}`)
                 .then(response => response.json())
                 .then(items => {
                     const itemsList = document.querySelector('.items-list');
