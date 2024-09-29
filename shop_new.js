@@ -24,11 +24,11 @@ function generateTimestamp() {
     return Math.floor(date.getTime() / 1000);  // Converts milliseconds to seconds
 }
 
-
 // Check if userSessionData exists in localStorage and is not empty
 function checkAndSendExistingData() {
     let storedData = localStorage.getItem('userSessionData');
-    console.log(Object.keys(JSON.parse(storedData)).length);
+    let xx = JSON.parse(sessionData);
+    console.log(Object.keys(xx[chatId]));
 
     if (storedData) {
         storedData = JSON.parse(storedData);
