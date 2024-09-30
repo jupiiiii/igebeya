@@ -7,7 +7,7 @@ let userSessionData = JSON.parse(localStorage.getItem('userSessionData'));
 // currentTimestamp = String(currentTimestampp);
 
 console.log("User Session Data:", userSessionData);
-console.log("Current Timestamp:", currentTimestamp);
+console.log("Current Timestamp:", generateTimestamp());
 
 
 // Function to generate an integer timestamp (Unix time in seconds)
