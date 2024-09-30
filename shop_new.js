@@ -26,7 +26,7 @@ function generateTimestamp() {
 
 // Function to send data to the backend
 function sendDataToBackend(data) {
-    fetch(`https://igebeya3-272f297966dc.herokuapp.com/save_session_data`, {
+    fetch('https://igebeya3-272f297966dc.herokuapp.com/save_session_data', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
