@@ -63,7 +63,7 @@ function checkAndSendExistingData() {
         // Calculate the time difference in seconds (12 hours = 43,200 seconds)
         let timeDifference = currentTime - parseInt(lastTimestamp);
 
-        if (timeDifference >= 3600 && Object.keys(xx[chatId]).length > 0) {
+        if (timeDifference >= 360 && Object.keys(xx[chatId]).length > 0) {
             // If time difference is more than 12 hours and dict not empty, send data to backend
             sendDataToBackend({ chat_id: chatId, session_data: storedData });
 
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let start = 0; // Start index for items
     let startSearch = 0; // start index for search items
-    const limit = 4; // Number of items to load per batch
+    const limit = 10; // Number of items to load per batch
     let currentItems = [];
     let favSearch = [];
 
