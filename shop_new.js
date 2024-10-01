@@ -66,8 +66,10 @@ function checkAndSendExistingData() {
         
         // Calculate the time difference in seconds (12 hours = 43,200 seconds)
         let timeDifference = currentTime - parseInt(lastTimestamp);
+        alert ("Before time difference");
 
         if (timeDifference >= 600 && Object.keys(xx[chatId]).length > 0) {
+            alert("Inside time difference");
             // If time difference is more than 12 hours and dict not empty, send data to backend
             sendDataToBackend({ chat_id: chatId, session_data: storedData });
 
