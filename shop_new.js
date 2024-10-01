@@ -17,6 +17,7 @@ console.log("Retrieved chat ID from local storage: ",chatId);
 // Session tracker
 let userSessionData = {};
 let currentTimestamp;
+alert("chat id: ", chatId);
 
 // Function to generate an integer timestamp (Unix time in seconds)
 function generateTimestamp() {
@@ -46,8 +47,10 @@ function sendDataToBackend(data) {
 function checkAndSendExistingData() {
     let storedData = localStorage.getItem('userSessionData');
     let xx = JSON.parse(storedData);
+    alert("Session element length: ", Object.keys(xx[chatId]).length);
 
     if (storedData) {
+        alert("inside is stored data");
         storedData = JSON.parse(storedData);
 
         // Get the last timestamp in the stored data
@@ -78,6 +81,7 @@ function checkAndSendExistingData() {
             console.log(`Skipping sending data. Last session was ${timeDifference / 3600} hours ago.`);
         }
     } else {
+        alert("no stored data");
         //currentTimestamp = generateTimestamp();
         // Check if the session for this chat ID exists, if not, initialize
         userSessionData[chatId] = userSessionData[chatId] || {};
@@ -89,6 +93,7 @@ function checkAndSendExistingData() {
 
 // Call this function when the mini app is opened or user returns
 function startSession() {
+    alert("Starting session");
     // Check for existing session data in localStorage
     checkAndSendExistingData(); 
 }
