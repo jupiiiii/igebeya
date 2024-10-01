@@ -126,6 +126,7 @@ startSession(); // Call this function to track timestamp and usersessions
 updatePageHistory('shop.html'); // Call this with each page the user navigates to
 
 document.addEventListener("DOMContentLoaded", function () {
+    alert("inside the DOM");
     const searchButton = document.querySelector('.search-button');
     const header = document.querySelector('.header');
     const searchInput = document.getElementById('search-input');
