@@ -47,8 +47,9 @@ function sendDataToBackend(data) {
 function checkAndSendExistingData() {
     let storedData = localStorage.getItem('userSessionData');
     let xx = JSON.parse(storedData);
+    let yy = Object.keys(xx[chatId]).length
     console.log("Stored Data: ", xx);
-    alert(xx);
+    alert(yy);
 
     if (xx) {
         alert("inside if stored data");
@@ -81,17 +82,15 @@ function checkAndSendExistingData() {
         } else {
             console.log(`Skipping sending data. Last session was ${timeDifference / 3600} hours ago.`);
         }
+    } else {
+        alert("no stored data");
+        //currentTimestamp = generateTimestamp();
+        // Check if the session for this chat ID exists, if not, initialize
+        userSessionData[chatId] = userSessionData[chatId] || {};
+        //userSessionData[chatId][currentTimestamp] = {}; // Create a new entry for the current session
+        console.log(userSessionData);
+        localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
     }
-    alert("Before else");
-    // else {
-    //     alert("no stored data");
-    //     //currentTimestamp = generateTimestamp();
-    //     // Check if the session for this chat ID exists, if not, initialize
-    //     userSessionData[chatId] = userSessionData[chatId] || {};
-    //     //userSessionData[chatId][currentTimestamp] = {}; // Create a new entry for the current session
-    //     console.log(userSessionData);
-    //     localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
-    // }
 }
 
 // Call this function when the mini app is opened or user returns
