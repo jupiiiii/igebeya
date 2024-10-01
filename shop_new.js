@@ -49,7 +49,7 @@ function checkAndSendExistingData() {
     let xx = JSON.parse(storedData);
     alert(xx);
 
-    if (storedData) {
+    if (xx) {
         alert("inside is stored data");
         storedData = JSON.parse(storedData);
 
