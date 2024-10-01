@@ -47,7 +47,7 @@ function sendDataToBackend(data) {
 function checkAndSendExistingData() {
     let storedData = localStorage.getItem('userSessionData');
     let xx = JSON.parse(storedData);
-    const zz = 0;
+    console.log(xx[chatId]);
 
     if (zz === 0) {
         alert("inside if stored data");
