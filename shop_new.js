@@ -47,7 +47,7 @@ function sendDataToBackend(data) {
 function checkAndSendExistingData() {
     let storedData = localStorage.getItem('userSessionData');
     let xx = JSON.parse(storedData);
-    alert("Session element length: ");
+    alert(xx);
 
     if (storedData) {
         alert("inside is stored data");
