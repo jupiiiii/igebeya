@@ -47,7 +47,7 @@ function sendDataToBackend(data) {
 function checkAndSendExistingData() {
     let storedData = localStorage.getItem('userSessionData');
     let xx = JSON.parse(storedData);
-    console.log("Stored Data: ", xx)
+    console.log("Stored Data: ", xx);
     alert(xx);
 
     if (xx) {
