@@ -47,7 +47,7 @@ function sendDataToBackend(data) {
 function checkAndSendExistingData() {
     let storedData = localStorage.getItem('userSessionData');
     let xx = JSON.parse(storedData);
-    let yy = Object.keys(xx[chatId]).length
+    let yy = Object.keys(xx[chatId]).length;
     console.log("Stored Data: ", xx);
     alert(yy);
 
