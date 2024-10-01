@@ -17,7 +17,7 @@ console.log("Retrieved chat ID from local storage: ",chatId);
 // Session tracker
 let userSessionData = {};
 let currentTimestamp;
-alert("chat id: ", chatId);
+alert(chatId);
 
 // Function to generate an integer timestamp (Unix time in seconds)
 function generateTimestamp() {
