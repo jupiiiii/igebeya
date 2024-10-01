@@ -51,7 +51,7 @@ function checkAndSendExistingData() {
     alert(xx);
 
     if (xx) {
-        alert("inside is stored data");
+        alert("inside if stored data");
         storedData = JSON.parse(storedData);
 
         // Get the last timestamp in the stored data
@@ -81,7 +81,9 @@ function checkAndSendExistingData() {
         } else {
             console.log(`Skipping sending data. Last session was ${timeDifference / 3600} hours ago.`);
         }
-    } else {
+    }
+    alert("Before else");
+    else {
         alert("no stored data");
         //currentTimestamp = generateTimestamp();
         // Check if the session for this chat ID exists, if not, initialize
