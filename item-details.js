@@ -312,6 +312,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Event listener to detect focus and adjust the message box
             messageBox.addEventListener('focus', function() {
+                alert("tryna focus on message box");
                 adjustMessageBoxHeight(); // Adjust the height when the textarea gets focus
             });
 
