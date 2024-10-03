@@ -311,17 +311,16 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // Event listener to detect focus and adjust the message box
-            messageBox.addEventListener('focus', function() {
-                alert("tryna focus on message box");
-                adjustMessageBoxHeight(); // Adjust the height when the textarea gets focus
-            });
+            // messageBox.addEventListener('focus', function() {
+            //     adjustMessageBoxHeight(); // Adjust the height when the textarea gets focus
+            // });
 
-            // Event listener to reset height on blur (optional)
-            messageBox.addEventListener('blur', function() {
-                // Reset to original height when focus is lost
-                container.classList.remove("container-move-up");
-                messageBox.style.height = '100px'; // Reset to default height
-            });
+            // // Event listener to reset height on blur (optional)
+            // messageBox.addEventListener('blur', function() {
+            //     // Reset to original height when focus is lost
+            //     container.classList.remove("container-move-up");
+            //     messageBox.style.height = '100px'; // Reset to default height
+            // });
 
 
         })
