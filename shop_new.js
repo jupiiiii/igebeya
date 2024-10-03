@@ -63,6 +63,7 @@ function checkAndSendExistingData() {
         
     } else {
         alert("Stored data found, checking timestamp");
+        alert(storedData);
         storedData = JSON.parse(storedData);
 
         // Get the last timestamp in the stored data
