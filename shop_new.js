@@ -1,24 +1,23 @@
 // TG instance for close button
 const tg = window.Telegram.WebApp;
 let itemDetailsDict = {};
-const testId = tg.initDataUnsafe.user.id;
-alert(testId);
+const chatId = tg.initDataUnsafe.user.id;
 
 // Session tracker
 let userSessionData = {};
 let currentTimestamp;
 
 // Initialize URLSearchParams from the window location
-const urlParams = new URLSearchParams(window.location.search);
+// const urlParams = new URLSearchParams(window.location.search);
 
 // Check if the URL has any search parameters
-if (urlParams.toString()) {
-    const chatId = urlParams.get('chat_id');
-    localStorage.setItem('chatId', chatId);
-    console.log("saved chat ID to local storage: ",chatId);
-}
-const chatId = localStorage.getItem('chatId');
-console.log("Retrieved chat ID from local storage: ",chatId);
+// if (urlParams.toString()) {
+//     const chatId = urlParams.get('chat_id');
+//     localStorage.setItem('chatId', chatId);
+//     console.log("saved chat ID to local storage: ",chatId);
+// }
+// const chatId = localStorage.getItem('chatId');
+// console.log("Retrieved chat ID from local storage: ",chatId);
 
 alert(chatId);
 

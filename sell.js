@@ -19,6 +19,7 @@ let pageHistory = getPageHistory();
 
 document.addEventListener("DOMContentLoaded", function () {
     let tg = window.Telegram.WebApp;
+    const chatId = tg.initDataUnsafe.user.id;
     const sell_cont = document.getElementById('sell_cont')
     const myListedItemsContainer = document.getElementById('my-listed-items');
 
@@ -273,10 +274,12 @@ document.addEventListener("DOMContentLoaded", function () {
         // Append images to FormData
         imageFiles.forEach(file => formData.append('images', file));
     
-        // Retrieve the chat id and append
-        const chatId = localStorage.getItem('chatId');
+        // Append chat id
         if (chatId) {
             formData.append('chat_id', chatId);
+        } else {
+            alert("Please restart the mini app!");
+            return;
         }
 
         // Append selected city to FormData
@@ -327,9 +330,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function fetchListedItems() {
         // Clear the existing items before fetching new ones
         myListedItemsContainer.innerHTML = '';
-
-        // Get the chatId stored in localStorage
-        const chatId = localStorage.getItem('chatId');
 
         // Check if chatId exists before making the API call
         if (!chatId) {

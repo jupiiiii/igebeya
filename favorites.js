@@ -1,5 +1,6 @@
 // Initialize the Telegram WebApp instance
 const tg = window.Telegram.WebApp;
+const chatId = tg.initDataUnsafe.user.id;
 
 function updatePageHistory(pageName) {
     // Retrieve existing history from localStorage or initialize an empty array
@@ -21,8 +22,6 @@ function getPageHistory() {
 let pageHistory = getPageHistory();
 
 document.addEventListener("DOMContentLoaded", function () {
-    const chatId = localStorage.getItem('chatId');
-    
 
     //const chatId = getChatIdFromCookie();
     console.log(chatId);
