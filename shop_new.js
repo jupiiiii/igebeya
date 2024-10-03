@@ -51,7 +51,7 @@ function checkAndSendExistingData() {
     console.log("Stored data:", storedData);  // Output the data type
 
 
-    if (storedData === null) {
+    if (storedData == null) {
         alert("Stored data is null, creating new session data!");
         //currentTimestamp = generateTimestamp();
         // Check if the session for this chat ID exists, if not, initialize
