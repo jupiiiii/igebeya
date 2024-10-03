@@ -125,7 +125,6 @@ body {
 }
 
 .item_main, .item_sub {
-    display: flex; /* Use flexbox to ensure they align on the same row */
     gap: 10px; /* Add some space between the two tags */
     display: inline-block;
     padding: 5px 5px; /* Padsding inside the box */
