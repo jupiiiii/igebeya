@@ -141,6 +141,7 @@ body {
     white-space: nowrap; /* Prevent text from wrapping */
     text-overflow: ellipsis; /* Handle overflow with ellipsis */
     overflow: hidden; /* Hide overflow content */
+    z-index: 1000;
     /* pointer-events: none; */
 }
 
