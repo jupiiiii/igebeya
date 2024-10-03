@@ -51,8 +51,18 @@ function checkAndSendExistingData() {
     console.log("Stored data:", storedData);  // Output the data type
 
 
-    if (storedData) {
-        alert("inside if stored data");
+    if (storedData === null) {
+        alert("Stored data is null, creating new session data!");
+        //currentTimestamp = generateTimestamp();
+        // Check if the session for this chat ID exists, if not, initialize
+        userSessionData[chatId] = userSessionData[chatId] || {};
+        //userSessionData[chatId][currentTimestamp] = {}; // Create a new entry for the current session
+        console.log("Created new users session data:", userSessionData);
+        localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
+
+        
+    } else {
+        alert("Stored data found, checking timestamp");
         storedData = JSON.parse(storedData);
 
         // Get the last timestamp in the stored data
@@ -84,14 +94,7 @@ function checkAndSendExistingData() {
         } else {
             console.log(`Skipping sending data. Last session was ${timeDifference / 3600} hours ago.`);
         }
-    } else {
-        alert("no stored data");
-        //currentTimestamp = generateTimestamp();
-        // Check if the session for this chat ID exists, if not, initialize
-        userSessionData[chatId] = userSessionData[chatId] || {};
-        //userSessionData[chatId][currentTimestamp] = {}; // Create a new entry for the current session
-        console.log(userSessionData);
-        localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
+        
     }
 }
 
