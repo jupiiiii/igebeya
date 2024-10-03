@@ -19,7 +19,7 @@ let currentTimestamp;
 // const chatId = localStorage.getItem('chatId');
 // console.log("Retrieved chat ID from local storage: ",chatId);
 
-alert(chatId);
+
 
 // Function to generate an integer timestamp (Unix time in seconds)
 function generateTimestamp() {
