@@ -2,6 +2,10 @@
 const tg = window.Telegram.WebApp;
 let itemDetailsDict = {};
 
+// Session tracker
+let userSessionData = {};
+let currentTimestamp;
+
 // Initialize URLSearchParams from the window location
 const urlParams = new URLSearchParams(window.location.search);
 
@@ -9,14 +13,12 @@ const urlParams = new URLSearchParams(window.location.search);
 if (urlParams.toString()) {
     const chatId = urlParams.get('chat_id');
     localStorage.setItem('chatId', chatId);
+    localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
     console.log("saved chat ID to local storage: ",chatId);
 }
 const chatId = localStorage.getItem('chatId');
 console.log("Retrieved chat ID from local storage: ",chatId);
 
-// Session tracker
-let userSessionData = {};
-let currentTimestamp;
 alert(chatId);
 
 // Function to generate an integer timestamp (Unix time in seconds)
