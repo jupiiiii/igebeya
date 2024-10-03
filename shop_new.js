@@ -39,14 +39,15 @@ function sendDataToBackend(data) {
     .then(data => {
         console.log('Data sent and saved:', data);
         // Clear userSessionData after successfully sending to backend
-        localStorage.removeItem('userSessionData');
+        localStorage.removeItem(`${chatId}_userSessionData`);
     })
     .catch((error) => console.error('Error:', error));
 }
 
 // Check if userSessionData exists in localStorage and is not empty
 function checkAndSendExistingData() {
-    let storedData = localStorage.getItem('userSessionData');
+    let storedData = localStorage.getItem(`${chatId}_userSessionData`);
+
     //let xx = JSON.parse(storedData);
     console.log("Stored data:", storedData);  // Output the data type
 
@@ -58,7 +59,7 @@ function checkAndSendExistingData() {
         userSessionData[chatId] = userSessionData[chatId] || {};
         //userSessionData[chatId][currentTimestamp] = {}; // Create a new entry for the current session
         console.log("Created new users session data:", userSessionData);
-        localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
+        localStorage.setItem(`${chatId}_userSessionData`, JSON.stringify(userSessionData));
 
         
     } else {
@@ -91,7 +92,7 @@ function checkAndSendExistingData() {
             userSessionData[chatId] = userSessionData[chatId] || {};
             //userSessionData[chatId][currentTimestamp] = {}; // Create a new entry for the current session
             // Store the updated session data in localStorage
-            localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
+            localStorage.setItem(`${chatId}_userSessionData`, JSON.stringify(userSessionData));
         } else {
             console.log(`Skipping sending data. Last session was ${timeDifference / 3600} hours ago.`);
         }
@@ -109,7 +110,7 @@ function startSession() {
 // Function to track user interaction with items
 function trackUserInteraction(itemName, mainCategory, subCategory, action) {
     // Record interaction with main and subcategories
-    let userSessionData = JSON.parse(localStorage.getItem('userSessionData'));
+    let userSessionData = JSON.parse(localStorage.getItem(`${chatId}_userSessionData`));
     currentTimestamp = generateTimestamp();
     // Add the interaction details
     userSessionData[chatId][currentTimestamp] = {
@@ -120,7 +121,7 @@ function trackUserInteraction(itemName, mainCategory, subCategory, action) {
     };
     
     // Update localStorage with the new session data
-    localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
+    localStorage.setItem(`${chatId}_userSessionData`, JSON.stringify(userSessionData));
 }
 
 // Track page history

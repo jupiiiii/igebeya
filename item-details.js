@@ -2,7 +2,7 @@
 const tg = window.Telegram.WebApp;
 const chatId = localStorage.getItem('chatId');
 let currentTimestamp;
-let userSessionData = JSON.parse(localStorage.getItem('userSessionData'));
+let userSessionData = JSON.parse(localStorage.getItem(`${chatId}_userSessionData`));
 // let currentTimestampp = Object.keys(userSessionData).pop();
 // currentTimestamp = String(currentTimestampp);
 
@@ -30,7 +30,7 @@ function trackUserInteraction(itemName, mainCategory, subCategory, action) {
 
 
     // Update localStorage with the new session data
-    localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
+    localStorage.setItem(`${chatId}_userSessionData`, JSON.stringify(userSessionData));
     console.log('User session data: ', userSessionData);
 }
 
