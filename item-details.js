@@ -190,11 +190,11 @@ document.addEventListener("DOMContentLoaded", function () {
             const itemPrice = itemDetails.item_price;
             const itemCity = itemDetails.item_city;
             const itemDate = itemDetails.date;
-            const itemMain = itemDetails.item_main_category;
-            const itemSub = itemDetails.item_sub_category;
+            //const itemMain = itemDetails.item_main_category;
+            //const itemSub = itemDetails.item_sub_category;
 
             // Add validation to ensure itemMain and itemSub are not undefined or null
-            trackUserInteraction(itemTitle, itemMain, itemSub, 'click');
+            //trackUserInteraction(itemTitle, itemMain, itemSub, 'click');
             console.log("Item added to user session: ", itemDetails.item_name);
 
 
