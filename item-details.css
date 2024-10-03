@@ -119,12 +119,12 @@ body {
     white-space: normal; /* Ensure the text wraps normally */
 }
 
-/* .main_and_sub {
+.main_and_sub {
     display: flex; 
     gap: 10px;
-} */
+}
 
-/* .item_main, .item_sub {
+.item_main, .item_sub {
     gap: 10px;
     display: inline-block;
     padding: 5px 5px; 
@@ -141,8 +141,8 @@ body {
     text-overflow: ellipsis; 
     overflow: hidden; 
     z-index: 999;
-    pointer-events: none;
-} */
+    /* pointer-events: none; */
+}
 
 
 .item-city {
