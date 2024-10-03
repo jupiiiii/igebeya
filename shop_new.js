@@ -47,7 +47,7 @@ function sendDataToBackend(data) {
 // Check if userSessionData exists in localStorage and is not empty
 function checkAndSendExistingData() {
     let storedData = localStorage.getItem('userSessionData');
-    let xx = JSON.parse(storedData);
+    //let xx = JSON.parse(storedData);
     console.log("Stored data:", storedData);  // Output the data type
 
 
