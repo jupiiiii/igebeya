@@ -124,25 +124,25 @@ body {
     gap: 10px; /* Add some space between the two tags */
 }
 
-.item_main, .item_sub {
-    gap: 10px; /* Add some space between the two tags */
+/* .item_main, .item_sub {
+    gap: 10px;
     display: inline-block;
-    padding: 5px 5px; /* Padsding inside the box */
+    padding: 5px 5px; 
     margin-top: 5px;
     margin-bottom: 5px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 250;
     font-size: 10px;
     color: var(--tg-theme-text-color);
-    border: 1px solid rgb(197, 198, 198); /* Border around the box */
-    border-radius: 10px; /* Rounded corners */
-    background-color: #d4d8d88a; /* Box background color */
-    /* white-space: nowrap; 
+    border: 1px solid rgb(197, 198, 198); 
+    border-radius: 10px; 
+    background-color: #d4d8d88a; 
+    white-space: nowrap; 
     text-overflow: ellipsis; 
-    overflow: hidden; Hide overflow content
-    z-index: 999; */
-    /* pointer-events: none; */
-}
+    overflow: hidden; 
+    z-index: 999;
+    pointer-events: none;
+} */
 
 
 .item-city {
