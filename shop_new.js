@@ -1,7 +1,7 @@
 // TG instance for close button
 const tg = window.Telegram.WebApp;
 let itemDetailsDict = {};
-const testId = tg.initDataUnsafe.user.id;
+const testId = tg.initDataUnsafe.user;
 alert(testId);
 
 // Session tracker
