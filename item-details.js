@@ -1,5 +1,13 @@
 // Initialize the Telegram WebApp instance
 const tg = window.Telegram.WebApp;
+
+const platform = Telegram.WebApp.platform;
+
+if (platform === 'desktop') {
+    alert("You are on tg desktop");
+    // Apply specific CSS/JS adjustments for Telegram Desktop
+}
+
 const chatId = localStorage.getItem('chatId');
 let currentTimestamp;
 let userSessionData = JSON.parse(localStorage.getItem('userSessionData'));

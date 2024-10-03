@@ -138,10 +138,10 @@ body {
     border: 1px solid rgb(197, 198, 198); /* Border around the box */
     border-radius: 10px; /* Rounded corners */
     background-color: #d4d8d88a; /* Box background color */
-    white-space: nowrap; /* Prevent text from wrapping */
-    text-overflow: ellipsis; /* Handle overflow with ellipsis */
-    overflow: hidden; /* Hide overflow content */
-    z-index: 999;
+    /* white-space: nowrap; 
+    text-overflow: ellipsis; 
+    overflow: hidden; Hide overflow content
+    z-index: 999; */
     /* pointer-events: none; */
 }
 
