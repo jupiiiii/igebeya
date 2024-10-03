@@ -8,7 +8,7 @@ body {
 .item-details-container {
     max-width: 1200px;
     margin: 0 auto;
-    margin-bottom: 150px;
+    margin-bottom: 180px;
     padding: 20px 20px 60px;
     background-color: var(--tg-theme-bg-color);
     border-radius: 10px;
