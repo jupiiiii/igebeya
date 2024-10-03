@@ -13,7 +13,6 @@ const urlParams = new URLSearchParams(window.location.search);
 if (urlParams.toString()) {
     const chatId = urlParams.get('chat_id');
     localStorage.setItem('chatId', chatId);
-    localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
     console.log("saved chat ID to local storage: ",chatId);
 }
 const chatId = localStorage.getItem('chatId');
@@ -49,51 +48,51 @@ function sendDataToBackend(data) {
 function checkAndSendExistingData() {
     let storedData = localStorage.getItem('userSessionData');
     let xx = JSON.parse(storedData);
-    console.log(typeof storedData);  // Output the data type
+    console.log("Stored data:", storedData);  // Output the data type
 
 
-    // if (storedData) {
-    //     alert("inside if stored data");
-    //     storedData = JSON.parse(storedData);
+    if (storedData) {
+        alert("inside if stored data");
+        storedData = JSON.parse(storedData);
 
-    //     // Get the last timestamp in the stored data
-    //     // Get all timestamps for the chat ID
-    //     let timestamps = Object.keys(storedData[chatId]);
+        // Get the last timestamp in the stored data
+        // Get all timestamps for the chat ID
+        let timestamps = Object.keys(storedData[chatId]);
 
-    //     // Get the last timestamp
-    //     let lastTimestamp = timestamps[timestamps.length - 1];
-    //     console.log("Last time stamp",lastTimestamp);
+        // Get the last timestamp
+        let lastTimestamp = timestamps[timestamps.length - 1];
+        console.log("Last time stamp",lastTimestamp);
 
-    //     let currentTime = generateTimestamp();
+        let currentTime = generateTimestamp();
         
-    //     // Calculate the time difference in seconds (12 hours = 43,200 seconds)
-    //     let timeDifference = currentTime - parseInt(lastTimestamp);
-    //     alert ("Before time difference");
+        // Calculate the time difference in seconds (12 hours = 43,200 seconds)
+        let timeDifference = currentTime - parseInt(lastTimestamp);
+        alert ("Before time difference");
 
-    //     if (timeDifference >= 600 && Object.keys(xx[chatId]).length > 0) {
-    //         alert("Inside time difference");
-    //         // If time difference is more than 12 hours and dict not empty, send data to backend
-    //         sendDataToBackend({ chat_id: chatId, session_data: storedData });
+        if (timeDifference >= 600 && Object.keys(xx[chatId]).length > 0) {
+            alert("Inside time difference");
+            // If time difference is more than 12 hours and dict not empty, send data to backend
+            sendDataToBackend({ chat_id: chatId, session_data: storedData });
 
-    //         // Proceed with normal session process
-    //         //currentTimestamp = generateTimestamp();
-    //         // Check if the session for this chat ID exists, if not, initialize
-    //         userSessionData[chatId] = userSessionData[chatId] || {};
-    //         //userSessionData[chatId][currentTimestamp] = {}; // Create a new entry for the current session
-    //         // Store the updated session data in localStorage
-    //         localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
-    //     } else {
-    //         console.log(`Skipping sending data. Last session was ${timeDifference / 3600} hours ago.`);
-    //     }
-    // } else {
-    //     alert("no stored data");
-    //     //currentTimestamp = generateTimestamp();
-    //     // Check if the session for this chat ID exists, if not, initialize
-    //     userSessionData[chatId] = userSessionData[chatId] || {};
-    //     //userSessionData[chatId][currentTimestamp] = {}; // Create a new entry for the current session
-    //     console.log(userSessionData);
-    //     localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
-    // }
+            // Proceed with normal session process
+            //currentTimestamp = generateTimestamp();
+            // Check if the session for this chat ID exists, if not, initialize
+            userSessionData[chatId] = userSessionData[chatId] || {};
+            //userSessionData[chatId][currentTimestamp] = {}; // Create a new entry for the current session
+            // Store the updated session data in localStorage
+            localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
+        } else {
+            console.log(`Skipping sending data. Last session was ${timeDifference / 3600} hours ago.`);
+        }
+    } else {
+        alert("no stored data");
+        //currentTimestamp = generateTimestamp();
+        // Check if the session for this chat ID exists, if not, initialize
+        userSessionData[chatId] = userSessionData[chatId] || {};
+        //userSessionData[chatId][currentTimestamp] = {}; // Create a new entry for the current session
+        console.log(userSessionData);
+        localStorage.setItem('userSessionData', JSON.stringify(userSessionData));
+    }
 }
 
 // Call this function when the mini app is opened or user returns
