@@ -195,7 +195,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Add validation to ensure itemMain and itemSub are not undefined or null
             //trackUserInteraction(itemTitle, itemMain, itemSub, 'click');
-            console.log("Item added to user session: ", itemDetails.item_name);
+            //console.log("Item added to user session: ", itemDetails.item_name);
 
 
             // Handle Send Message button click
