@@ -8,6 +8,7 @@ body {
 .item-details-container {
     max-width: 1200px;
     margin: 0 auto;
+    margin-bottom: 50px;
     padding: 20px 20px 60px;
     background-color: var(--tg-theme-bg-color);
     border-radius: 10px;
@@ -140,7 +141,7 @@ body {
     white-space: nowrap; 
     text-overflow: ellipsis; 
     overflow: hidden; 
-    z-index: 999;
+    /* z-index: 999; */
     /* pointer-events: none; */
 }
 
