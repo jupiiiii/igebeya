@@ -301,26 +301,28 @@ document.addEventListener("DOMContentLoaded", function () {
             const container = document.querySelector(".item-details-container");
 
             // Function to adjust the height of the message box
-            function adjustMessageBoxHeight() {
-                container.classList.add("container-move-up");
-                const vh = window.innerHeight * 0.01;
-                document.documentElement.style.setProperty('--vh', `${vh}px`);
+            // function adjustMessageBoxHeight() {
+            //     container.classList.add("container-move-up");
+            //     const vh = window.innerHeight * 0.01;
+            //     document.documentElement.style.setProperty('--vh', `${vh}px`);
     
-                // Adjust the height of the message box dynamically to fit above the keyboard
-                messageBox.style.height = `calc(var(--vh, 1vh) * 25)`; // Adjust based on your layout
-            }
+            //     // Adjust the height of the message box dynamically to fit above the keyboard
+            //     messageBox.style.height = `calc(var(--vh, 1vh) * 25)`; // Adjust based on your layout
+            // }
 
             // Event listener to detect focus and adjust the message box
-            // messageBox.addEventListener('focus', function() {
-            //     adjustMessageBoxHeight(); // Adjust the height when the textarea gets focus
-            // });
+            messageBox.addEventListener('focus', function() {
+                // adjustMessageBoxHeight(); // Adjust the height when the textarea gets focus
+                container.style.marginBottom = '180px';
+            });
 
-            // // Event listener to reset height on blur (optional)
-            // messageBox.addEventListener('blur', function() {
-            //     // Reset to original height when focus is lost
-            //     container.classList.remove("container-move-up");
-            //     messageBox.style.height = '100px'; // Reset to default height
-            // });
+            // Event listener to reset height on blur (optional)
+            messageBox.addEventListener('blur', function() {
+                // Reset to original height when focus is lost
+                //container.classList.remove("container-move-up");
+                //messageBox.style.height = '100px'; // Reset to default height
+                container.style.marginBottom = '30px';
+            });
 
 
         })
