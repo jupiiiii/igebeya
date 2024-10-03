@@ -194,7 +194,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const itemSub = itemDetails.item_sub_category;
 
             // Add validation to ensure itemMain and itemSub are not undefined or null
-            trackUserInteraction(itemTitle, itemMain, itemSub, 'click');
+            //trackUserInteraction(itemTitle, itemMain, itemSub, 'click');
             //console.log("Item added to user session: ", itemDetails.item_name);
 
 
