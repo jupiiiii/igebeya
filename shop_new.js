@@ -36,7 +36,17 @@ function sendDataToBackend(data) {
         },
         body: JSON.stringify(data)
     })
-    .then(response => response.json())
+    .then(response => {
+        if (!response.ok) {
+            console.error("Response status:", response.status);
+            return response.json().then(err => {
+                console.error("Error details:", err);
+                alert(err);
+                throw new Error("Server responded with error");
+            });
+        }
+        return response.json();
+    })
     .then(data => {
         console.log('Data sent and saved:', data);
         // Clear userSessionData after successfully sending to backend
