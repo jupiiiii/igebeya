@@ -1,6 +1,7 @@
 // Initialize the Telegram WebApp instance
 const tg = window.Telegram.WebApp;
 const chatId = tg.initDataUnsafe.user.id;
+alert(chatId);
 
 let currentTimestamp;
 let userSessionData = JSON.parse(localStorage.getItem(`${chatId}_userSessionData`));

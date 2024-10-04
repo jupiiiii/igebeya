@@ -540,9 +540,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Function to add item to favorites
 function addToFavorites(itemId) {
-    const chatId = localStorage.getItem('chatId');
     const item = itemDetailsDict[itemId];
-
     if (!itemId || !chatId) return;
     console.log('item ID:', itemId);
 
@@ -564,7 +562,6 @@ function addToFavorites(itemId) {
 
 // Function to remove item from favorites
 function removeFromFavorites(itemId) {
-    const chatId = localStorage.getItem('chatId');
     if (!itemId || !chatId) return;
 
     // Call API to remove from favorites (implement server-side logic for removal)
