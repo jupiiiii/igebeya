@@ -5,7 +5,7 @@ alert(chatId);
 
 let currentTimestamp;
 let userSessionData = JSON.parse(localStorage.getItem(`${chatId}_userSessionData`));
-alert(localStorage.getItem(`${chatId}_userSessionData`));
+alert(userSessionData);
 // let currentTimestampp = Object.keys(userSessionData).pop();
 // currentTimestamp = String(currentTimestampp);
 
