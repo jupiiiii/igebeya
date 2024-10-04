@@ -24,16 +24,19 @@ function trackUserInteraction(itemName, mainCategory, subCategory, action) {
     // Record interaction with main and subcategories
     currentTimestamp = generateTimestamp();
     // Add the interaction details
+    alert("bout to add item details bro");
     userSessionData[chatId][currentTimestamp] = {
         'item': itemName,
         'main category': mainCategory,
         'sub category': subCategory,
         'action': action
     };
+    alert("just added item details bro");
 
 
     // Update localStorage with the new session data
     localStorage.setItem(`${chatId}_userSessionData`, JSON.stringify(userSessionData));
+    alert("just added item details bro");
     console.log('User session data: ', userSessionData);
 }
 
