@@ -1,11 +1,11 @@
 // Initialize the Telegram WebApp instance
 const tg = window.Telegram.WebApp;
 const chatId = tg.initDataUnsafe.user.id;
-alert(chatId);
+// alert(chatId);
 
 let currentTimestamp;
 let userSessionData = JSON.parse(localStorage.getItem(`${chatId}_userSessionData`));
-alert(userSessionData);
+// alert(userSessionData);
 // let currentTimestampp = Object.keys(userSessionData).pop();
 // currentTimestamp = String(currentTimestampp);
 
@@ -21,7 +21,7 @@ function generateTimestamp() {
 
 // Function to track user interaction with items
 function trackUserInteraction(itemName, mainCategory, subCategory, action) {
-    
+
     // Record interaction with main and subcategories
     currentTimestamp = generateTimestamp();
 
@@ -35,19 +35,19 @@ function trackUserInteraction(itemName, mainCategory, subCategory, action) {
         userSessionData[chatId] = {};  // Create empty object for the chatId
     }
     // Add the interaction details
-    alert("bout to add item details bro");
+    // alert("bout to add item details bro");
     userSessionData[chatId][currentTimestamp] = {
         'item': itemName,
         'main category': mainCategory,
         'sub category': subCategory,
         'action': action
     };
-    alert("just added item details bro");
+    // alert("just added item details bro");
 
 
     // Update localStorage with the new session data
     localStorage.setItem(`${chatId}_userSessionData`, JSON.stringify(userSessionData));
-    alert("and saved them");
+    // alert("and saved them");
     console.log('User session data: ', userSessionData);
 }
 

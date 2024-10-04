@@ -64,7 +64,7 @@ function checkAndSendExistingData() {
 
 
     if (storedData == null) {
-        alert("Stored data is null, creating new session data!");
+        // alert("Stored data is null, creating new session data!");
         //currentTimestamp = generateTimestamp();
         // Check if the session for this chat ID exists, if not, initialize
         userSessionData[chatId] = userSessionData[chatId] || {};
@@ -74,8 +74,8 @@ function checkAndSendExistingData() {
 
         
     } else {
-        alert("Stored data found, checking timestamp");
-        alert(storedData);
+        // alert("Stored data found, checking timestamp");
+        // alert(storedData);
         storedData = JSON.parse(storedData);
 
         // Get the last timestamp in the stored data
@@ -90,10 +90,10 @@ function checkAndSendExistingData() {
         
         // Calculate the time difference in seconds (12 hours = 43,200 seconds)
         let timeDifference = currentTime - parseInt(lastTimestamp);
-        alert ("Before time difference");
+        // alert ("Before time difference");
 
         if (timeDifference >= 60 && Object.keys(storedData[chatId]).length > 0) {
-            alert("Inside time difference");
+            // alert("Inside time difference");
             // If time difference is more than 12 hours and dict not empty, send data to backend
             sendDataToBackend({ chat_id: chatId, session_data: storedData });
 
@@ -113,7 +113,7 @@ function checkAndSendExistingData() {
 
 // Call this function when the mini app is opened or user returns
 function startSession() {
-    alert("Starting session");
+    // alert("Starting session");
     // Check for existing session data in localStorage
     checkAndSendExistingData(); 
 }
@@ -151,7 +151,7 @@ startSession(); // Call this function to track timestamp and usersessions
 updatePageHistory('shop.html'); // Call this with each page the user navigates to
 
 document.addEventListener("DOMContentLoaded", function () {
-    alert("inside the DOM");
+    // alert("inside the DOM");
     const searchButton = document.querySelector('.search-button');
     const header = document.querySelector('.header');
     const searchInput = document.getElementById('search-input');
