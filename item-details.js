@@ -36,7 +36,7 @@ function trackUserInteraction(itemName, mainCategory, subCategory, action) {
 
     // Update localStorage with the new session data
     localStorage.setItem(`${chatId}_userSessionData`, JSON.stringify(userSessionData));
-    alert("just added item details bro");
+    alert("and saved them");
     console.log('User session data: ', userSessionData);
 }
 
