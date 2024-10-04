@@ -21,8 +21,19 @@ function generateTimestamp() {
 
 // Function to track user interaction with items
 function trackUserInteraction(itemName, mainCategory, subCategory, action) {
+    
     // Record interaction with main and subcategories
     currentTimestamp = generateTimestamp();
+
+    // Check if userSessionData is null and initialize if needed
+    if (!userSessionData) {
+        userSessionData = {};
+    }
+
+    // Check if the chatId exists in userSessionData, if not, initialize it
+    if (!userSessionData[chatId]) {
+        userSessionData[chatId] = {};  // Create empty object for the chatId
+    }
     // Add the interaction details
     alert("bout to add item details bro");
     userSessionData[chatId][currentTimestamp] = {
