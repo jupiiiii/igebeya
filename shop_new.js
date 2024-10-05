@@ -7,6 +7,7 @@ const chatId = tg.initDataUnsafe.user.id;
 let userSessionData = {};
 let currentTimestamp;
 let cookies;
+let UserCookiesConsent;
 
 // Initialize URLSearchParams from the window location
 // const urlParams = new URLSearchParams(window.location.search);
@@ -94,9 +95,15 @@ function checkAndSendExistingData() {
         // alert ("Before time difference");
 
         if (timeDifference >= 60 && Object.keys(storedData[chatId]).length > 0) {
+            cookies = localStorage.getItem(`${chatId}_YesCookiesPlease`);
+            if (!cookies){
+                UserCookiesConsent = "No";
+            } else {
+                UserCookiesConsent = "yes";
+            }
             // alert("Inside time difference");
             // If time difference is more than 12 hours and dict not empty, send data to backend
-            sendDataToBackend({ chat_id: chatId, session_data: storedData });
+            sendDataToBackend({ chat_id: chatId, session_data: storedData, cookies: UserCookiesConsent});
 
             // Proceed with normal session process
             //currentTimestamp = generateTimestamp();
@@ -205,6 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     declineCookies.addEventListener('click', function() {
+        localStorage.setItem(`${chatId}_NoCookiesPlease`, "No, I dont consent to cookies on this mini app!");
         document.getElementById('cookie-banner').style.display = 'none';
     });
 
