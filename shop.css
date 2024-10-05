@@ -389,6 +389,8 @@ body {
     text-align: center;
     padding: 10px;
     z-index: 1000;
+    border: 1px solid #326472;
+    border-radius: 5px;
 }
 
 .cookie-banner button {
