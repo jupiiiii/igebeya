@@ -247,7 +247,7 @@ textarea {
 .unlist-button {
     background-color: var(--tg-theme-bg-color);
     color: var(--tg-theme-text-color);
-    border: none;
+    border: #f42055;
     padding: 8px 16px;
     border-radius: 5px;
     cursor: pointer;
