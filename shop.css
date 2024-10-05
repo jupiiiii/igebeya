@@ -382,7 +382,8 @@ body {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 80%;
+    height: 30px;
     background-color: var(--tg-theme-bg-color);
     color: #bcc2c498;
     text-align: center;
@@ -402,11 +403,12 @@ body {
     background-color: #244c57;
 }
 
-/* .cookie-banner p {
-    font-family: 'Merriweather', serif;
-    font-size: 12px;
+.cookie-banner p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 50;
+    font-size: 8px;
     color: var(--tg-theme-text-color);
-} */
+}
 
 
 
