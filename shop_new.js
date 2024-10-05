@@ -166,6 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const cityTrigger = document.getElementById("city-dropdown-trigger");
     const cityDropdown = document.getElementById("city-dropdown");
     const selectedCity = document.getElementById("selected-city");
+    alert(selectedCity);
     
     tg.BackButton.hide();
 
