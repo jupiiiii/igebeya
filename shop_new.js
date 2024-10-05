@@ -175,8 +175,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     // For either first time comers or others set whatever is saved in the local storage 
-    // (either Anywhere or users choice)
+    // (either Anywhere or users choice) and then update the selected city handle
     city = localStorage.getItem(`${chatId}_userCity`);
+    selectedCity.textContent = city;
     
     
     tg.BackButton.hide();
