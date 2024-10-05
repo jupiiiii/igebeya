@@ -367,7 +367,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         </div>
                         <div class="item-unlist">
                             <button class="unlist-button" data-id="${item.id}">
-                                &#128465;
+                                <i class="fas fa-trash-alt"></i>
                             </button>
                         </div>
                     `;
