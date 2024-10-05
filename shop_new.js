@@ -212,7 +212,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     declineCookies.addEventListener('click', function() {
-        localStorage.setItem(`${chatId}_NoCookiesPlease`, "No, I dont consent to cookies on this mini app!");
         document.getElementById('cookie-banner').style.display = 'none';
     });
 
