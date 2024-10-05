@@ -245,8 +245,8 @@ textarea {
 }
 
 .unlist-button {
-    background-color: #ff4d4d;
-    color: white;
+    background-color: var(--tg-theme-bg-color);
+    color: var(--tg-theme-text-color);
     border: none;
     padding: 8px 16px;
     border-radius: 5px;
@@ -254,7 +254,7 @@ textarea {
 }
 
 .unlist-button:hover {
-    background-color: #ff1a1a;
+    background-color: #ef1d1d55;
 }
 
 #back-button {
