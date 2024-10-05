@@ -391,6 +391,7 @@ body {
     z-index: 1000;
     border: 1px solid #326472;
     border-radius: 5px;
+    animation: bounce 1.5s infinite;
 }
 
 .cookie-banner button {
@@ -432,5 +433,15 @@ body {
 @media (max-width: 480px) {
     .item-box {
         width: 44%;
+    }
+}
+
+/* Keyframes for bounce animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Moves the banner up by 10px */
     }
 }
