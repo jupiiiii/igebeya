@@ -114,25 +114,6 @@ function checkAndSendExistingData() {
 
 // Call this function when the mini app is opened or user returns
 function startSession() {
-    // Cookies consent
-    cookies = localStorage.getItem(`${chatId}_YesCookiesPlease`);
-    
-    if (!cookies){
-        document.getElementById('cookie-banner').style.display = 'flex';
-
-        // If user consents
-        document.getElementById('accept-cookies').addEventListener('click', function() {
-            localStorage.setItem(`${chatId}_YesCookiesPlease`);
-            document.getElementById('cookie-banner').style.display = 'none';
-        });
-
-        // If user doesnt consent
-        document.getElementById('decline-cookies').addEventListener('click', function() {
-            document.getElementById('cookie-banner').style.display = 'none';
-            tg.close();
-        });
-    }
-    
     // Check for existing session data in localStorage
     checkAndSendExistingData(); 
 }
@@ -192,6 +173,16 @@ document.addEventListener("DOMContentLoaded", function () {
         let city = "Anywhere";
         localStorage.setItem(`${chatId}_userCity`, city);
     }
+
+    // Cookies consent
+    const acceptCookies = document.getElementById('accept-cookies');
+    const declineCookies = document.getElementById('decline-cookies');
+
+    cookies = localStorage.getItem(`${chatId}_YesCookiesPlease`);
+    
+    if (!cookies){
+        document.getElementById('cookie-banner').style.display = 'flex';
+    }
     
     // For either first time comers or others set whatever is saved in the local storage 
     // (either Anywhere or users choice) and then update the selected city handle
@@ -206,6 +197,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const limit = 10; // Number of items to load per batch
     let currentItems = [];
     let favSearch = [];
+
+    // Cookies
+    acceptCookies.addEventListener('click', function() {
+        localStorage.setItem(`${chatId}_YesCookiesPlease`);
+        document.getElementById('cookie-banner').style.display = 'none';
+    });
+
+    declineCookies.addEventListener('click', function() {
+        document.getElementById('cookie-banner').style.display = 'none';
+    });
 
     // Load initial batch of items
     displayItems(start, limit);

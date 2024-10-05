@@ -384,7 +384,7 @@ body {
     left: 0;
     width: 100%;
     background-color: var(--tg-theme-bg-color);
-    color: var(--tg-theme-text-color);
+    color: #bcc2c498;
     text-align: center;
     padding: 10px;
     z-index: 1000;
@@ -402,11 +402,11 @@ body {
     background-color: #244c57;
 }
 
-.cookie-banner p {
+/* .cookie-banner p {
     font-family: 'Merriweather', serif;
     font-size: 12px;
     color: var(--tg-theme-text-color);
-}
+} */
 
 
 
