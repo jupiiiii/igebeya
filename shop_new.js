@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const cityTrigger = document.getElementById("city-dropdown-trigger");
     const cityDropdown = document.getElementById("city-dropdown");
     const selectedCity = document.getElementById("selected-city");
-    alert(selectedCity);
+    let city = "Anywhere";
     
     tg.BackButton.hide();
 
@@ -217,19 +217,14 @@ document.addEventListener("DOMContentLoaded", function () {
     // Handle city selection
     cityDropdown.addEventListener("click", function(event) {
         if (event.target.tagName === 'LI') {
-            const city = event.target.getAttribute("data-city");
+            city = event.target.getAttribute("data-city");
             selectedCity.textContent = city; // Update the header with selected city
 
             // Hide the dropdown after selection
             cityDropdown.classList.add("hidden");
             document.body.classList.remove("no-scroll");
 
-            // Optionally, perform any additional action based on the selected city (e.g., filter search results)
-            if (city !== 'Anywhere'){
-                loadMoreButton.style.display = 'none';
-                backToTopButton.style.display = 'none';
-                handleSearch(city);
-            }else{
+            if (city){
                 showMoreButton.style.display = 'none';
                 backToTopButton.style.display = 'none';
                 loadMoreButton.style.display = 'block';
@@ -237,6 +232,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 start -= start;
                 displayItems(start, limit);
             }
+
+            // Optionally, perform any additional action based on the selected city (e.g., filter search results)
+            // if (city !== 'Anywhere'){
+            //     loadMoreButton.style.display = 'none';
+            //     backToTopButton.style.display = 'none';
+            //     handleSearch(city);
+            // }else{
+            //     showMoreButton.style.display = 'none';
+            //     backToTopButton.style.display = 'none';
+            //     loadMoreButton.style.display = 'block';
+            //     startSearch -= startSearch;
+            //     start -= start;
+            //     displayItems(start, limit);
+            // }
             
         }
     });
@@ -269,7 +278,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             // Fetch all items
-            fetch(`https://igebeya3-272f297966dc.herokuapp.com/get_items?start=${start}&limit=${limit}&chat_id=${chatId}`)
+            fetch(`https://igebeya3-272f297966dc.herokuapp.com/get_items?start=${start}&limit=${limit}&chat_id=${chatId}&city=${city}`)
                 .then(response => response.json())
                 .then(items => {
                     const itemsList = document.querySelector('.items-list');
