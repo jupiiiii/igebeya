@@ -382,8 +382,8 @@ body {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 80%;
-    height: 30px;
+    width: 100%;
+    height: 70px;
     background-color: var(--tg-theme-bg-color);
     color: #bcc2c498;
     text-align: center;
@@ -406,7 +406,7 @@ body {
 .cookie-banner p {
     font-family: 'Open Sans', sans-serif;
     font-weight: 50;
-    font-size: 8px;
+    font-size: 10px;
     color: var(--tg-theme-text-color);
 }
 
