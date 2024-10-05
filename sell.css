@@ -250,7 +250,7 @@ textarea {
     padding: 8px 16px;
     border-radius: 5px;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    /* transition: transform 0.2s ease; */
 }
 
 .unlist-button:hover {
