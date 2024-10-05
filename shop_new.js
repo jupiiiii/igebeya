@@ -166,7 +166,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const cityTrigger = document.getElementById("city-dropdown-trigger");
     const cityDropdown = document.getElementById("city-dropdown");
     const selectedCity = document.getElementById("selected-city");
-    let city = "Anywhere";
+    let savedCity = localStorage.getItem(`${chatId}_userCity`);
+
+    // If the user is first time comer set city to Anywhere by default
+    if (!savedCity){
+        let city = "Anywhere";
+        localStorage.setItem(`${chatId}_userCity`, city);
+    }
+    
+    // For either first time comers or others set whatever is saved in the local storage 
+    // (either Anywhere or users choice)
+    city = localStorage.getItem(`${chatId}_userCity`);
+    
     
     tg.BackButton.hide();
 
@@ -225,9 +236,15 @@ document.addEventListener("DOMContentLoaded", function () {
             document.body.classList.remove("no-scroll");
 
             if (city){
+                // handle buttons
                 showMoreButton.style.display = 'none';
                 backToTopButton.style.display = 'none';
                 loadMoreButton.style.display = 'block';
+
+                // save selected new city to local storage
+                localStorage.setItem(`${chatId}_userCity`, city);
+
+                // Proceed to displaying items
                 startSearch -= startSearch;
                 start -= start;
                 displayItems(start, limit);
