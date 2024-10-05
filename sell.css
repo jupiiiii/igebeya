@@ -251,12 +251,13 @@ textarea {
     border-radius: 5px;
     cursor: pointer;
     /* transition: transform 0.2s ease; */
+    border: 2px solid #ef1d1d;
 }
 
 .unlist-button:hover {
     /* background-color: var(--tg-theme-bg-color); */
     /* transform: scale(1.2); */
-    border: 2px solid #ef1d1d;
+    border: 2px solid #b00b0b;
 }
 
 #back-button {
