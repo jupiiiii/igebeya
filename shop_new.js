@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Cookies
     acceptCookies.addEventListener('click', function() {
-        localStorage.setItem(`${chatId}_YesCookiesPlease`);
+        localStorage.setItem(`${chatId}_YesCookiesPlease`, "Yes, I consent to cookies on this mini app!");
         document.getElementById('cookie-banner').style.display = 'none';
     });
 
