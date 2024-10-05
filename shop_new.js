@@ -6,6 +6,7 @@ const chatId = tg.initDataUnsafe.user.id;
 // Session tracker
 let userSessionData = {};
 let currentTimestamp;
+let cookies;
 
 // Initialize URLSearchParams from the window location
 // const urlParams = new URLSearchParams(window.location.search);
@@ -113,7 +114,25 @@ function checkAndSendExistingData() {
 
 // Call this function when the mini app is opened or user returns
 function startSession() {
-    // alert("Starting session");
+    // Cookies consent
+    cookies = localStorage.getItem(`${chatId}_YesCookiesPlease`);
+    
+    if (!cookies){
+        document.getElementById('cookie-banner').style.display = 'flex';
+
+        // If user consents
+        document.getElementById('accept-cookies').addEventListener('click', function() {
+            localStorage.setItem(`${chatId}_YesCookiesPlease`);
+            document.getElementById('cookie-banner').style.display = 'none';
+        });
+
+        // If user doesnt consent
+        document.getElementById('decline-cookies').addEventListener('click', function() {
+            document.getElementById('cookie-banner').style.display = 'none';
+            tg.close();
+        });
+    }
+    
     // Check for existing session data in localStorage
     checkAndSendExistingData(); 
 }

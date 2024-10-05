@@ -377,6 +377,38 @@ body {
     background-color: #244c57; /* Adjust color on hover as needed */
 }
 
+.cookie-banner {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--tg-theme-bg-color);
+    color: var(--tg-theme-text-color);
+    text-align: center;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.cookie-banner button {
+    background-color: #326472;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.cookie-banner button:hover {
+    background-color: #244c57;
+}
+
+.cookie-banner p {
+    font-family: 'Merriweather', serif;
+    font-size: 12px;
+    color: var(--tg-theme-text-color);
+}
+
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
