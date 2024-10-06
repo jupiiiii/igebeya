@@ -50,26 +50,17 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(response => response.json()) // Parse the response as JSON
         .then(data => {
-            if (data.status === "email") {
+            if (data.status != "success") {
                 alert(data.message);
                 loadingIndicator.style.display = "none";
                 submitButt.style.display = "block";
 
-            } else if (data.status === "password") {
-                alert(data.message);
-                loadingIndicator.style.display = "none";
-                submitButt.style.display = "block";
-                
             } else if (data.status === "success") {
                 alert(data.message);
                 window.location.href = "/shop.html";
 
-            } else if (data.status === "error") {
-                alert(data.message);
-                loadingIndicator.style.display = "none";
-                submitButt.style.display = "block";
-                
             }
+            
         })
         .catch((error) => {
             loadingIndicator.style.display = "none";
