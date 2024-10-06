@@ -23,7 +23,7 @@ body {
 /* Footer navigation */
 .bottom-navigation {
     position: fixed;
-    bottom: 10px;
+    bottom: 5px;
     left: 21px;
     right: 21px;
     background-color: var(--tg-theme-bg-color);
@@ -33,7 +33,10 @@ body {
     border-top: 1px solid rgba(53, 108, 110, 0.59);
     display: flex;
     justify-content: space-around;
-    padding: 10px 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 10px;
+    padding-bottom: 15px;
     z-index: 1000;
 }
 
