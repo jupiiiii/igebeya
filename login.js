@@ -48,14 +48,19 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             body: JSON.stringify(formData)
         })
+        .then(response => response.json())
         .then(response => {
-            if (response.error){
+            if (response.status === "email"){
                 loadingIndicator.style.display = "none";
                 submitButt.style.display = "block";
-                alert(`Error: ${data.error}`);
+                alert(response.message);
                 return;
-            }
-            else{
+            } else if (response.status === "password"){
+                loadingIndicator.style.display = "none";
+                submitButt.style.display = "block";
+                alert(response.message);
+                return;
+            } else if (response.status === "success") {
                 alert(response.message);
                 window.location.href = "/shop.html";
             }
