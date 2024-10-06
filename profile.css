@@ -17,11 +17,15 @@ body {
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.profile-picture {
+
+.profile-pic{
     border: 1px solid var(--tg-theme-bg-color);
+    border-radius: 50%;
+}
+
+.profile-picture {
     width: 100px;
     height: 100px;
-    border-radius: 50%;
     object-fit: cover;
 }
 .user-name {
