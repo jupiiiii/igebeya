@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert(data.message);
                 loadingIndicator.style.display = "none";
                 submitButt.style.display = "block";
-                 // Use `data.message` instead of `response.message`
+
             } else if (data.status === "password") {
                 alert(data.message);
                 loadingIndicator.style.display = "none";
@@ -62,11 +62,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 
             } else if (data.status === "success") {
                 alert(data.message);
-                window.location.href = "/shop.html"; // Redirect to the shop page
+                window.location.href = "/shop.html";
+
             } else if (data.status === "error") {
                 alert(data.message);
                 loadingIndicator.style.display = "none";
                 submitButt.style.display = "block";
+                
             }
         })
         .catch((error) => {
