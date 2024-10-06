@@ -38,6 +38,7 @@ h1 {
 
 /* Centered content within the overlay */
 .content {
+    display: none;
     text-align: center;
     color: var(--tg-theme-text-color);
     margin-top: 70%;
