@@ -2,21 +2,11 @@
 const tg = window.Telegram.WebApp;
 const chatId = tg.initDataUnsafe.user.id;
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Ensure that tg is initialized before the event listeners
-    if (!tg) {
-        console.error("Telegram WebApp is not initialized.");
-        return;
-    }
 
-    // Handle signup form submission
-    const signupForm = document.getElementById("signup_form");
-    const loginForm = document.getElementById("login_form");
+start();
 
-    start();
-
-    function start(){
-        fetch(`https://igebeya3-272f297966dc.herokuapp.com/user_status?chat_id=${chatId}`)
+function start(){
+    fetch(`https://igebeya3-272f297966dc.herokuapp.com/user_status?chat_id=${chatId}`)
             .then(response => response.json())
             .then(status => {
                 // alert(status.info);
@@ -31,73 +21,84 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             })
             .catch((error) => console.error('Error:', error));
-    }
+        }
 
-    if(signupForm){
-        signupForm.addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent default form submission
+// document.addEventListener("DOMContentLoaded", function () {
+//     // Ensure that tg is initialized before the event listeners
+//     if (!tg) {
+//         console.error("Telegram WebApp is not initialized.");
+//         return;
+//     }
 
-            // Collect form data
-            const username = document.getElementById("username").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const password = document.getElementById("password").value.trim();
+//     // Handle signup form submission
+//     const signupForm = document.getElementById("signup_form");
+//     const loginForm = document.getElementById("login_form");
 
-            // Hash the password using SHA-256
-            const hashedPassword = CryptoJS.SHA256(password).toString();
+//     if(signupForm){
+//         signupForm.addEventListener("submit", function (event) {
+//             event.preventDefault(); // Prevent default form submission
 
-            if (!username || !email || !password) {
-                alert("Please fill in all fields.");
-                return;
-            }
+//             // Collect form data
+//             const username = document.getElementById("username").value.trim();
+//             const email = document.getElementById("email").value.trim();
+//             const password = document.getElementById("password").value.trim();
 
-            // Create an object to hold the data
-            const formData = {
-                signup: 'signup',
-                username: username,
-                email: email,
-                password: hashedPassword
-            };
+//             // Hash the password using SHA-256
+//             const hashedPassword = CryptoJS.SHA256(password).toString();
 
-            console.log("Sending Signup Data: ", formData);
+//             if (!username || !email || !password) {
+//                 alert("Please fill in all fields.");
+//                 return;
+//             }
 
-            // Send the data to Telegram
-            tg.sendData(JSON.stringify(formData));
+//             // Create an object to hold the data
+//             const formData = {
+//                 signup: 'signup',
+//                 username: username,
+//                 email: email,
+//                 password: hashedPassword
+//             };
 
-            // Optionally, you can close the WebApp after sending the data
-            tg.close();
-        });
-    }
+//             console.log("Sending Signup Data: ", formData);
 
-    if (loginForm){
-        loginForm.addEventListener("submit", function (e) {
-            e.preventDefault(); // Prevent default form submission
+//             // Send the data to Telegram
+//             tg.sendData(JSON.stringify(formData));
 
-            // Collect form data
-            const email = document.getElementById("email").value.trim();
-            const password = document.getElementById("password").value.trim();
+//             // Optionally, you can close the WebApp after sending the data
+//             tg.close();
+//         });
+//     }
 
-            // Hash the password using SHA-256
-            const hashedPassword = CryptoJS.SHA256(password).toString();
+//     if (loginForm){
+//         loginForm.addEventListener("submit", function (e) {
+//             e.preventDefault(); // Prevent default form submission
 
-            if (!email || !password) {
-                alert("Please enter an email and password.");
-                return;
-            }
+//             // Collect form data
+//             const email = document.getElementById("email").value.trim();
+//             const password = document.getElementById("password").value.trim();
 
-            // Prepare formData object
-            const formData = {
-                login: 'login',
-                email: email,
-                password: hashedPassword
-            };
+//             // Hash the password using SHA-256
+//             const hashedPassword = CryptoJS.SHA256(password).toString();
 
-            console.log("Sending Login Data: ", formData);
+//             if (!email || !password) {
+//                 alert("Please enter an email and password.");
+//                 return;
+//             }
 
-            // Send the data to Telegram
-            tg.sendData(JSON.stringify(formData));
+//             // Prepare formData object
+//             const formData = {
+//                 login: 'login',
+//                 email: email,
+//                 password: hashedPassword
+//             };
 
-            // Optionally, close the WebApp after sending the data
-            tg.close();
-        });
-    }
-});
+//             console.log("Sending Login Data: ", formData);
+
+//             // Send the data to Telegram
+//             tg.sendData(JSON.stringify(formData));
+
+//             // Optionally, close the WebApp after sending the data
+//             tg.close();
+//         });
+//     }
+// });
