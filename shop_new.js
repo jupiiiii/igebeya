@@ -192,14 +192,12 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!cookies && !noCookies){
         document.getElementById('cookie-banner').style.display = 'flex';
     } else if (noCookies){
-        alert("am here");
         let nowTimestamp = generateTimestamp();
         let diffCookiesTime;
         diffCookiesTime = nowTimestamp - parseInt(noCookies);
-        alert(diffCookiesTime);
+        
         if (diffCookiesTime >= 60){
-            alert("> 60");
-            document.removeItem(`${chatId}_NoCookiesPlease`);
+            localStorage.removeItem(`${chatId}_NoCookiesPlease`);
             document.getElementById('cookie-banner').style.display = 'flex';
         } 
     }
