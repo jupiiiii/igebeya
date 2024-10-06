@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert(response.message);
                 return;
             } else if (response.status === "success") {
-                alert(response.message);
+                alert(response.message.json());
                 window.location.href = "/shop.html";
             }
         })
