@@ -198,6 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
         diffCookiesTime = nowTimestamp - parseInt(noCookies);
         alert(diffCookiesTime);
         if (diffCookiesTime >= 60){
+            alert("> 60");
             document.removeItem(`${chatId}_NoCookiesPlease`);
             document.getElementById('cookie-banner').style.display = 'flex';
         } 
