@@ -19,15 +19,16 @@ body {
 }
 
 .profile-pic {
-    width: 100px;
-    height: 100px;
+    width: 170px;
+    height: 170px;
     border: 1px solid var(--tg-theme-text-color);
     border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(74, 136, 154, 0.44);
 }
 
 .profile-picture {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
 }
 .user-name {
