@@ -23,7 +23,7 @@ body {
 /* Footer navigation */
 .bottom-navigation {
     position: fixed;
-    bottom: 5px;
+    /* bottom: 5px; */
     left: 21px;
     right: 21px;
     background-color: var(--tg-theme-bg-color);
