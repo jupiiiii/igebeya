@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         formData.append("username", username);
         formData.append("email", email);
         formData.append("password", hashedPassword);
+        alert(formData);
 
         // Change the button to loading...
         submitButt.style.display = "none";
@@ -45,7 +46,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         fetch('https://igebeya3-272f297966dc.herokuapp.com/user_signup', {
             method: 'POST',
-            body: formData
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
         })
         .then(response => response.json())
         .then(data => {
