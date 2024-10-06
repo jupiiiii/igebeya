@@ -52,13 +52,11 @@ document.addEventListener("DOMContentLoaded", function () {
             if (response.status === "email"){
                 loadingIndicator.style.display = "none";
                 submitButt.style.display = "block";
-                alert(response.message);
-                return;
+                alert(response.message.json());
             } else if (response.status === "password"){
                 loadingIndicator.style.display = "none";
                 submitButt.style.display = "block";
-                alert(response.message);
-                return;
+                alert(response.message.json());
             } else if (response.status === "success") {
                 alert(response.message.json());
                 window.location.href = "/shop.html";
