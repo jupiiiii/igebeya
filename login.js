@@ -63,6 +63,10 @@ document.addEventListener("DOMContentLoaded", function () {
             } else if (data.status === "success") {
                 alert(data.message);
                 window.location.href = "/shop.html"; // Redirect to the shop page
+            } else if (data.status === "error") {
+                alert(data.message);
+                loadingIndicator.style.display = "none";
+                submitButt.style.display = "block";
             }
         })
         .catch((error) => {
