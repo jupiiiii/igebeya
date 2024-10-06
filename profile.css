@@ -19,7 +19,9 @@ body {
 }
 
 .profile-pic {
-    border: 1px solid #ff0000;
+    width: 100px;
+    height: 100px;
+    border: 1px solid var(--tg-theme-text-color);
     border-radius: 50%;
 }
 
