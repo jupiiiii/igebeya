@@ -49,19 +49,19 @@ document.addEventListener("DOMContentLoaded", function () {
             body: JSON.stringify(formData)
         })
         .then(response => response.json())
-        .then(response => {
-            if (response.status === "email"){
+        .then(xx => {
+            if (xx.status === "email"){
                 loadingIndicator.style.display = "none";
                 submitButt.style.display = "block";
-                alert(response.message);
+                alert(xx.message);
                 return;
-            } else if (response.status === "password"){
+            } else if (xx.status === "password"){
                 loadingIndicator.style.display = "none";
                 submitButt.style.display = "block";
-                alert(response.message);
+                alert(xx.message);
                 return;
-            } else if (response.status === "success") {
-                alert(response.message);
+            } else if (xx.status === "success") {
+                alert(xx.message);
                 window.location.href = "/shop.html";
             }
         })
