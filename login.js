@@ -48,20 +48,19 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             body: JSON.stringify(formData)
         })
-        .then(response => response.json())
-        .then(xx => {
-            if (xx.status === "email"){
+        .then(response => {
+            if (response.status === "email"){
                 loadingIndicator.style.display = "none";
                 submitButt.style.display = "block";
-                alert(xx.message);
+                alert(response.message);
                 return;
-            } else if (xx.status === "password"){
+            } else if (response.status === "password"){
                 loadingIndicator.style.display = "none";
                 submitButt.style.display = "block";
-                alert(xx.message);
+                alert(response.message);
                 return;
-            } else if (xx.status === "success") {
-                alert(xx.message);
+            } else if (response.status === "success") {
+                alert(response.message);
                 window.location.href = "/shop.html";
             }
         })
