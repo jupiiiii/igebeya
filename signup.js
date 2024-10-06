@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
         formData.append("username", username);
         formData.append("email", email);
         formData.append("password", hashedPassword);
-        alert(formData);
 
         // Change the button to loading...
         submitButt.style.display = "none";
@@ -49,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(formData)
+            body: formData
         })
         .then(response => response.json())
         .then(data => {
