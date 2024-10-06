@@ -12,38 +12,53 @@ document.addEventListener("DOMContentLoaded", function () {
     // Handle signup form submission
     const signupForm = document.getElementById("signup_form");
 
-    if(signupForm){
-        signupForm.addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent default form submission
+    signupForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
 
-            // Collect form data
-            const username = document.getElementById("username").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const password = document.getElementById("password").value.trim();
+        // Collect form data
+        const username = document.getElementById("username").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+        const formData = new FormData(signupForm);
+        const loadingIndicator = document.getElementById("loading");
 
-            // Hash the password using SHA-256
-            const hashedPassword = CryptoJS.SHA256(password).toString();
+        // Hash the password using SHA-256
+        const hashedPassword = CryptoJS.SHA256(password).toString();
 
-            if (!username || !email || !password) {
-                alert("Please fill in all fields.");
-                return;
+        if (!username || !email || !password) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        // Create an object to hold the data
+        formData.append("chatId", chatId);
+        formData.append("username", username);
+        formData.append("email", email);
+        formData.append("password", hashedPassword);
+
+        // Change the button to loading...
+        loadingIndicator.style.display = "block";
+
+        // console.log("Sending Signup Data: ", formData);
+
+        fetch('https://igebeya3-272f297966dc.herokuapp.com/user_signup', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                loadingIndicator.style.display = "none";
+                alert(`Error: ${data.error}`);
+            } else {
+                alert(data.message);
+                window.location.href = "/login.html";
             }
+        })
+        .catch(error => {
+            // console.error('Error:', error);
+            alert('Failed to signup. Please try again!');
+        })
+    });
 
-            // Create an object to hold the data
-            const formData = {
-                signup: 'signup',
-                username: username,
-                email: email,
-                password: hashedPassword
-            };
-
-            console.log("Sending Signup Data: ", formData);
-
-            // Send the data to Telegram
-            tg.sendData(JSON.stringify(formData));
-
-            // Optionally, you can close the WebApp after sending the data
-            tg.close();
-        });
-    }
 });
