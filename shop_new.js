@@ -123,11 +123,9 @@ function checkAndSendExistingData() {
 // Call this function when the mini app is opened or user returns
 function startSession() {
     fetch(`https://igebeya3-272f297966dc.herokuapp.com/user_status?chat_id=${chatId}`)
-        .then(response => {
-            alert(JSON.stringify(response));
-        })
+        .then(response => response.json())
         .then(status => {
-            alert(status);
+            alert(status.info);
         })
         .catch((error) => console.error('Error:', error));
     // Check for existing session data in localStorage
