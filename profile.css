@@ -15,15 +15,17 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .profile-picture {
+    border: 1px rgba(74, 136, 154, 0.44);
     width: 100px;
     height: 100px;
     border-radius: 50%;
     object-fit: cover;
 }
 .user-name {
-    font-size: 12px;
+    font-size: 14px;
     font: 'Open Sans', sans-serif;
     margin-top: 15px;
+    color: var(--tg-theme-text-color);
 }
 
 /* Footer navigation */
