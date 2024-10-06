@@ -124,7 +124,7 @@ function checkAndSendExistingData() {
 function startSession() {
     fetch(`https://igebeya3-272f297966dc.herokuapp.com/user_status?chat_id=${chatId}`)
         .then(response => {
-            alert(response);
+            alert(JSON.stringify(response));
         })
         .then(status => {
             alert(status);
