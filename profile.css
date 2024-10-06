@@ -22,6 +22,7 @@ body {
     object-fit: cover;
 }
 .user-name {
+    left: 10px;
     font-size: 14px;
     font: 'Open Sans', sans-serif;
     margin-top: 15px;
