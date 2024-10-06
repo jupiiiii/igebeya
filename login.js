@@ -51,13 +51,15 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.json()) // Parse the response as JSON
         .then(data => {
             if (data.status === "email") {
-                loadingIndicator.style.display = "none";
-                submitButt.style.display = "block";
-                alert(data.message); // Use `data.message` instead of `response.message`
-            } else if (data.status === "password") {
-                loadingIndicator.style.display = "none";
-                submitButt.style.display = "block";
                 alert(data.message);
+                loadingIndicator.style.display = "none";
+                submitButt.style.display = "block";
+                 // Use `data.message` instead of `response.message`
+            } else if (data.status === "password") {
+                alert(data.message);
+                loadingIndicator.style.display = "none";
+                submitButt.style.display = "block";
+                
             } else if (data.status === "success") {
                 alert(data.message);
                 window.location.href = "/shop.html"; // Redirect to the shop page
