@@ -19,7 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const username = document.getElementById("username").value.trim();
         const email = document.getElementById("email").value.trim();
         const password = document.getElementById("password").value.trim();
-        const formData = new FormData(signupForm);
         const loadingIndicator = document.getElementById("loading");
         const submitButt = document.getElementById("submit");
 
@@ -31,11 +30,14 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
-        // Create an object to hold the data
-        formData.append("chatId", chatId);
-        formData.append("username", username);
-        formData.append("email", email);
-        formData.append("password", hashedPassword);
+
+        // Prepare formData object
+        const formData = {
+            chatId: chatId,
+            username: username,
+            email: email,
+            password: hashedPassword
+        };
 
         // Change the button to loading...
         submitButt.style.display = "none";
@@ -48,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: formData
+            body: JSON.stringify(formData)
         })
         .then(response => response.json())
         .then(data => {
