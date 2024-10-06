@@ -51,7 +51,9 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(data => {
             if (data.error) {
                 loadingIndicator.style.display = "none";
+                submitButt.style.display = "block";
                 alert(`Error: ${data.error}`);
+                return;
             } else {
                 alert(data.message);
                 window.location.href = "/login.html";

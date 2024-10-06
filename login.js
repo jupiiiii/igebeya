@@ -27,6 +27,10 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+        // Change the button to loading...
+        submitButt.style.display = "none";
+        loadingIndicator.style.display = "block";
+
         // Hash the password using SHA-256
         const hashedPassword = CryptoJS.SHA256(password).toString();
 
@@ -37,16 +41,24 @@ document.addEventListener("DOMContentLoaded", function () {
             password: hashedPassword
         };
 
-        fetch('https://igebeya3-272f297966dc.herokuapp.com/save_session_data', {
+        fetch('https://igebeya3-272f297966dc.herokuapp.com/user_login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            formData: JSON.stringify(data)
+            body: JSON.stringify(formData)
         })
         .then(response => {
-            alert(response.message);
-            window.location.href = "/shop.html";
+            if (response.error){
+                loadingIndicator.style.display = "none";
+                submitButt.style.display = "block";
+                alert(`Error: ${data.error}`);
+                return;
+            }
+            else{
+                alert(response.message);
+                window.location.href = "/shop.html";
+            }
         })
         
         .catch((error) => console.error('Error:', error));
