@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const password = document.getElementById("password").value.trim();
         const formData = new FormData(signupForm);
         const loadingIndicator = document.getElementById("loading");
+        const submitButt = document.getElementById("submit");
 
         // Hash the password using SHA-256
         const hashedPassword = CryptoJS.SHA256(password).toString();
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
         formData.append("password", hashedPassword);
 
         // Change the button to loading...
+        submitButt.style.display = "none";
         loadingIndicator.style.display = "block";
 
         // console.log("Sending Signup Data: ", formData);
