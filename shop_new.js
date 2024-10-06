@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Toggle header visibility when search button is clicked
     searchButton.addEventListener('click', function (event) {
         event.preventDefault();  // Prevent default link behavior if it's a link
-        if (header.style.display === 'none' || header.style.display === '') {
+        if (header.style.display === 'none') {
             header.style.display = 'flex';  // Show the header
         } else {
             header.style.display = 'none';  // Hide the header if already shown
