@@ -13,36 +13,43 @@ document.addEventListener("DOMContentLoaded", function () {
     // Handle signup form submission
     const loginForm = document.getElementById("login_form");
 
-    if (loginForm){
-        loginForm.addEventListener("submit", function (e) {
-            e.preventDefault(); // Prevent default form submission
+    loginForm.addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent default form submission
 
-            // Collect form data
-            const email = document.getElementById("email").value.trim();
-            const password = document.getElementById("password").value.trim();
+        // Collect form data
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value.trim();
+        const loadingIndicator = document.getElementById("loading");
+        const submitButt = document.getElementById("submit");
 
-            // Hash the password using SHA-256
-            const hashedPassword = CryptoJS.SHA256(password).toString();
+        if (!email || !password) {
+            alert("Please enter an email and password.");
+            return;
+        }
 
-            if (!email || !password) {
-                alert("Please enter an email and password.");
-                return;
-            }
+        // Hash the password using SHA-256
+        const hashedPassword = CryptoJS.SHA256(password).toString();
 
-            // Prepare formData object
-            const formData = {
-                login: 'login',
-                email: email,
-                password: hashedPassword
-            };
+        // Prepare formData object
+        const formData = {
+            chatId: chatId,
+            email: email,
+            password: hashedPassword
+        };
 
-            console.log("Sending Login Data: ", formData);
+        fetch('https://igebeya3-272f297966dc.herokuapp.com/save_session_data', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            formData: JSON.stringify(data)
+        })
+        .then(response => {
+            alert(response.message);
+            window.location.href = "/shop.html";
+        })
+        
+        .catch((error) => console.error('Error:', error));
+    });
 
-            // Send the data to Telegram
-            tg.sendData(JSON.stringify(formData));
-
-            // Optionally, close the WebApp after sending the data
-            tg.close();
-        });
-    }
 });
