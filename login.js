@@ -48,22 +48,27 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             body: JSON.stringify(formData)
         })
-        .then(response => {
-            if (response.status === "email"){
+        .then(response => response.json()) // Parse the response as JSON
+        .then(data => {
+            if (data.status === "email") {
                 loadingIndicator.style.display = "none";
                 submitButt.style.display = "block";
-                alert(response.message.json());
-            } else if (response.status === "password"){
+                alert(data.message); // Use `data.message` instead of `response.message`
+            } else if (data.status === "password") {
                 loadingIndicator.style.display = "none";
                 submitButt.style.display = "block";
-                alert(response.message.json());
-            } else if (response.status === "success") {
-                alert(response.message.json());
-                window.location.href = "/shop.html";
+                alert(data.message);
+            } else if (data.status === "success") {
+                alert(data.message);
+                window.location.href = "/shop.html"; // Redirect to the shop page
             }
         })
+        .catch((error) => {
+            loadingIndicator.style.display = "none";
+            submitButt.style.display = "block";
+            console.error('Error:', error);
+        });
         
-        .catch((error) => console.error('Error:', error));
     });
 
 });
