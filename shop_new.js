@@ -122,22 +122,8 @@ function checkAndSendExistingData() {
 
 // Call this function when the mini app is opened or user returns
 function startSession() {
-    fetch(`https://igebeya3-272f297966dc.herokuapp.com/user_status?chat_id=${chatId}`)
-        .then(response => response.json())
-        .then(status => {
-            // alert(status.info);
-
-            // Check the user status and forward accordingly
-            if (status.info === "Logged_in") {
-                // Check for existing session data in localStorage
-                checkAndSendExistingData();
-            } else if (status.info === "Logged_out") {
-                window.location.href = "/login.html";
-            } else if (status.info === "New_user"){
-                window.location.href = "/signup.html";
-            }
-        })
-        .catch((error) => console.error('Error:', error)); 
+    // Check for existing session data in localStorage
+    checkAndSendExistingData(); 
 }
 
 // Function to track user interaction with items

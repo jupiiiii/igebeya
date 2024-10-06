@@ -1,5 +1,6 @@
 // Initialize the Telegram WebApp instance
-let tg = window.Telegram.WebApp;
+const tg = window.Telegram.WebApp;
+const chatId = tg.initDataUnsafe.user.id;
 
 document.addEventListener("DOMContentLoaded", function () {
     // Ensure that tg is initialized before the event listeners
@@ -12,8 +13,27 @@ document.addEventListener("DOMContentLoaded", function () {
     const signupForm = document.getElementById("signup_form");
     const loginForm = document.getElementById("login_form");
 
-    // Signup form submission
-    if (signupForm) {
+    start();
+
+    function start(){
+        fetch(`https://igebeya3-272f297966dc.herokuapp.com/user_status?chat_id=${chatId}`)
+            .then(response => response.json())
+            .then(status => {
+                // alert(status.info);
+
+                // Check the user status and forward accordingly
+                if (status.info === "Logged_in") {
+                    window.location.href = "/shop.html";
+                } else if (status.info === "Logged_out") {
+                    window.location.href = "/login.html";
+                } else if (status.info === "New_user"){
+                    window.location.href = "/signup.html";
+                }
+            })
+            .catch((error) => console.error('Error:', error));
+    }
+
+    if(signupForm){
         signupForm.addEventListener("submit", function (event) {
             event.preventDefault(); // Prevent default form submission
 
@@ -48,8 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Login form submission
-    if (loginForm) {
+    if (loginForm){
         loginForm.addEventListener("submit", function (e) {
             e.preventDefault(); // Prevent default form submission
 
