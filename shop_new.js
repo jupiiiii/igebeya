@@ -8,6 +8,7 @@ let userSessionData = {};
 let currentTimestamp;
 let cookies;
 let UserCookiesConsent;
+let timestampCookiesDeclined;
 
 // Initialize URLSearchParams from the window location
 // const urlParams = new URLSearchParams(window.location.search);
@@ -186,9 +187,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const declineCookies = document.getElementById('decline-cookies');
 
     cookies = localStorage.getItem(`${chatId}_YesCookiesPlease`);
+    let noCookies = localStorage.getItem(`${chatId}_NoCookiesPlease`);
     
-    if (!cookies){
+    if (!cookies && !noCookies){
         document.getElementById('cookie-banner').style.display = 'flex';
+    } else if (noCookies){
+        let nowTimestamp = generateTimestamp();
+        let diffCookiesTime;
+        diffCookiesTime = nowTimestamp - parseInt(noCookies);
+        if (diffCookiesTime >= 60){
+            document.removeItem(`${chatId}_NoCookiesPlease`);
+            document.getElementById('cookie-banner').style.display = 'flex';
+        } 
     }
     
     // For either first time comers or others set whatever is saved in the local storage 
@@ -212,6 +222,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     declineCookies.addEventListener('click', function() {
+        timestampCookiesDeclined = generateTimestamp();
+        localStorage.setItem(`${chatId}_NoCookiesPlease`, timestampCookiesDeclined);
         document.getElementById('cookie-banner').style.display = 'none';
     });
 
