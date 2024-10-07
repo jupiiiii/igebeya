@@ -48,7 +48,7 @@ body {
     box-shadow: 0 2px 5px rgba(74, 136, 154, 0.44);
     border-radius: 10px;     
     box-sizing: border-box;     
-    margin: 10px 10px 5px 10px;              
+    margin: 10px 10px 5px 5px;              
     padding: 10px;
 }
 
@@ -61,7 +61,7 @@ body {
     box-shadow: 0 2px 5px rgba(74, 136, 154, 0.44);
     border-radius: 10px;     
     box-sizing: border-box;     
-    margin: 5px 10px 5px 10px;              
+    margin: 5px 10px 5px 5px;              
     padding: 10px;
 }
 
@@ -74,7 +74,7 @@ body {
     box-shadow: 0 2px 5px rgba(74, 136, 154, 0.44);
     border-radius: 10px;     
     box-sizing: border-box;     
-    margin: 5px 10px 5px 10px;         
+    margin: 5px 10px 5px 5px;         
     padding: 10px;
 }
 
@@ -87,7 +87,7 @@ body {
     box-shadow: 0 2px 5px rgba(74, 136, 154, 0.44);
     border-radius: 10px;     
     box-sizing: border-box;     
-    margin: 5px 10px 5px 10px;             
+    margin: 5px 10px 5px 5px;             
     padding: 10px;
 }
 
