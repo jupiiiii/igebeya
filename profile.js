@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function (){
         fetch(`https://igebeya3-272f297966dc.herokuapp.com/user_status?chat_id=${chatId}`)
             .then(response => response.json())
             .then(status => {
-                alert(status.info);
+                // alert(status.info);
                 // Populate user details
                 document.getElementById("username").innerHTML = `<i class="fas fa-user"></i> ${status.username}`;
                 document.getElementById("email").innerHTML = `<i class="fas fa-envelope"></i> ${status.email}`;
