@@ -106,10 +106,11 @@ body {
 .delete-account {
     border: 2px solid transparent;
     background-color: transparent;
-    padding: 20px 20px;
+    padding: 10px 20px;
     font-size: 14px;
     font: 'Open Sans', sans-serif;
     cursor: pointer;
+    margin-right: 10px;
 }
 
 .log-out-button {
