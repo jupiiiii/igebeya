@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
             password: hashedPassword
         };
 
-        fetch('https://igebeya3-272f297966dc.herokuapp.com/user_login', {
+        fetch(`https://igebeya3-272f297966dc.herokuapp.com/user_login?request=login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

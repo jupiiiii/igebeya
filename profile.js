@@ -22,6 +22,9 @@ const randomString = generateRandomAlphabet(5);
 
 
 document.addEventListener("DOMContentLoaded", function (){
+
+    const logOut = document.getElementById("log-out-button");
+    const deleteAccount = document.getElementById("delete-account");
     // Set user's name and profile picture
     document.getElementById('user-name').innerText = `${user.first_name} ${user.last_name || ''}`;
     const profilePicture = user.photo_url || 'bg.png'; // Fallback if no profile picture is available
@@ -44,6 +47,35 @@ document.addEventListener("DOMContentLoaded", function (){
             })
             .catch((error) => console.error('Error:', error));
     }
+
+    const userData = {chatId: chatId};
+
+    logOut.addEventListener('click', function(){
+        fetch(`https://igebeya3-272f297966dc.herokuapp.com/user_login?request=logout`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(userData)
+        })
+        .then(response => response.json()) // Parse the response as JSON
+        .then(data => {
+            if (data.status === "success") {
+                alert("Logged Out!");
+                window.location.href = "/main.html";
+
+            } else {
+                alert("Something went wrong!");
+                return;
+            }
+            
+        })
+        .catch((error) => {
+            loadingIndicator.style.display = "none";
+            submitButt.style.display = "block";
+            console.error('Error:', error);
+        });
+    });
 
 
 });
