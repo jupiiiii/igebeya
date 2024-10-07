@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function (){
         .then(data => {
             if (data.status === "success") {
                 alert("Logged Out!");
-                window.location.href = "/main.html";
+                window.location.href = "/home.html";
 
             } else {
                 alert("Something went wrong!");
