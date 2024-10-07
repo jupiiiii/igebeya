@@ -36,8 +36,8 @@ document.addEventListener("DOMContentLoaded", function (){
             .then(status => {
                 // alert(status.info);
                 // Populate user details
-                document.getElementById("username").innerHTML = `<i class="fas fa-map-marker-alt"></i> ${status.username}`;
-                document.getElementById("email").innerHTML = `<i class="fas fa-map-marker-alt"></i> ${status.email}`;
+                document.getElementById("username").innerHTML = `<i class="fas fa-user"></i> ${status.username}`;
+                document.getElementById("email").innerHTML = `<i class="fas fa-envelope"></i> ${status.email}`;
 
     
             })
