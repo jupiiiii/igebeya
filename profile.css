@@ -22,6 +22,7 @@ body {
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    text-align: left;
 }
 
 .profile-pic {
@@ -37,6 +38,7 @@ body {
     height: 150px;
     object-fit: cover;
 }
+
 .user-name {
     font-size: 14px;
     font: 'Open Sans', sans-serif;
