@@ -48,10 +48,10 @@ document.addEventListener("DOMContentLoaded", function (){
             .catch((error) => console.error('Error:', error));
     }
 
-    const userData = {chatId: chatId};
+    const userData = {chatId: chatId, action: "logout"};
 
     logOut.addEventListener('click', function(){
-        fetch(`https://igebeya3-272f297966dc.herokuapp.com/user_login?request=logout`, {
+        fetch(`https://igebeya3-272f297966dc.herokuapp.com/user_login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -71,8 +71,6 @@ document.addEventListener("DOMContentLoaded", function (){
             
         })
         .catch((error) => {
-            loadingIndicator.style.display = "none";
-            submitButt.style.display = "block";
             console.error('Error:', error);
         });
     });

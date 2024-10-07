@@ -38,10 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const formData = {
             chatId: chatId,
             email: email,
-            password: hashedPassword
+            password: hashedPassword,
+            action: "login"
         };
 
-        fetch(`https://igebeya3-272f297966dc.herokuapp.com/user_login?request=login`, {
+        fetch(`https://igebeya3-272f297966dc.herokuapp.com/user_login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
