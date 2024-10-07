@@ -1,5 +1,7 @@
 // Retrieve user data from Telegram WebApp
 const user = window.Telegram.WebApp.initDataUnsafe.user;
+const tg = window.Telegram.WebApp;
+const chatId = tg.initDataUnsafe.user.id;
 const firstName = user.first_name;
 const lastName = user.last_name || '';  // Last name is optional
 
