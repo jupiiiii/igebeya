@@ -37,6 +37,8 @@ body {
     width: 150px;
     height: 150px;
     object-fit: cover;
+    padding: 5px;
+    margin-left: 5px;
 }
 
 .user-name {
