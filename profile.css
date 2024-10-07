@@ -93,6 +93,39 @@ body {
     padding: 10px;
 }
 
+.log-out-delete-button {
+    position: fixed; /* Fix the position */
+    bottom: 60px; /* Place just above the footer */
+    width: 100%;
+    display: flex;
+    justify-content: space-around; /* Space the buttons evenly */
+    padding: 10px;
+}
+
+.log-out-button,
+.delete-account {
+    border: 2px solid transparent;
+    background-color: transparent;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Merriweather', serif;
+    cursor: pointer;
+}
+
+.delete-account {
+    border-color: #ff4d4d; /* Reddish border for the delete button */
+    color: #ff4d4d;
+}
+
+.delete-account:hover {
+    background-color: #ff4d4d; /* Hover effect for delete button */
+    color: white;
+}
+
+.log-out-button:hover {
+    background-color: #f0f0f0; /* Hover effect for log-out button */
+}
+
 /* Footer navigation */
 .bottom-navigation {
     position: fixed;
