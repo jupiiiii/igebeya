@@ -44,6 +44,11 @@ body {
     font: 'Open Sans', sans-serif;
     margin-top: 15px;
     color: var(--tg-theme-text-color);
+    width: 100%;               
+    border: 1px solid #000;     
+    box-sizing: border-box;     
+    margin: 10px;               
+    padding: 5px;
 }
 
 /* Footer navigation */
