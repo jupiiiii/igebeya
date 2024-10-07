@@ -38,14 +38,13 @@ body {
     object-fit: cover;
 }
 .user-name {
-    margin-left: 15px;
-    left: 10px;
     font-size: 14px;
     font: 'Open Sans', sans-serif;
-    margin-top: 15px;
     color: var(--tg-theme-text-color);
     width: 100%;               
-    border: 1px solid #000;     
+    border: 1px solid var(--tg-theme-text-color);
+    box-shadow: 0 2px 5px rgba(74, 136, 154, 0.44);
+    border-radius: 10px;     
     box-sizing: border-box;     
     margin: 10px;               
     padding: 5px;
