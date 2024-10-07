@@ -76,6 +76,19 @@ body {
     padding: 5px;
 }
 
+.join-date {
+    font-size: 14px;
+    font: 'Open Sans', sans-serif;
+    color: var(--tg-theme-text-color);
+    width: 100%;               
+    border: 1px solid var(--tg-theme-text-color);
+    box-shadow: 0 2px 5px rgba(74, 136, 154, 0.44);
+    border-radius: 10px;     
+    box-sizing: border-box;     
+    margin: 10px;               
+    padding: 5px;
+}
+
 /* Footer navigation */
 .bottom-navigation {
     position: fixed;
