@@ -79,7 +79,7 @@
     transition: background-color 0.3s ease;
 }
 
-.password-container .toggle-password {
+.toggle-password {
     position: absolute;
     top: 36.5%;
     right: 65px;
