@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function(){
     const passwordInput = document.querySelector("#new_password");
     const submitButt = document.getElementById("reset-submit");
     const loadingIndicator = document.getElementById("loading");
+    const goBack = document.getElementById("back-home");
 
 
     togglePassword.addEventListener("click", function () {
@@ -33,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
         // Change the button to loading...
         submitButt.style.display = "none";
+        goBack.style.display = "none";
         loadingIndicator.style.display = "block";
     
         const email = document.getElementById('email').value.trim();
@@ -64,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function(){
             } else {
                 // Change the button to loading...
                 submitButt.style.display = "block";
+                goBack.style.display = "block";
                 loadingIndicator.style.display = "none";
                 alert(data.message);
             }
