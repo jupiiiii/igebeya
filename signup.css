@@ -78,26 +78,27 @@
     background-color: #1d4e69;
 }
 
-.toggle-password {
-    position: absolute;
-    top: 56.5%;
-    right: 65px;
-    transform: translateY(-50%); /* Center the icon vertically */
-    cursor: pointer;
-    color: #888; /* Optional: change color */
+.password-container {
+    position: relative;
+    width: 100%;
 }
 
-/* Style when password is visible */
-input.visible {
+.password-container input[type="password"] {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    color: var(--tg-theme-text-color);
-    font-size: 14px;
-    font-family: 'Roboto Light', sans-serif;
-    transition: border-color 0.3s ease;
+    padding-right: 40px; /* Add space for the icon */
+}
+
+.password-container .toggle-password {
+    position: absolute;
+    top: 48%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888; /* Icon color */
+}
+
+.password-container .toggle-password:hover {
+    color: #7e7c7c; /* Icon hover color */
 }
 
 /* Back to Home link */
