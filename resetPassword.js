@@ -11,6 +11,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const resetPassword = document.getElementById("password-reset");
+    const reset = document.getElementById("reset-submit");
+    const loadingIndicator = document.getElementById("loading");
+
+    // Change the button to loading...
+    reset.style.display = "none";
+    loadingIndicator.style.display = "block";
 
     document.getElementById('reset_form').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -28,6 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 window.location.href = "/newPassword.html";
             } else {
                 alert("Email not found.");
+                reset.style.display = "block";
+                loadingIndicator.style.display = "none";
             }
         })
         .catch(error => console.error('Error:', error));
