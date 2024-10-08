@@ -76,7 +76,7 @@
 
 .toggle-password {
     position: absolute;
-    top: 36%;
+    top: 36.5%;
     right: 65px;
     transform: translateY(-50%); /* Center the icon vertically */
     cursor: pointer;
