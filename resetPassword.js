@@ -14,13 +14,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const reset = document.getElementById("reset-submit");
     const loadingIndicator = document.getElementById("loading");
 
-    // Change the button to loading...
-    reset.style.display = "none";
-    loadingIndicator.style.display = "block";
 
     document.getElementById('reset_form').addEventListener('submit', function(e) {
         e.preventDefault();
         const email = document.getElementById('email').value;
+        // Change the button to loading...
+        reset.style.display = "none";
+        loadingIndicator.style.display = "block";
 
         fetch('https://igebeya3-272f297966dc.herokuapp.com/reset_password', {
             method: 'POST',
