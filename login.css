@@ -59,6 +59,25 @@
     outline: none;
 }
 
+.password-container input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    color: var(--tg-theme-text-color);
+    font-size: 14px;
+    font-family: 'Roboto Light', sans-serif;
+    transition: border-color 0.3s ease;
+}
+
+
+/*.login-container input[type="email"]:focus,*/
+.password-container input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
 .password-container {
     position: absolute;
     display: inline-block;
