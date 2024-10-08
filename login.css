@@ -74,13 +74,13 @@
     transition: background-color 0.3s ease;
 }
 
-/* Position the eye icon */
-#toggle-password {
+.toggle-password {
     position: absolute;
+    top: 50%;
     right: 10px;
-    top: calc(50% + 20px); /* Aligns with the password field */
+    transform: translateY(-50%); /* Center the icon vertically */
     cursor: pointer;
-    color: #555;
+    color: #888; /* Optional: change color */
 }
 
 /* Style when password is visible */
