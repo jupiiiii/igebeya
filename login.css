@@ -74,6 +74,23 @@
     transition: background-color 0.3s ease;
 }
 
+.password-container {
+    position: relative;
+    display: inline-block;
+}
+
+.password-container input {
+    padding-right: 30px; /* Space for the eye icon */
+}
+
+.password-container .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
 .login-container button:hover {
     background-color: #1d4e69;
 }

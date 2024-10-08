@@ -10,6 +10,20 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
+    // Toggle password type on eye click
+    const togglePassword = document.querySelector("#toggle-password");
+    const passwordInput = document.querySelector("#password");
+
+    togglePassword.addEventListener("click", function () {
+        // Toggle the type attribute between 'password' and 'text'
+        const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+        passwordInput.setAttribute("type", type);
+
+        // Toggle the eye icon
+        this.classList.toggle("fa-eye");
+        this.classList.toggle("fa-eye-slash");
+    });
+
     // Handle signup form submission
     const loginForm = document.getElementById("login_form");
     const resetPassword = document.getElementById("password-reset");
