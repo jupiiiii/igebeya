@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.json())
         .then(data => {
             if (data.status === "success") {
-                alert("A reset code has been sent to your email or Telegram.");
+                alert("A reset code has been sent to your email.");
+                window.location.href = "/newPassword.html";
             } else {
                 alert("Email not found.");
             }
