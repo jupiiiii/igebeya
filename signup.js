@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (data.error) {
                 loadingIndicator.style.display = "none";
                 submitButt.style.display = "block";
-                alert(`Error: ${data.error}`);
+                alert(data.error);
                 return;
             } else {
                 alert(data.message);
