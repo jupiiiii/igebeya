@@ -52,6 +52,30 @@
     transition: border-color 0.3s ease;
 }
 
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-container input[type="password"] {
+    width: 100%;
+    padding-right: 40px; /* Add space for the icon */
+}
+
+.password-container .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888; /* Icon color */
+}
+
+.password-container .toggle-password:hover {
+    color: #333; /* Icon hover color */
+}
+
+
 .login-container input[type="email"]:focus,
 /*.login-container input[type="email"]:focus,*/
 .login-container input[type="password"]:focus {
