@@ -6,7 +6,7 @@ const chatId = tg.initDataUnsafe.user.id;
 document.addEventListener("DOMContentLoaded", function(){
     // Toggle password type on eye click
     const togglePassword = document.querySelector("#toggle-password");
-    const passwordInput = document.querySelector("#password");
+    const passwordInput = document.querySelector("#new_password");
 
     togglePassword.addEventListener("click", function () {
         // Toggle the type attribute between 'password' and 'text'
