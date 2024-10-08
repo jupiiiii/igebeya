@@ -64,7 +64,7 @@
 
 .password-container .toggle-password {
     position: absolute;
-    top: 48%;
+    top: 55%;
     right: 10px;
     transform: translateY(-50%);
     cursor: pointer;
