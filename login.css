@@ -74,16 +74,16 @@
     transition: background-color 0.3s ease;
 }
 
-.password-container {
+/* .password-container {
     position: relative;
     display: inline-block;
-}
+} */
 
-.password-container input {
+.login-container input[type="password"] {
     padding-right: 30px; /* Space for the eye icon */
 }
 
-.password-container .toggle-password {
+#toggle-password {
     position: absolute;
     top: 50%;
     right: 10px;
