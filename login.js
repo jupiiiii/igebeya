@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const resetPassword = document.getElementById("password-reset");
 
     resetPassword.addEventListener("click", function(){
-        
+
     });
 
     loginForm.addEventListener("submit", function (e) {
@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert(data.message);
                 loadingIndicator.style.display = "none";
                 submitButt.style.display = "block";
+                resetPassword.style.display = "block";
 
             } else if (data.status === "success") {
                 alert(data.message);
