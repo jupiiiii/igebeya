@@ -59,6 +59,11 @@
     outline: none;
 }
 
+.password-container {
+    position: absolute;
+    display: inline-block;
+}
+
 /* Submit button */
 .login-container button {
     width: 100%;
