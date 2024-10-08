@@ -12,6 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Handle signup form submission
     const loginForm = document.getElementById("login_form");
+    const resetPassword = document.getElementById("password-reset");
+
+    resetPassword.addEventListener("click", function(){
+        
+    });
 
     loginForm.addEventListener("submit", function (e) {
         e.preventDefault(); // Prevent default form submission
@@ -28,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Change the button to loading...
+        resetPassword.style.display = "none";
         submitButt.style.display = "none";
         loadingIndicator.style.display = "block";
 
