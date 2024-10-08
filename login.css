@@ -105,3 +105,16 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
+a {
+    font-size: 12px;
+    font: 'Open Sans', sans-serif;
+    display: block;
+    margin-top: 20px;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
