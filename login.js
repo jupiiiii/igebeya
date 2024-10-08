@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
         e.preventDefault(); // Prevent default form submission
 
         // Collect form data
-        const email = document.getElementById("email").value.trim();
+        const email = document.getElementById("email").value.trim().toLowerCase();
         const password = document.getElementById("password").value.trim();
         const loadingIndicator = document.getElementById("loading");
         const submitButt = document.getElementById("submit");

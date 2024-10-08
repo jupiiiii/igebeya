@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Collect form data
         const username = document.getElementById("username").value.trim();
-        const email = document.getElementById("email").value.trim();
+        const email = document.getElementById("email").value.trim().toLowerCase();
         const password = document.getElementById("password").value.trim();
         const loadingIndicator = document.getElementById("loading");
         const submitButt = document.getElementById("submit");

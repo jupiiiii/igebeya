@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById('reset_form').addEventListener('submit', function(e) {
         e.preventDefault();
-        const email = document.getElementById('email').value;
+        const email = document.getElementById('email').value.trim().toLowerCase();
         // Change the button to loading...
         reset.style.display = "none";
         loadingIndicator.style.display = "block";

@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function(){
         goBack.style.display = "none";
         loadingIndicator.style.display = "block";
     
-        const email = document.getElementById('email').value.trim();
+        const email = document.getElementById('email').value.trim().toLowerCase();
         const reset_token = document.getElementById('reset_token').value.trim();
         const new_password = document.getElementById('new_password').value.trim();
     
