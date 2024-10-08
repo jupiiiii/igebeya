@@ -22,6 +22,13 @@ document.addEventListener("DOMContentLoaded", function () {
         // Toggle the eye icon
         this.classList.toggle("fa-eye");
         this.classList.toggle("fa-eye-slash");
+
+        // Toggle the visible class to apply specific CSS
+        if (type === "text") {
+            passwordInput.classList.add("visible");
+        } else {
+            passwordInput.classList.remove("visible");
+        }
     });
 
     // Handle signup form submission

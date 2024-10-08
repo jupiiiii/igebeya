@@ -74,21 +74,19 @@
     transition: background-color 0.3s ease;
 }
 
-/* .password-container {
-    position: relative;
-    display: inline-block;
-} */
-
-.login-container input[type="password"] {
-    padding-right: 30px; /* Space for the eye icon */
-}
-
+/* Position the eye icon */
 #toggle-password {
     position: absolute;
-    top: 50%;
     right: 10px;
-    transform: translateY(-50%);
+    top: calc(50% + 20px); /* Aligns with the password field */
     cursor: pointer;
+    color: #555;
+}
+
+/* Style when password is visible */
+input.visible {
+    border-color: #ff7f7f; /* Reddish border */
+    background-color: #fff7f7; /* Light reddish background */
 }
 
 .login-container button:hover {
