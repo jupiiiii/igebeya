@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", function(){
     // Toggle password type on eye click
     const togglePassword = document.querySelector("#toggle-password");
     const passwordInput = document.querySelector("#new_password");
+    const submitButt = document.getElementById("reset-submit");
+    const loadingIndicator = document.getElementById("loading");
+
 
     togglePassword.addEventListener("click", function () {
         // Toggle the type attribute between 'password' and 'text'
@@ -27,6 +30,10 @@ document.addEventListener("DOMContentLoaded", function(){
     
     document.getElementById('confirm_reset_form').addEventListener('submit', function(e) {
         e.preventDefault();
+
+        // Change the button to loading...
+        submitButt.style.display = "none";
+        loadingIndicator.style.display = "block";
     
         const email = document.getElementById('email').value.trim();
         const reset_token = document.getElementById('reset_token').value.trim();
@@ -55,6 +62,9 @@ document.addEventListener("DOMContentLoaded", function(){
                 alert("Password reset successful!");
                 window.location.href = "/login.html";
             } else {
+                // Change the button to loading...
+                submitButt.style.display = "block";
+                loadingIndicator.style.display = "none";
                 alert(data.message);
             }
         })
