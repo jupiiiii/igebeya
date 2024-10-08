@@ -76,8 +76,8 @@
 
 .toggle-password {
     position: absolute;
-    top: 50%;
-    right: 10px;
+    top: 30%;
+    right: 50px;
     transform: translateY(-50%); /* Center the icon vertically */
     cursor: pointer;
     color: #888; /* Optional: change color */
@@ -85,8 +85,15 @@
 
 /* Style when password is visible */
 input.visible {
-    border-color: #ff7f7f; /* Reddish border */
-    background-color: #fff7f7; /* Light reddish background */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    color: var(--tg-theme-text-color);
+    font-size: 14px;
+    font-family: 'Roboto Light', sans-serif;
+    transition: border-color 0.3s ease;
 }
 
 .login-container button:hover {
