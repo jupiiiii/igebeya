@@ -12,8 +12,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const resetPassword = document.getElementById("password-reset");
 
-    resetPassword.addEventListener("click", function(){
-        return;
+    document.getElementById('reset_form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+
+        fetch('https://igebeya3-272f297966dc.herokuapp.com/reset_password', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email, chatId: chatId })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === "success") {
+                alert("A reset code has been sent to your email or Telegram.");
+            } else {
+                alert("Email not found.");
+            }
+        })
+        .catch(error => console.error('Error:', error));
     });
 
 });
