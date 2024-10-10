@@ -106,6 +106,7 @@ document.addEventListener("DOMContentLoaded", function (){
         // Hash the password using SHA-256
         const hashedPassword = CryptoJS.SHA256(password).toString();
         alert("3");
+        
         const userDataDelete = {chatId: chatId, action: "delete", password: hashedPassword};
 
         alert("4");
