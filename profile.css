@@ -194,7 +194,8 @@ body {
 }
 
 .modal-content p {
-    font-weight: 150;
+    color: var(--tg-theme-text-color);
+    font-weight: 100;
     font-size: 14px;
     font: 'Open Sans', sans-serif;
 }
@@ -215,11 +216,12 @@ body {
 
 /* Input Field */
 #delete-password {
-    width: 80%;
+    width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 10px 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: #cac7c7
 }
 
 /* Delete Button */
