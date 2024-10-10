@@ -356,7 +356,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             itemsList.innerHTML = `
                             <p id="no-items-found">
                                 <i class="fas fa-search icon"></i> <!-- Search icon -->
-                                No items listed yet! :(.
+                                No items listed yet! :(
                             </p>`;
                         }
                         

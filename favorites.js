@@ -71,9 +71,15 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.json())
         .then(items => {
             const yyy = Array.isArray(items) ? items.map(fav => fav.id.toString()) : [];
+            const noFav = document.querySelector(".items-list");
             if (yyy.length === 0) {
-                console.log("No favorites found.");
+                // console.log("No favorites found.");
                 alert("No items in favorite!");
+                noFav.innerHTML = `
+                            <p id="no-items-found">
+                                <i class="far fa-frown"></i>
+                                No items in favorite! :(
+                            </p>`;
                 return;
                 // You could display a message to the user here if needed
             }
