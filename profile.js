@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function (){
 
     // Set user's name and profile picture
     document.getElementById('user-name').innerText = `${user.first_name} ${user.last_name || ''}`;
-    const profilePicture = user.photo_url || 'bg.png'; // Fallback if no profile picture is available
     document.getElementById('profile-picture').src = `https://api.dicebear.com/9.x/bottts/svg?seed=${randomString}`;
 
     profile_details();

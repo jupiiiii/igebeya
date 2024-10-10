@@ -216,11 +216,9 @@ body {
 
 /* Input Field */
 #delete-password {
-    /* width: 100%; */
+    width: 99%;
     padding: 10px;
     margin-bottom: 10px;
-    right: 30px;
-    left: 30px;
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: var(--tg-theme-bg-color);
