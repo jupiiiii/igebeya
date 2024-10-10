@@ -193,6 +193,12 @@ body {
     border-radius: 8px;
 }
 
+.modal-content p {
+    font-weight: 150;
+    font-size: 14px;
+    font: 'Open Sans', sans-serif;
+}
+
 /* Close Button */
 .close-btn {
     color: #aaa;
@@ -209,7 +215,7 @@ body {
 
 /* Input Field */
 #delete-password {
-    width: 100%;
+    width: 80%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
