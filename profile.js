@@ -114,11 +114,11 @@ document.addEventListener("DOMContentLoaded", function (){
         .then(response => response.json()) // Parse the response as JSON
         .then(data => {
             if (data.status === "success") {
-                alert(data.status);
+                alert(data.message);
                 window.location.href = "/home.html";
 
             } else {
-                alert(data.status);
+                alert(data.message);
                 return;
             }
             
