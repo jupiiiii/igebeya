@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Delete Account</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap">
+    <link rel="stylesheet" href="/deleteAccount.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+    <!-- Delete Account Button -->
+    <button id="delete-account-btn" class="delete-account-btn">Delete Account</button>
+
+    <!-- Delete Account Modal -->
+    <div id="delete-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Confirm Account Deletion</h2>
+            <p>Please enter your password to delete your account:</p>
+            <input type="password" id="delete-password" placeholder="Enter your password" required>
+            <button id="confirm-delete-btn">Delete</button>
+        </div>
+    </div>
+
+    <script src="/deleteAccount.js"></script>
+</body>
+</html>
