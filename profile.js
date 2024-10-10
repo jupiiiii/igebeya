@@ -98,12 +98,16 @@ document.addEventListener("DOMContentLoaded", function (){
     });
 
     confirmDeleteBtn.addEventListener("click", function (){
+        alert("1");
         const password = document.getElementById("delete-password").value.trim();
+
+        alert("2");
          
         // Hash the password using SHA-256
         const hashedPassword = CryptoJS.SHA256(password).toString();
         const userDataDelete = {chatId: chatId, action: "delete", password: hashedPassword};
 
+        alert("3");
         fetch(`https://igebeya3-272f297966dc.herokuapp.com/user_login`, {
             method: 'POST',
             headers: {
