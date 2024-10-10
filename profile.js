@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function (){
         });
     });
 
-    confirmDeleteBtn.addEventListener("click", () => {
+    confirmDeleteBtn.addEventListener("click", function (){
         const password = document.getElementById("delete-password").value.trim();
          
         // Hash the password using SHA-256
