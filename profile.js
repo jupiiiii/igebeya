@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function (){
         .then(response => response.json()) // Parse the response as JSON
         .then(data => {
             if (data.status === "success") {
-                alert("Logged Out!");
+                alert(data.status);
                 window.location.href = "/home.html";
 
             } else {
