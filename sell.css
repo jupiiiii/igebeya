@@ -55,9 +55,12 @@ h2 {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+}
+
+#list-new-item, #check-listed-items {
     font-family: 'Roboto', sans-serif;
     font: 14px;
-}
+} 
 
 .option-btn {
     flex: 1;
