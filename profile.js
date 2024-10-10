@@ -99,6 +99,10 @@ document.addEventListener("DOMContentLoaded", function (){
 
     confirmDeleteBtn.addEventListener("click", function (){
         const password = document.getElementById("delete-password").value.trim();
+        if (!password){
+            alert("Please enter your password!");
+            return;
+        }
          
         // Hash the password using SHA-256
         const hashedPassword = CryptoJS.SHA256(password).toString();
