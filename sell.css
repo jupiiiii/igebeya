@@ -258,11 +258,11 @@ textarea {
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.2s ease;
-    border: 1px solid #ef1d1d;
+    border: 1px solid #467083;
 }
 
 .unlist-button i {
-    padding:5px;
+    padding:5px 5px;
 }
 
 .boost-button {
@@ -275,15 +275,19 @@ textarea {
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.2s ease;
-    border: 1px solid #ef1d1d;
+    border: 1px solid #467083;
 }
 
 .boost-button i {
-    padding:5px;
+    padding:5px 5px;
 }
 
 .unlist-button:hover {
-    background-color: #274b5c
+    background-color: #274b5c;
+}
+
+.boost-button:hover {
+    background-color: #274b5c;
 }
 
 #back-button {
