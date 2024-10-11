@@ -262,14 +262,6 @@ textarea {
     
 }
 
-.unlist-button i {
-    padding:5px 5px;
-    margin: 5px 5px;
-    justify-content: center; /* Horizontally centers the text */
-    align-items: center;     /* Vertically centers the text */
-    text-align: center;
-}
-
 .boost-button {
     margin-top: 10px;
     height: 25px;
@@ -283,13 +275,6 @@ textarea {
     border: 1px solid #467083;
 }
 
-.boost-button i {
-    padding:5px 5px;
-    margin: 5px 5px;
-    justify-content: center; /* Horizontally centers the text */
-    align-items: center;     /* Vertically centers the text */
-    text-align: center;
-}
 
 .unlist-button:hover {
     background-color: #274b5c;
