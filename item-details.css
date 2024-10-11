@@ -188,7 +188,8 @@ body {
     font-size: 12px;
     font-weight: bold;
     margin: 5px 0;
-    color: var(--tg-theme-text-color);
+    color: #326472;
+    /* color: var(--tg-theme-text-color); */
 }
 
 #joined-date {
@@ -196,7 +197,8 @@ body {
     font-size: 12px;
     font-weight: bold;
     margin: 5px 0;
-    color: var(--tg-theme-text-color);
+    color: #326472;
+    /* color: var(--tg-theme-text-color); */
 }
 
 #message-box {

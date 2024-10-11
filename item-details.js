@@ -202,8 +202,8 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("item-city").innerHTML = `<i class="fas fa-map-marker-alt"></i> ${itemDetails.item_city}`;
             document.getElementById("date").innerHTML = `<i class="fas fa-calendar-alt"></i> ${itemDetails.date}`;
             document.getElementById("item-description").textContent = itemDetails.item_description;
-            document.getElementById("posted-by").innerHTML = `<i class="fas fa-user"></i>Listed by: ${itemDetails.username}`;
-            document.getElementById("joined-date").innerHTML = `<i class="fas fa-clock"></i>Member since: ${itemDetails.joined_date}`;
+            document.getElementById("posted-by").innerHTML = `<i class="fas fa-user"></i> By: ${itemDetails.username}`;
+            document.getElementById("joined-date").innerHTML = `<i class="fas fa-clock"></i> Since: ${itemDetails.joined_date}`;
 
 
             const chat_id = itemDetails.chat_id;
