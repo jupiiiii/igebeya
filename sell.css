@@ -259,6 +259,16 @@ textarea {
     border: 1px solid #ef1d1d;
 }
 
+.boost-button {
+    background-color: var(--tg-theme-bg-color);
+    color: var(--tg-theme-text-color);
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border: 1px solid #ef1d1d;
+}
+
 .unlist-button:hover {
     /* background-color: var(--tg-theme-bg-color); */
     transform: scale(1.2);
