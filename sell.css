@@ -254,13 +254,11 @@ textarea {
     width: 70px;
     background-color: var(--tg-theme-bg-color);
     color: var(--tg-theme-text-color);
-    padding: 8px 16px;
+    padding: 10px 16px;
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.2s ease;
-    border: 1px solid #467083;
-    text-align: center;
-    
+    border: 1px solid #467083;  
 }
 
 .boost-button {
@@ -269,12 +267,11 @@ textarea {
     width: 70px;
     background-color: var(--tg-theme-bg-color);
     color: var(--tg-theme-text-color);
-    padding: 8px 16px;
+    padding: 10px 16px;
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.2s ease;
     border: 1px solid #467083;
-    text-align: center;
 }
 
 

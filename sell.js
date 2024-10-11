@@ -366,12 +366,8 @@ document.addEventListener("DOMContentLoaded", function () {
                             <p>🟢</p>
                         </div>
                         <div class="item-unlist">
-                            <button class="unlist-button" data-id="${item.id}">
-                                Unlist
-                            </button>
-                            <button class="boost-button" data-id="${item.id}">
-                                Boost
-                            </button>
+                            <button class="unlist-button" data-id="${item.id}">Unlist</button>
+                            <button class="boost-button" data-id="${item.id}">Boost</button>
                         </div>
                     `;
 
