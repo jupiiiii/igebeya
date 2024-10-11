@@ -284,10 +284,12 @@ textarea {
 
 .unlist-button:hover {
     background-color: #274b5c;
+    color:#ffffff;
 }
 
 .boost-button:hover {
     background-color: #274b5c;
+    color:#ffffff;
 }
 
 #back-button {
