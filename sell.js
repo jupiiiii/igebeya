@@ -367,10 +367,10 @@ document.addEventListener("DOMContentLoaded", function () {
                         </div>
                         <div class="item-unlist">
                             <button class="unlist-button" data-id="${item.id}">
-                                &#128465;
+                                Unlist
                             </button>
                             <button class="boost-button" data-id="${item.id}">
-                                <i class="fas fa-rocket"></i>
+                                Boost
                             </button>
                         </div>
                     `;
