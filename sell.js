@@ -370,7 +370,7 @@ document.addEventListener("DOMContentLoaded", function () {
                                 &#128465;
                             </button>
                             <button class="boost-button" data-id="${item.id}">
-                                &#128465;
+                                <i class="fas fa-rocket"></i>
                             </button>
                         </div>
                     `;
