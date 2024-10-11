@@ -182,6 +182,14 @@ body {
     white-space: pre-wrap; /* Ensure the text wraps normally and preserve pre input structure of the text*/
 }
 
+#posted-by, #joined-date {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 5px 0;
+    color: var(--tg-theme-text-color);
+}
+
 #message-box {
     /* height: calc(var(--vh, 1vh) * 100 - 50px); */
     width: 95%;

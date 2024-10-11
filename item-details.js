@@ -200,8 +200,12 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("item_main").textContent = itemDetails.item_main_category;
             document.getElementById("item_sub").textContent = itemDetails.item_sub_category;
             document.getElementById("item-city").innerHTML = `<i class="fas fa-map-marker-alt"></i> ${itemDetails.item_city}`;
-            document.getElementById("item-description").textContent = itemDetails.item_description;
             document.getElementById("date").innerHTML = `<i class="fas fa-calendar-alt"></i> ${itemDetails.date}`;
+            document.getElementById("item-description").textContent = itemDetails.item_description;
+            document.getElementById("posted-by").innerHTML = `<i class="fas fa-calendar-alt"></i> ${itemDetails.username}`;
+            document.getElementById("joined-date").innerHTML = `<i class="fas fa-calendar-alt"></i> ${itemDetails.joined_date}`;
+
+
             const chat_id = itemDetails.chat_id;
             const itemTitle = itemDetails.item_name;
             const itemPrice = itemDetails.item_price;
