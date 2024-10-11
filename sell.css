@@ -259,6 +259,9 @@ textarea {
     cursor: pointer;
     transition: transform 0.2s ease;
     border: 1px solid #467083;
+    justify-content: center; /* Horizontally centers the text */
+    align-items: center;     /* Vertically centers the text */
+    text-align: center;
 }
 
 .unlist-button i {
@@ -276,6 +279,9 @@ textarea {
     cursor: pointer;
     transition: transform 0.2s ease;
     border: 1px solid #467083;
+    justify-content: center; /* Horizontally centers the text */
+    align-items: center;     /* Vertically centers the text */
+    text-align: center;
 }
 
 .boost-button i {
