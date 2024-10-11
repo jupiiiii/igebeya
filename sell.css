@@ -263,6 +263,10 @@ textarea {
     border: 1px solid #ef1d1d;
 }
 
+.unlist-button i {
+    padding:5px;
+}
+
 .boost-button {
     margin-top: 10px;
     height: 25px;
@@ -274,6 +278,10 @@ textarea {
     cursor: pointer;
     transition: transform 0.2s ease;
     border: 1px solid #ef1d1d;
+}
+
+.boost-button i {
+    padding:5px;
 }
 
 .unlist-button:hover {
