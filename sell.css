@@ -259,6 +259,7 @@ textarea {
     cursor: pointer;
     transition: transform 0.2s ease;
     border: 1px solid #467083;
+    text-align: center;
     
 }
 
@@ -273,6 +274,7 @@ textarea {
     cursor: pointer;
     transition: transform 0.2s ease;
     border: 1px solid #467083;
+    text-align: center;
 }
 
 
