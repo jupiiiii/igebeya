@@ -258,7 +258,8 @@ textarea {
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.2s ease;
-    border: 1px solid #467083;  
+    border: 1px solid #467083;
+    line-height: 1.5;
 }
 
 .boost-button {
@@ -272,6 +273,7 @@ textarea {
     cursor: pointer;
     transition: transform 0.2s ease;
     border: 1px solid #467083;
+    line-height: 1.5;
 }
 
 
