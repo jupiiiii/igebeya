@@ -352,6 +352,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     const images = item.item_pic.split(',');  // Assuming multiple images are separated by a comma
                     const itemRow = document.createElement('div');
                     itemRow.classList.add('listed-item-row');
+                    if(item.boost==='nop'){const icon = "⭐️"}else{const icon = "🟢"}
 
                     // Create the HTML structure for each item row
                     itemRow.innerHTML = `
@@ -363,7 +364,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             <p class="list-price"><strong>ETB ${Number(item.item_price).toLocaleString()}</strong></p>
                         </div>
                         <div class="item-status">
-                            <p>🟢</p>
+                            <p>${icon}</p>
                         </div>
                         <div class="item-unlist">
                             <button class="unlist-button" data-id="${item.id}">Unlist</button>
