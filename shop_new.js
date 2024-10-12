@@ -491,6 +491,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Determine if the item is boosted
             const isBoosted = item.boosted === 'yep';
+            alert(isBoosted);
 
             itemBox.innerHTML = `
                 <img src="${images[0]}" alt="${item.item_name}">
