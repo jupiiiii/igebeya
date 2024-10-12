@@ -194,7 +194,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 350px; /* Set a fixed height for all item boxes */
+    height: 290px; /* Set a fixed height for all item boxes */
     box-sizing: border-box;
 }
 
