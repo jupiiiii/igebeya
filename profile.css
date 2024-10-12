@@ -13,7 +13,10 @@ body {
     text-align: center;
     padding: 20px;
     border-radius: 10px;
-    height: 100vh;
+    flex-direction: column;
+    align-items: stretch;
+    height: auto; 
+    overflow: visible;
     width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
