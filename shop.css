@@ -181,6 +181,7 @@ body {
 }
 
 .item-box {
+    position: relative;
     background-color: var(--tg-theme-bg-color);
     /*border: 1px solid rgba(243, 102, 102, 0.22);*/
     border: rgba(74, 136, 154, 0.44);
