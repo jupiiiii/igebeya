@@ -447,7 +447,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert('Item successfully boosted.');
                 fetchListedItems();  // Refresh the listed items
             } else {
-                alert('Failed to boost item.');
+                alert(data.error);
             }
         })
         .catch(error => {
