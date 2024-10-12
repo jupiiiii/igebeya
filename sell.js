@@ -395,7 +395,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.querySelectorAll('.boost-button').forEach(button => {
                     button.addEventListener('click', function () {
                         const itemId = this.getAttribute('data-id');
-                        const itemData = {'itemId': itemId}
+                        const itemData = {'itemId': itemId, 'chatId': chatId}
                         boostItem(itemData);  // Unlist the item by calling the backend
                     });
                 });
