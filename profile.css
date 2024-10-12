@@ -103,7 +103,8 @@ body {
 }
 
 .log-out-button,
-.delete-account {
+.delete-account,
+.boost-button {
     border: 2px solid transparent;
     background-color: transparent;
     padding: 10px 20px;
@@ -125,6 +126,16 @@ body {
 
 .delete-account:hover {
     background-color: #ff4d4d; /* Hover effect for delete button */
+    color: white;
+}
+
+.boost-button {
+    border-color: #4da761; /* Reddish border for the delete button */
+    color: #4da761;
+}
+
+.boost-button:hover {
+    background-color: #4da761; /* Hover effect for delete button */
     color: white;
 }
 
