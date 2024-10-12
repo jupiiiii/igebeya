@@ -191,7 +191,11 @@ body {
     margin: 5px auto;
     padding: 10px;
     transition: transform 0.3s ease;
-    height: 100%; /* Ensures consistent height for all items */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 350px; /* Set a fixed height for all item boxes */
+    box-sizing: border-box;
 }
 
 .item-box:hover {
