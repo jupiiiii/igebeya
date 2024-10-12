@@ -213,6 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let start = 0; // Start index for items
     let startSearch = 0; // start index for search items
     const limit = 20; // Number of items to load per batch
+    let boosted_offset = 0;
     let currentItems = [];
     let favSearch = [];
 
@@ -229,12 +230,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Load initial batch of items
-    displayItems(start, limit);
+    displayItems(start, limit, boosted_offset);
 
     // Add event listener to the "Load More" button
     loadMoreButton.addEventListener('click', function () {
         start += limit;  // Increment the start index
-        displayItems(start, limit);  // Fetch and display the next batch of items
+        boosted_offset += 4;
+        displayItems(start, limit, boosted_offset);  // Fetch and display the next batch of items
     });
 
     // Add event listener to the "Back to Top" button
@@ -288,7 +290,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Proceed to displaying items
                 startSearch -= startSearch;
                 start -= start;
-                displayItems(start, limit);
+                boosted_offset -= boosted_offset;
+                displayItems(start, limit, boosted_offset);
             }
 
             // Optionally, perform any additional action based on the selected city (e.g., filter search results)
@@ -322,7 +325,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    function displayItems(start, limit) {
+    function displayItems(start, limit, boosted_offset) {
         // Fetch user's favorites
     fetch(`https://igebeya3-272f297966dc.herokuapp.com/get_favorite?chat_id=${chatId}`)
         .then(response => response.json())
@@ -336,7 +339,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             // Fetch all items
-            fetch(`https://igebeya3-272f297966dc.herokuapp.com/get_items?start=${start}&limit=${limit}&chat_id=${chatId}&city=${city}`)
+            fetch(`https://igebeya3-272f297966dc.herokuapp.com/get_items?start=${start}&limit=${limit}&chat_id=${chatId}&city=${city}&boosted_offset=${boosted_offset}`)
                 .then(response => response.json())
                 .then(items => {
                     const itemsList = document.querySelector('.items-list');
@@ -594,7 +597,8 @@ document.addEventListener("DOMContentLoaded", function () {
             itemsList.innerHTML = ''; // Clear results if query is empty
             startSearch -= startSearch;
             start -= start;
-            displayItems(start, limit);
+            boosted_offset -= boosted_offset;
+            displayItems(start, limit, boosted_offset);
         }
     }
 
