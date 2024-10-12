@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function (){
                 document.getElementById("username").innerHTML = `<i class="fas fa-user"></i>  ${status.username}`;
                 document.getElementById("email").innerHTML = `<i class="fas fa-envelope"></i>  ${status.email}`;
                 document.getElementById("join-date").innerHTML = `<i class="fas fa-calendar-alt"></i> Since: ${status.date}`;
-
+                document.getElementById("boost-amount").innerHTML = `<i class="fas fa-bolt"></i> Boosts: ${status.boost}`;
     
             })
             .catch((error) => console.error('Error:', error));
