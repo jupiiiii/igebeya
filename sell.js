@@ -349,15 +349,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 // Populate the listed items in the DOM
                 items.forEach(item => {
+                    let icon;
                     const images = item.item_pic.split(',');  // Assuming multiple images are separated by a comma
                     const itemRow = document.createElement('div');
                     itemRow.classList.add('listed-item-row');
                     alert("1", item.boosted);
                     if(item.boosted==='nop'){
-                        const icon = "⭐️";
+                        icon = "⭐️";
                         alert("2");
                     }else{
-                        const icon = "🟢";
+                        icon = "🟢";
                         alert("3");
                     }
 
