@@ -61,10 +61,17 @@ document.addEventListener("DOMContentLoaded", function (){
             .then(status => {
                 // alert(status.info);
                 // Populate user details
+                let boostPower;
                 document.getElementById("username").innerHTML = `<i class="fas fa-user"></i>  ${status.username}`;
                 document.getElementById("email").innerHTML = `<i class="fas fa-envelope"></i>  ${status.email}`;
                 document.getElementById("join-date").innerHTML = `<i class="fas fa-calendar-alt"></i> Since: ${status.date}`;
-                document.getElementById("boost-amount").innerHTML = `<i class="fas fa-bolt"></i> Boosts: ${status.boost}`;
+                if (status.boost === 0){
+                    boostPower = "🪫";
+                }
+                else{
+                    boostPower = "🔋";
+                }
+                document.getElementById("boost-amount").innerHTML = `<i class="fas fa-bolt"></i> Boosts: ${status.boost} ${boostPower}`;
     
             })
             .catch((error) => console.error('Error:', error));

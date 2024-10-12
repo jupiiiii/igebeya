@@ -355,9 +355,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     itemRow.classList.add('listed-item-row');
                     
                     if(item.boosted==='nop'){
-                        icon = "⭐️";
+                        icon = "🪫";
                     }else{
-                        icon = "🟢";
+                        icon = "🔋";
                     }
 
                     // Create the HTML structure for each item row
