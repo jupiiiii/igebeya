@@ -194,7 +194,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    height: 290px; /* Set a fixed height for all item boxes */
+    height: 330px; /* Set a fixed height for all item boxes */
     box-sizing: border-box;
 }
 
@@ -262,6 +262,8 @@ body {
     margin: 5px 0;
     color: var(--tg-theme-text-color);
     overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .item-description {
