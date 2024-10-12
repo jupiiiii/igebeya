@@ -94,6 +94,19 @@ body {
     padding: 10px;
 }
 
+.boost-amount {
+    font-size: 14px;
+    font: 'Open Sans', sans-serif;
+    color: var(--tg-theme-text-color);
+    width: 100%;               
+    border: 1px solid var(--tg-theme-text-color);
+    box-shadow: 0 2px 5px rgba(74, 136, 154, 0.44);
+    border-radius: 10px;     
+    box-sizing: border-box;     
+    margin: 5px 10px 5px 5px;             
+    padding: 10px;
+}
+
 .log-out-delete-button {
     bottom: 60px;
     width: 100%;
