@@ -352,10 +352,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     const images = item.item_pic.split(',');  // Assuming multiple images are separated by a comma
                     const itemRow = document.createElement('div');
                     itemRow.classList.add('listed-item-row');
+                    alert("1", item.boosted);
                     if(item.boosted==='nop'){
                         const icon = "⭐️";
+                        alert("2");
                     }else{
                         const icon = "🟢";
+                        alert("3");
                     }
 
                     // Create the HTML structure for each item row
