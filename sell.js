@@ -386,7 +386,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.querySelectorAll('.unlist-button').forEach(button => {
                     button.addEventListener('click', function () {
                         const itemId = this.getAttribute('data-id');
-                        unlistItem(itemId);  // Unlist the item by calling the backend
+                        const itemData = {'itemId': itemId};
+                        unlistItem(itemData);  // Unlist the item by calling the backend
+                    });
+                });
+
+                // Add event listeners for the "boost" buttons
+                document.querySelectorAll('.boost-button').forEach(button => {
+                    button.addEventListener('click', function () {
+                        const itemId = this.getAttribute('data-id');
+                        const itemData = {'itemId': itemId}
+                        boostItem(itemData);  // Unlist the item by calling the backend
                     });
                 });
             })
@@ -397,10 +407,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Function to unlist an item
-    function unlistItem(itemId) {
+    function unlistItem(itemData) {
         // Make a request to the backend to unlist the item
-        fetch(`https://igebeya3-272f297966dc.herokuapp.com/unlist_item?id=${itemId}`, {
+        fetch(`https://igebeya3-272f297966dc.herokuapp.com/unlist_item`, {
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(itemData)
         })
         .then(response => response.json())
         .then(data => {
@@ -414,6 +428,31 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(error => {
             // console.error('Error unlisting item:', error);
             alert('An error occurred while trying to unlist the item.');
+        });
+    }
+
+    // Function to boost an item
+    function boostItem(itemData) {
+        // Make a request to the backend to unlist the item
+        fetch(`https://igebeya3-272f297966dc.herokuapp.com/boost_item`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(itemData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Item successfully boosted.');
+                fetchListedItems();  // Refresh the listed items
+            } else {
+                alert('Failed to boost item.');
+            }
+        })
+        .catch(error => {
+            // console.error('Error unlisting item:', error);
+            alert('An error occurred while trying to boost the item.');
         });
     }
 });
