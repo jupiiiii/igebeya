@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let start = 0; // Start index for items
     let startSearch = 0; // start index for search items
-    const limit = 10; // Number of items to load per batch
+    const limit = 20; // Number of items to load per batch
     let currentItems = [];
     let favSearch = [];
 
