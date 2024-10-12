@@ -489,6 +489,9 @@ document.addEventListener("DOMContentLoaded", function () {
             // Set heart icon class based on liked status
             const heartIconClass = isLiked ? 'fas fa-heart like-icon liked' : 'fas fa-heart like-icon';
 
+            // Determine if the item is boosted
+            const isBoosted = item.boosted === 'yep';
+
             itemBox.innerHTML = `
                 <img src="${images[0]}" alt="${item.item_name}">
                 <div class="item-details">
@@ -496,6 +499,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         <p class="item-price"><strong>ETB ${Number(item.item_price).toLocaleString()}</strong></p>
                         <i class="${heartIconClass}"></i>
                     </div>
+                    ${isBoosted ? `
+                        <div class="boost-badge">
+                            <i class="fas fa-star"></i> Boosted
+                        </div>
+                    ` : ''}
                     <p class="item-title">${item.item_name}</p>
                     <p class="item-description">${item.item_description}</p>
                     <p class="item-city">
