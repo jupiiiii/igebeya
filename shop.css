@@ -436,8 +436,8 @@ body {
 /* Styles for the boost badge */
 .boost-badge {
     position: absolute;
-    top: 15px;
-    right: 10px;
+    top: 9px;
+    right: 9px;
     background-color: #ffcc00;
     color: #fff;
     padding: 4px 8px;
