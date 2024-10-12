@@ -267,6 +267,7 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     line-height: 1.5;
+    padding-bottom: 10px;
 }
 
 .item-city {
