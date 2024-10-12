@@ -191,8 +191,6 @@ body {
     margin: 5px auto;
     padding: 10px;
     transition: transform 0.3s ease;
-    flex-direction: column;
-    justify-content: space-between; /* Space between content and city */
     height: 100%; /* Ensures consistent height for all items */
 }
 
