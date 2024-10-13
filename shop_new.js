@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Add event listener to the "Load More" button
     loadMoreButton.addEventListener('click', function () {
         start += limit;  // Increment the start index
-        boosted_offset += 4;
+        boosted_offset = 0;
         displayItems(start, limit, boosted_offset);  // Fetch and display the next batch of items
     });
 
@@ -290,7 +290,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Proceed to displaying items
                 startSearch -= startSearch;
                 start -= start;
-                boosted_offset -= boosted_offset;
+                boosted_offset = 0;
                 displayItems(start, limit, boosted_offset);
             }
 
@@ -606,7 +606,7 @@ document.addEventListener("DOMContentLoaded", function () {
             itemsList.innerHTML = ''; // Clear results if query is empty
             startSearch -= startSearch;
             start -= start;
-            boosted_offset -= boosted_offset;
+            boosted_offset = 0;
             displayItems(start, limit, boosted_offset);
         }
     }
