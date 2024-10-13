@@ -137,6 +137,13 @@ body {
     color: var(--tg-theme-text-color);
 }
 
+.item-title p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 4px;
+    margin-bottom: 5px;
+    color: var(--tg-theme-text-color);
+}
+
 .item-price {
     font-family: 'Open Sans', sans-serif;
     font-size: 4px;
