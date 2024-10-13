@@ -132,14 +132,14 @@ body {
 
 .item-title {
     font-family: 'Open Sans', sans-serif;
-    font-size: 4px !important;
+    font-size: 14px !important;
     margin-bottom: 5px;
     color: var(--tg-theme-text-color);
 }
 
 .item-price {
     font-family: 'Open Sans', sans-serif;
-    font-size: 4px !important;
+    font-size: 12px !important;
     color: #326472;
 }
 
