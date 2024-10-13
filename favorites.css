@@ -132,14 +132,14 @@ body {
 
 .item-title {
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 12px;
     margin-bottom: 5px;
     color: var(--tg-theme-text-color);
 }
 
 .item-price {
     font-family: 'Oswald', sans-serif;
-    font-size: 13px;
+    font-size: 12px;
     color: #326472;
 }
 
